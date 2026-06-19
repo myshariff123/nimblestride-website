@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  h1 {
+    @apply font-bold text-4xl md:text-5xl lg:text-6xl;
+  }
+  h2 {
+    @apply font-bold text-2xl md:text-3xl lg:text-4xl;
+  }
+  h3 {
+    @apply font-bold text-xl md:text-2xl;
+  }
+  body {
+    @apply font-sans text-body;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply uppercase text-xs md:text-sm font-medium tracking-[0.1em] text-teal;
+  }
+  .btn-primary {
+    @apply bg-teal text-white px-4 md:px-6 py-2 md:py-3 rounded-md font-medium hover:bg-teal-hover transition-colors;
+  }
+  .btn-secondary {
+    @apply border-2 border-teal text-teal px-4 md:px-6 py-2 md:py-3 rounded-md font-medium hover:bg-teal-light transition-colors;
+  }
+  .card {
+    @apply bg-white rounded-lg border border-gray-100 shadow-sm;
+  }
+  .callout {
+    @apply pl-4 border-l-4 rounded-r-lg;
+  }
+}
+
+.active-link {
+  @apply border-b-2 border-teal;
+}
