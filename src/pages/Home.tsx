@@ -306,7 +306,7 @@ export const Home: React.FC = () => {
               },
               {
                 title: 'Newcomer Economy',
-                body: 'Canada welcomes hundreds of thousands of immigrants annually. Most arrive without Canadian credit history, yet face Canada's complex mortgage and financial services landscape on day one.',
+                body: "Canada welcomes hundreds of thousands of immigrants annually. Most arrive without Canadian credit history, yet face Canada's complex mortgage and financial services landscape on day one.",
               },
               {
                 title: 'P&C Insurance Gap',
