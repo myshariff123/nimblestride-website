@@ -302,7 +302,7 @@ export const Home: React.FC = () => {
             {[
               {
                 title: 'OSFI & Provincial Regulators',
-                body: "Canada's financial institutions operate under some of the most rigorous disclosure and governance requirements in the world — creating demand for precise, auditable compliance tooling.',
+                body: "Canada's financial institutions operate under some of the most rigorous disclosure and governance requirements in the world — creating demand for precise, auditable compliance tooling.",
               },
               {
                 title: 'Newcomer Economy',
@@ -314,7 +314,7 @@ export const Home: React.FC = () => {
               },
               {
                 title: 'AI Governance Frontier',
-                body: "Canada's sovereign AI compute strategy, OSFI B-15, and provincial climate disclosure requirements are creating an entirely new compliance obligation category that existing software cannot address.',
+                body: "Canada's sovereign AI compute strategy, OSFI B-15, and provincial climate disclosure requirements are creating an entirely new compliance obligation category that existing software cannot address.",
               },
             ].map((c) => (
               <div key={c.title} className="card p-6">
