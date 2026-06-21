@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nimblestride — Software Built for Canada</title>
+  <meta name="description" content="Nimblestride builds focused SaaS products for Canadian industries — insurance, climate compliance, and mortgage lending." />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0c10;
+      --surface: #111318;
+      --border: #1e2130;
+      --text: #e8eaf0;
+      --muted: #7c8299;
+      --accent: #3b6ef8;
+      --accent-hover: #5585ff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(10, 12, 16, 0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .logo span { color: var(--accent); }
+
+    nav a.contact-link {
+      font-size: 0.875rem;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    nav a.contact-link:hover { color: var(--text); }
+
+    /* ── Hero ── */
+    .hero {
+      max-width: 780px;
+      margin: 7rem auto 5rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(59, 110, 248, 0.12);
+      border: 1px solid rgba(59, 110, 248, 0.25);
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1.75rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+
+    .hero-sub {
+      font-size: 1.125rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ── Products ── */
+    .products {
+      max-width: 1080px;
+      margin: 0 auto 6rem;
+      padding: 0 2rem;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .product-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top left, var(--card-glow, rgba(59,110,248,0.06)) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .product-card:hover {
+      border-color: var(--card-border-hover, rgba(59,110,248,0.5));
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    /* Per-product accent colours */
+    .card-clearbind   { --card-glow: rgba(249,115,22,0.08); --card-border-hover: rgba(249,115,22,0.45); }
+    .card-gridwitness { --card-glow: rgba(34,197,94,0.07);  --card-border-hover: rgba(34,197,94,0.4); }
+    .card-mortgage    { --card-glow: rgba(168,85,247,0.07); --card-border-hover: rgba(168,85,247,0.4); }
+
+    .product-icon {
+      font-size: 1.6rem;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .product-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    .product-domain {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+
+    .product-desc {
+      font-size: 0.925rem;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .product-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.25rem;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--link-color, var(--accent));
+      margin-top: 0.5rem;
+      transition: gap 0.2s;
+    }
+    .product-link:hover { gap: 0.65rem; }
+
+    .card-clearbind   .product-link { --link-color: #f97316; }
+    .card-gridwitness .product-link { --link-color: #22c55e; }
+    .card-mortgage    .product-link { --link-color: #a855f7; }
+
+    .arrow { font-style: normal; }
+
+    /* ── Divider ── */
+    .divider {
+      max-width: 1080px;
+      margin: 0 auto 5rem;
+      padding: 0 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Contact ── */
+    .contact {
+      max-width: 600px;
+      margin: 0 auto 6rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 1.65rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact p {
+      color: var(--muted);
+      font-size: 0.975rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .email-btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: auto;
+      border-top: 1px solid var(--border);
+      padding: 1.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    footer a { color: var(--muted); transition: color 0.2s; }
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.25rem; }
+      .hero { margin: 4rem auto 3.5rem; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <span class="logo">Nimble<span>stride</span></span>
+    <a class="contact-link" href="mailto:support@nimblestride.ca">support@nimblestride.ca</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="hero-eyebrow">Canadian Software</span>
+    <h1>Software Built for the Industries That Move Canada</h1>
+    <p class="hero-sub">
+      Nimblestride builds focused, AI-powered SaaS products for Canadian insurance, climate compliance, and mortgage lending.
+    </p>
+  </section>
+
+  <!-- Products -->
+  <section class="products">
+    <p class="section-label">Our Products</p>
+    <div class="product-grid">
+
+      <!-- ClearBind -->
+      <div class="product-card card-clearbind">
+        <div class="product-icon">&#x1F4CB;</div>
+        <div>
+          <div class="product-name">ClearBind</div>
+          <div class="product-domain">clearbind.ca</div>
+        </div>
+        <p class="product-desc">
+          AI-powered submission intake, enrichment, and appetite matching for Canadian P&amp;C insurance MGAs and brokers. Extract, enrich, and route commercial submissions in minutes — not days.
+        </p>
+        <div class="product-tags">
+          <span class="tag">InsurTech</span>
+          <span class="tag">MGA</span>
+          <span class="tag">AI Underwriting</span>
+        </div>
+        <a class="product-link" href="https://clearbind.ca" target="_blank" rel="noopener">
+          Visit clearbind.ca <span class="arrow">&#8594;</span>
+        </a>
+      </div>
+
+      <!-- GridWitness -->
+      <div class="product-card card-gridwitness">
+        <div class="product-icon">&#x26A1;</div>
+        <div>
+          <div class="product-name">GridWitness</div>
+          <div class="product-domain">gridwitness.ca</div>
+        </div>
+        <p class="product-desc">
+          Real-time hardware telemetry and tamper-evident carbon accounting for data centres. Generate OSFI B-15, TCFD, and IFRS S2 disclosure reports in seconds — with an immutable audit trail for regulators and boards.
+        </p>
+        <div class="product-tags">
+          <span class="tag">ClimaTech</span>
+          <span class="tag">OSFI B-15</span>
+          <span class="tag">IFRS S2</span>
+        </div>
+        <a class="product-link" href="https://gridwitness.ca" target="_blank" rel="noopener">
+          Visit gridwitness.ca <span class="arrow">&#8594;</span>
+        </a>
+      </div>
+
+      <!-- New In Canada Mortgage -->
+      <div class="product-card card-mortgage">
+        <div class="product-icon">&#x1F3E0;</div>
+        <div>
+          <div class="product-name">New In Canada Mortgage</div>
+          <div class="product-domain">newincanadamortgage.ca</div>
+        </div>
+        <p class="product-desc">
+          Mortgage guidance built for newcomers to Canada. Navigate the Canadian housing market with clear, accessible resources and expert support — no Canadian credit history required to get started.
+        </p>
+        <div class="product-tags">
+          <span class="tag">Mortgage</span>
+          <span class="tag">Newcomers</span>
+          <span class="tag">FinTech</span>
+        </div>
+        <a class="product-link" href="https://newincanadamortgage.ca" target="_blank" rel="noopener">
+          Visit newincanadamortgage.ca <span class="arrow">&#8594;</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <div class="divider"></div>
+  <section class="contact">
+    <h2>Get in Touch</h2>
+    <p>Questions about any of our products? Reach our team directly.</p>
+    <a class="email-btn" href="mailto:support@nimblestride.ca">
+      &#x2709;&#xFE0F; support@nimblestride.ca
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <span>&copy; 2026 Nimblestride Inc. All rights reserved.</span>
+    <span>
+      <a href="https://clearbind.ca">ClearBind</a> &nbsp;&middot;&nbsp;
+      <a href="https://gridwitness.ca">GridWitness</a> &nbsp;&middot;&nbsp;
+      <a href="https://newincanadamortgage.ca">New In Canada Mortgage</a>
+    </span>
+  </footer>
+
+</body>
+</html>
