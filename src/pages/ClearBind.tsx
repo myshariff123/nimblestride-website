@@ -270,12 +270,12 @@ export const ClearBind: React.FC = () => {
                 <ArrowRight size={18} />
               </Link>
               <a
-                href="https://nimblestride.ca"
+                href="https://clearbind.ca"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary flex items-center justify-center gap-2 w-full py-4 text-base"
               >
-                Visit Live Platform
+                Visit clearbind.ca
                 <ArrowRight size={18} />
               </a>
             </div>
