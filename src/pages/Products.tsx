@@ -55,7 +55,7 @@ export const Products: React.FC = () => {
                   <ArrowRight size={16} />
                 </Link>
                 <a
-                  href="https://nimblestride.ca"
+                  href="https://clearbind.ca"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary inline-flex items-center gap-2"
@@ -104,7 +104,7 @@ export const Products: React.FC = () => {
               <div className="bg-teal-light border border-teal/20 rounded-lg p-4 flex items-center justify-between">
                 <div>
                   <p className="text-sm font-bold text-teal">Status: Live Beta</p>
-                  <p className="text-xs text-secondary mt-0.5">Available at nimblestride.ca · Inviting MGA beta partners</p>
+                  <p className="text-xs text-secondary mt-0.5">Available at clearbind.ca · Inviting MGA beta partners</p>
                 </div>
                 <Link to="/contact" state={{ contactType: 'clearbind' }} className="btn-primary text-sm">
                   Request Access
@@ -144,6 +144,10 @@ export const Products: React.FC = () => {
                 Full Product Overview
                 <ArrowRight size={16} />
               </Link>
+              <a href="https://newincanadamortgage.ca" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center gap-2">
+                Visit newincanadamortgage.ca
+                <ArrowRight size={16} />
+              </a>
             </div>
 
             <div className="lg:order-1 space-y-4">
@@ -215,6 +219,10 @@ export const Products: React.FC = () => {
                   Regulatory Coverage
                   <ArrowRight size={16} />
                 </Link>
+                <a href="https://gridwitness.ca" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center gap-2">
+                  Visit gridwitness.ca
+                  <ArrowRight size={16} />
+                </a>
               </div>
             </div>
 
