@@ -33,7 +33,7 @@ const PRODUCTS = [
     domain: 'FinTech',
     tagline: 'Mortgage Intelligence for Newcomers',
     description:
-      "Canada's first AI-guided mortgage platform purpose-built for newcomers. NewInCanada Mortgage navigates the unique challenges immigrants face — thin Canadian credit history, foreign income, and unfamiliar lending criteria — to connect them with the right lenders and the right products.',
+      "Canada's first AI-guided mortgage platform purpose-built for newcomers. NewInCanada Mortgage navigates the unique challenges immigrants face — thin Canadian credit history, foreign income, and unfamiliar lending criteria — to connect them with the right lenders and the right products.",
     features: [
       'AI-powered mortgage eligibility assessment for newcomers',
       'Foreign income and international credit history analysis',
