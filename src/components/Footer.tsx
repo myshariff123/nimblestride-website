@@ -44,22 +44,22 @@ export const Footer: React.FC = () => {
             <h4 className="font-bold text-sm uppercase tracking-wider mb-4">Our Products</h4>
             <ul className="space-y-4 text-sm">
               <li>
-                <Link to="/products/clearbind" className="hover:text-teal transition-colors group">
+                <a href="https://clearbind.ca" target="_blank" rel="noopener noreferrer" className="hover:text-teal transition-colors group">
                   <div className="font-semibold text-navy-200 group-hover:text-teal">🛡️ ClearBind</div>
-                  <div className="text-xs text-navy-300 mt-0.5">InsurTech · MGA Underwriting</div>
-                </Link>
+                  <div className="text-xs text-navy-300 mt-0.5">InsurTech · MGA Underwriting · clearbind.ca</div>
+                </a>
               </li>
               <li>
-                <Link to="/products/newincanada-mortgage" className="hover:text-teal transition-colors group">
+                <a href="https://newincanadamortgage.ca" target="_blank" rel="noopener noreferrer" className="hover:text-teal transition-colors group">
                   <div className="font-semibold text-navy-200 group-hover:text-teal">🏠 NewInCanada Mortgage</div>
-                  <div className="text-xs text-navy-300 mt-0.5">FinTech · Newcomer Finance</div>
-                </Link>
+                  <div className="text-xs text-navy-300 mt-0.5">FinTech · Newcomer Finance · newincanadamortgage.ca</div>
+                </a>
               </li>
               <li>
-                <Link to="/solutions" className="hover:text-teal transition-colors group">
+                <a href="https://gridwitness.ca" target="_blank" rel="noopener noreferrer" className="hover:text-teal transition-colors group">
                   <div className="font-semibold text-navy-200 group-hover:text-teal">⚡ GridWitness</div>
-                  <div className="text-xs text-navy-300 mt-0.5">RegTech · AI Compute Compliance</div>
-                </Link>
+                  <div className="text-xs text-navy-300 mt-0.5">RegTech · AI Compute Compliance · gridwitness.ca</div>
+                </a>
               </li>
             </ul>
           </div>
