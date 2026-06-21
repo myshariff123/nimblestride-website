@@ -237,13 +237,24 @@ export const Solutions: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <Link
-                to="/portal"
-                className="inline-flex items-center gap-2 bg-teal text-white px-6 py-3 rounded-md font-bold hover:bg-teal-dark transition-colors"
-              >
-                Access Portal
-                <ArrowRight size={18} />
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link
+                  to="/portal"
+                  className="inline-flex items-center gap-2 bg-teal text-white px-6 py-3 rounded-md font-bold hover:bg-teal-dark transition-colors"
+                >
+                  Access Portal
+                  <ArrowRight size={18} />
+                </Link>
+                <a
+                  href="https://gridwitness.ca"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border-2 border-teal text-teal px-6 py-3 rounded-md font-bold hover:bg-teal/10 transition-colors"
+                >
+                  Visit gridwitness.ca
+                  <ArrowRight size={18} />
+                </a>
+              </div>
             </div>
 
             <div className="card p-8 bg-white">
