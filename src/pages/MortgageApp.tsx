@@ -326,6 +326,15 @@ export const MortgageApp: React.FC = () => {
                 Register Your Interest
                 <ArrowRight size={18} />
               </Link>
+              <a
+                href="https://newincanadamortgage.ca"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary flex items-center justify-center gap-2 w-full py-4 text-base font-bold"
+              >
+                Visit newincanadamortgage.ca
+                <ArrowRight size={18} />
+              </a>
               <Link to="/products" className="btn-secondary flex items-center justify-center gap-2 w-full py-3">
                 See All NimbleStride Products
               </Link>
