@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nimblestride — Software Built for Canada</title>
-  <meta name="description" content="Nimblestride builds focused SaaS products for Canadian industries — insurance, climate compliance, and mortgage lending." />
+  <meta name="description" content="Nimblestride builds focused SaaS products for Canadian industries — insurance, climate compliance, model risk management, and mortgage lending." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -117,7 +117,7 @@
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem;
     }
 
@@ -149,9 +149,10 @@
     }
 
     /* Per-product accent colours */
-    .card-clearbind   { --card-glow: rgba(249,115,22,0.08); --card-border-hover: rgba(249,115,22,0.45); }
-    .card-gridwitness { --card-glow: rgba(34,197,94,0.07);  --card-border-hover: rgba(34,197,94,0.4); }
-    .card-mortgage    { --card-glow: rgba(168,85,247,0.07); --card-border-hover: rgba(168,85,247,0.4); }
+    .card-clearbind   { --card-glow: rgba(249,115,22,0.08);  --card-border-hover: rgba(249,115,22,0.45); }
+    .card-gridwitness { --card-glow: rgba(34,197,94,0.07);   --card-border-hover: rgba(34,197,94,0.4); }
+    .card-mortgage    { --card-glow: rgba(168,85,247,0.07);  --card-border-hover: rgba(168,85,247,0.4); }
+    .card-clearmrm    { --card-glow: rgba(6,182,212,0.08);   --card-border-hover: rgba(6,182,212,0.45); }
 
     .product-icon {
       font-size: 1.6rem;
@@ -214,6 +215,7 @@
     .card-clearbind   .product-link { --link-color: #f97316; }
     .card-gridwitness .product-link { --link-color: #22c55e; }
     .card-mortgage    .product-link { --link-color: #a855f7; }
+    .card-clearmrm    .product-link { --link-color: #06b6d4; }
 
     .arrow { font-style: normal; }
 
@@ -280,6 +282,10 @@
     footer a { color: var(--muted); transition: color 0.2s; }
     footer a:hover { color: var(--text); }
 
+    @media (max-width: 680px) {
+      .product-grid { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 600px) {
       nav { padding: 1rem 1.25rem; }
       .hero { margin: 4rem auto 3.5rem; }
@@ -300,7 +306,7 @@
     <span class="hero-eyebrow">Canadian Software</span>
     <h1>Software Built for the Industries That Move Canada</h1>
     <p class="hero-sub">
-      Nimblestride builds focused, AI-powered SaaS products for Canadian insurance, climate compliance, and mortgage lending.
+      Nimblestride builds focused, AI-powered SaaS products for Canadian insurance, climate compliance, model risk management, and mortgage lending.
     </p>
   </section>
 
@@ -317,7 +323,7 @@
           <div class="product-domain">clearbind.ca</div>
         </div>
         <p class="product-desc">
-          AI-powered submission intake, enrichment, and appetite matching for Canadian P&amp;C insurance MGAs and brokers. Extract, enrich, and route commercial submissions in minutes — not days.
+          AI-powered submission intake, enrichment, and appetite matching for Canadian P&amp;C insurance MGAs and brokers. Four integrated modules — submission processing, pipeline analytics, broker intake with AI rate indication, and lead generation with Aria AI Copilot. Extract, enrich, and route commercial submissions in minutes — not days.
         </p>
         <div class="product-tags">
           <span class="tag">InsurTech</span>
@@ -337,15 +343,16 @@
           <div class="product-domain">gridwitness.ca</div>
         </div>
         <p class="product-desc">
-          Real-time hardware telemetry and tamper-evident carbon accounting for data centres. Generate OSFI B-15, TCFD, and IFRS S2 disclosure reports in seconds — with an immutable audit trail for regulators and boards.
+          Hardware-verified carbon telemetry and compliance reporting for Canadian data centres and financial institutions. Track Scope 1, 2 &amp; 3 emissions against Science-Based Targets, manage carbon budgets with breach alerts, and generate OSFI B-15, Bill C-59, and IFRS S2 audit packages — sealed in a cryptographic WORM ledger with 7-year S3 Object Lock retention.
         </p>
         <div class="product-tags">
           <span class="tag">ClimaTech</span>
           <span class="tag">OSFI B-15</span>
+          <span class="tag">Bill C-59</span>
           <span class="tag">IFRS S2</span>
         </div>
-        <a class="product-link" href="https://gridwitness.ca" target="_blank" rel="noopener">
-          Visit gridwitness.ca <span class="arrow">&#8594;</span>
+        <a class="product-link" href="https://16-174-1-7.nip.io" target="_blank" rel="noopener">
+          Access Platform <span class="arrow">&#8594;</span>
         </a>
       </div>
 
@@ -369,6 +376,26 @@
         </a>
       </div>
 
+      <!-- ClearMRM -->
+      <div class="product-card card-clearmrm">
+        <div class="product-icon">&#x1F6E1;&#xFE0F;</div>
+        <div>
+          <div class="product-name">ClearMRM</div>
+          <div class="product-domain">clearmrm.nimblestride.ca</div>
+        </div>
+        <p class="product-desc">
+          AI-powered model risk management platform for Canadian FRFIs — purpose-built for OSFI Guideline E-23 (effective May 1, 2027). Complete model inventory, automated Tier 1/2/3 risk rating, validation workflows, vendor governance, OSFI Examiner Export, and an immutable audit trail. Deploy in 30 days. Up to 97% less than IBM OpenPages.
+        </p>
+        <div class="product-tags">
+          <span class="tag">RegTech</span>
+          <span class="tag">OSFI E-23</span>
+          <span class="tag">Model Risk</span>
+        </div>
+        <a class="product-link" href="https://clearmrm.nimblestride.ca" target="_blank" rel="noopener">
+          Visit ClearMRM <span class="arrow">&#8594;</span>
+        </a>
+      </div>
+
     </div>
   </section>
 
@@ -387,8 +414,9 @@
     <span>&copy; 2026 Nimblestride Inc. All rights reserved.</span>
     <span>
       <a href="https://clearbind.ca">ClearBind</a> &nbsp;&middot;&nbsp;
-      <a href="https://gridwitness.ca">GridWitness</a> &nbsp;&middot;&nbsp;
-      <a href="https://newincanadamortgage.ca">New In Canada Mortgage</a>
+      <a href="https://16-174-1-7.nip.io">GridWitness</a> &nbsp;&middot;&nbsp;
+      <a href="https://newincanadamortgage.ca">New In Canada Mortgage</a> &nbsp;&middot;&nbsp;
+      <a href="https://clearmrm.nimblestride.ca">ClearMRM</a>
     </span>
   </footer>
 
