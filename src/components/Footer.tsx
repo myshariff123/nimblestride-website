@@ -56,9 +56,15 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="https://gridwitness.ca" target="_blank" rel="noopener noreferrer" className="hover:text-teal transition-colors group">
+                <a href="https://16-174-1-7.nip.io" target="_blank" rel="noopener noreferrer" className="hover:text-teal transition-colors group">
                   <div className="font-semibold text-navy-200 group-hover:text-teal">⚡ GridWitness</div>
-                  <div className="text-xs text-navy-300 mt-0.5">RegTech · AI Compute Compliance · gridwitness.ca</div>
+                  <div className="text-xs text-navy-300 mt-0.5">RegTech · Carbon Compliance · gridwitness.ca</div>
+                </a>
+              </li>
+              <li>
+                <a href="https://clearmrm.nimblestride.ca" target="_blank" rel="noopener noreferrer" className="hover:text-teal transition-colors group">
+                  <div className="font-semibold text-navy-200 group-hover:text-teal">🏦 ClearMRM</div>
+                  <div className="text-xs text-navy-300 mt-0.5">RegTech · OSFI E-23 Model Risk · clearmrm.nimblestride.ca</div>
                 </a>
               </li>
             </ul>

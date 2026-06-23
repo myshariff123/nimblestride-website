@@ -7,16 +7,16 @@ export const Products: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="Our Products — NimbleStride InsurTech, FinTech & RegTech"
-        description="NimbleStride's product portfolio: ClearBind (MGA underwriting intelligence), NewInCanada Mortgage (newcomer FinTech), and GridWitness (AI compute compliance). Edmonton, Alberta."
-        keywords="ClearBind InsurTech, NewInCanada Mortgage, GridWitness AI compliance, NimbleStride products, Canadian software, MGA platform, newcomer mortgage Canada"
+        title="Our Products — NimbleStride InsurTech, RegTech, FinTech"
+        description="NimbleStride's product portfolio: ClearBind (MGA underwriting), ClearMRM (OSFI E-23 model risk), NewInCanada Mortgage (newcomer FinTech), and GridWitness (AI compute compliance). Edmonton, Alberta."
+        keywords="ClearBind InsurTech, ClearMRM OSFI E-23 model risk, NewInCanada Mortgage, GridWitness AI compliance, NimbleStride products, Canadian software"
         canonicalUrl="https://nimblestride.ca/products"
         path="/products"
       />
 
       <HeroSection
         eyebrow="Product Portfolio"
-        title="Three Products. Three Regulated Domains. One Company."
+        title="Four Products. Four Regulated Domains. One Company."
         subtitle="Each NimbleStride product was built to address a genuine Canadian market gap — where regulation is real, the processes are manual, and practitioners have been waiting for software that actually understands their world."
         primaryCtaLabel="Contact Us"
         primaryCtaTo="/contact"
@@ -32,7 +32,7 @@ export const Products: React.FC = () => {
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-4xl">🛡️</span>
                 <div>
-                  <div className="eyebrow">InsurTech · Product 1 of 3</div>
+                  <div className="eyebrow">InsurTech · Product 1 of 4</div>
                   <h2 className="text-body">ClearBind</h2>
                 </div>
               </div>
@@ -123,7 +123,7 @@ export const Products: React.FC = () => {
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-4xl">🏠</span>
                 <div>
-                  <div className="eyebrow text-blue">FinTech · Product 2 of 3</div>
+                  <div className="eyebrow text-blue">FinTech · Product 2 of 4</div>
                   <h2 className="text-body">NewInCanada Mortgage</h2>
                 </div>
               </div>
@@ -193,7 +193,7 @@ export const Products: React.FC = () => {
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-4xl">⚡</span>
                 <div>
-                  <div className="eyebrow text-purple">RegTech · Product 3 of 3</div>
+                  <div className="eyebrow text-purple">RegTech · Product 3 of 4</div>
                   <h2 className="text-body">GridWitness</h2>
                 </div>
               </div>
@@ -219,8 +219,8 @@ export const Products: React.FC = () => {
                   Regulatory Coverage
                   <ArrowRight size={16} />
                 </Link>
-                <a href="https://gridwitness.ca" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center gap-2">
-                  Visit gridwitness.ca
+                <a href="https://16-174-1-7.nip.io" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center gap-2">
+                  Access GridWitness Platform
                   <ArrowRight size={16} />
                 </a>
               </div>
@@ -262,6 +262,92 @@ export const Products: React.FC = () => {
                 </div>
                 <Link to="/contact" state={{ contactType: 'institutional' }} className="bg-purple text-white px-4 py-2 rounded-md text-sm font-bold hover:bg-purple/90 transition-colors">
                   Request Briefing
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── PRODUCT 4: ClearMRM ─────────────────────────────────────────── */}
+      <section className="bg-surface py-14 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-4xl">🏦</span>
+                <div>
+                  <div className="eyebrow text-amber">RegTech · Product 4 of 4</div>
+                  <h2 className="text-body">ClearMRM</h2>
+                </div>
+              </div>
+              <p className="text-secondary text-lg leading-relaxed mb-6">
+                AI-powered model risk management platform for Canadian Federally Regulated Financial Institutions
+                (FRFIs) — purpose-built for OSFI Guideline E-23 (effective May 1, 2027). 70%+ of Canadian FRFIs
+                currently manage their model inventory in Excel spreadsheets. ClearMRM replaces that with a
+                structured, auditable, AI-assisted platform in 30 days.
+              </p>
+              <p className="text-secondary leading-relaxed mb-8">
+                ClearMRM delivers a complete model inventory, automated Tier 1/2/3 risk rating, 6-state
+                validation workflow, vendor/third-party governance, OSFI Examiner Export PDF, and an immutable
+                audit trail — all powered by AWS Bedrock Claude in ca-central-1 (PIPEDA compliant). Up to
+                97% less cost than IBM OpenPages ($72K vs. $1.2M year-1).
+              </p>
+
+              <div className="flex gap-4 flex-wrap">
+                <Link to="/products/clearmrm" className="btn-primary inline-flex items-center gap-2">
+                  Full ClearMRM Overview
+                  <ArrowRight size={16} />
+                </Link>
+                <a
+                  href="https://clearmrm.nimblestride.ca"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary inline-flex items-center gap-2"
+                >
+                  Live Platform
+                  <ArrowRight size={16} />
+                </a>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="card p-6 border-l-4 border-amber">
+                <h3 className="font-bold text-body mb-3">Platform Capabilities (Phases 1–4 Live)</h3>
+                <ul className="space-y-2 text-sm text-secondary">
+                  {[
+                    'Model inventory — 15+ fields per model, version history, soft-delete',
+                    'Risk Rating Wizard — 8-question, automated Tier 1/2/3 (OSFI §3.2)',
+                    'Validation Workflow — 6-state machine: requested → closed (§3.3)',
+                    'Vendor/Third-Party Assessment — OSFI E-23 §5 checklist + AI deep dive',
+                    'OSFI Examiner Export — 6-page Supervisory Review Package PDF',
+                    'Immutable audit trail — PostgreSQL trigger, append-only (§4.4)',
+                    'AI board reports, smart fill, remediation advisor (AWS Bedrock Claude)',
+                    'SSO (SAML 2.0), multi-tenant onboarding, admin panel',
+                  ].map((f) => (
+                    <li key={f} className="flex gap-2">
+                      <CheckCircle2 size={14} className="text-amber flex-shrink-0 mt-0.5" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3 text-center text-sm">
+                {['🇨🇦 OSFI E-23', '🔒 PIPEDA', '🏦 All FRFIs'].map((f) => (
+                  <div key={f} className="bg-amber/10 border border-amber/20 rounded-lg p-3 font-medium text-amber text-xs">
+                    {f}
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-amber/10 border border-amber/20 rounded-lg p-4 flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-bold text-amber">Status: Live — Phases 1–4 Complete</p>
+                  <p className="text-xs text-secondary mt-0.5">Available at clearmrm.nimblestride.ca · Inviting pilot FRFIs</p>
+                </div>
+                <Link to="/contact" state={{ contactType: 'clearmrm' }} className="bg-amber text-white px-4 py-2 rounded-md text-sm font-bold hover:bg-amber-600 transition-colors">
+                  Request Access
                 </Link>
               </div>
             </div>

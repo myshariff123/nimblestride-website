@@ -246,12 +246,12 @@ export const Solutions: React.FC = () => {
                   <ArrowRight size={18} />
                 </Link>
                 <a
-                  href="https://gridwitness.ca"
+                  href="https://16-174-1-7.nip.io"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 border-2 border-teal text-teal px-6 py-3 rounded-md font-bold hover:bg-teal/10 transition-colors"
                 >
-                  Visit gridwitness.ca
+                  Access GridWitness Platform
                   <ArrowRight size={18} />
                 </a>
               </div>

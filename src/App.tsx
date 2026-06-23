@@ -7,6 +7,7 @@ import { Products } from './pages/Products';
 import { ClearBind } from './pages/ClearBind';
 import { MortgageApp } from './pages/MortgageApp';
 import { Solutions } from './pages/Solutions';
+import { ClearMRM } from './pages/ClearMRM';
 import { Regulatory } from './pages/Regulatory';
 import { RegulatoryMap } from './pages/RegulatoryMap';
 import { Partnerships } from './pages/Partnerships';
@@ -27,6 +28,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/products/clearbind" element={<ClearBind />} />
             <Route path="/products/newincanada-mortgage" element={<MortgageApp />} />
+            <Route path="/products/clearmrm" element={<ClearMRM />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/regulatory" element={<Regulatory />} />
             <Route path="/regulatory-map" element={<RegulatoryMap />} />

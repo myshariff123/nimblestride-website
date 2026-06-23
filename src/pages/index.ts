@@ -3,6 +3,7 @@ export { Products } from './Products';
 export { ClearBind } from './ClearBind';
 export { MortgageApp } from './MortgageApp';
 export { Solutions } from './Solutions';
+export { ClearMRM } from './ClearMRM';
 export { Regulatory } from './Regulatory';
 export { RegulatoryMap } from './RegulatoryMap';
 export { Partnerships } from './Partnerships';

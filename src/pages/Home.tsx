@@ -59,10 +59,10 @@ const PRODUCTS = [
       'Hardware-anchored compliance evidence for AI compute infrastructure. GridWitness reads directly from server hardware to generate cryptographically verified Scope 2 emissions data — satisfying OSFI B-15, California SB 253, EU CSRD, and ISSB S2 obligations with a single deployment.',
     features: [
       'Real-time hardware telemetry via IPMI and Redfish',
-      'Cryptographic attestation — tamper-evident audit trail',
-      'Multi-framework output: OSFI B-15, SB 253, CSRD, ISSB S2',
+      'Cryptographic attestation — tamper-evident WORM ledger',
+      'Multi-framework output: OSFI B-15, Bill C-59, SB 253, CSRD, ISSB S2',
+      'Scope 1, 2 & 3 tracking with Science-Based Targets',
       'Big4 audit firm integration and assurance-grade evidence packages',
-      'Zero new hardware required — works with existing infrastructure',
     ],
     status: 'Pilot Stage',
     statusColor: 'bg-purple text-white',
@@ -73,6 +73,31 @@ const PRODUCTS = [
     ctaLabel: 'Explore GridWitness',
     audience: 'Financial Institutions · Data Centre Operators',
   },
+  {
+    icon: '🏦',
+    name: 'ClearMRM',
+    domain: 'RegTech',
+    tagline: 'OSFI E-23 Model Risk Management',
+    description:
+      'AI-powered model risk management platform for Canadian FRFIs — purpose-built for OSFI Guideline E-23 (effective May 1, 2027). Complete model inventory, automated Tier 1/2/3 risk rating, validation workflows, vendor governance, and an immutable audit trail. From Excel to compliant in 30 days.',
+    features: [
+      'Model inventory — 15+ fields, risk tier, validation status',
+      'Automated Tier 1/2/3 risk rating wizard (OSFI §3.2)',
+      'Validation workflow — 6-state compliance machine (§3.3)',
+      'Third-party / vendor model governance (OSFI E-23 §5)',
+      'OSFI Examiner Export — 6-page Supervisory Review Package PDF',
+      'Immutable audit trail — append-only, PostgreSQL trigger (§4.4)',
+      'AI board reports, smart fill & remediation advisor (AWS Bedrock)',
+    ],
+    status: 'Live',
+    statusColor: 'bg-amber text-white',
+    accentBorder: 'border-amber',
+    accentText: 'text-amber',
+    accentBg: 'bg-amber-light',
+    cta: '/products/clearmrm',
+    ctaLabel: 'Explore ClearMRM',
+    audience: 'CROs · Head of Model Risk · Canadian FRFIs',
+  },
 ];
 
 export const Home: React.FC = () => {
@@ -80,8 +105,8 @@ export const Home: React.FC = () => {
     <>
       <SEOHelmet
         title="NimbleStride — AI-Powered Platforms for Canada's Regulated Industries"
-        description="NimbleStride builds intelligent software for Canada's most regulated industries. ClearBind for InsurTech, NewInCanada Mortgage for FinTech, and GridWitness for AI compute compliance."
-        keywords="NimbleStride, Canadian InsurTech, ClearBind MGA, NewInCanada Mortgage, GridWitness, AI compliance, Edmonton Alberta, Canadian FinTech, RegTech Canada"
+        description="NimbleStride builds intelligent software for Canada's most regulated industries. ClearBind for InsurTech, ClearMRM for OSFI E-23 model risk, NewInCanada Mortgage for FinTech, and GridWitness for AI compute compliance."
+        keywords="NimbleStride, Canadian InsurTech, ClearBind MGA, ClearMRM OSFI E-23, NewInCanada Mortgage, GridWitness, AI compliance, Edmonton Alberta, Canadian FinTech, RegTech Canada"
         canonicalUrl="https://nimblestride.ca/"
         path="/"
       />
@@ -104,7 +129,7 @@ export const Home: React.FC = () => {
               of getting it wrong is highest.
             </p>
             <p className="text-navy-300 text-base leading-relaxed mb-10 max-w-3xl">
-              We currently operate three products across insurance, mortgage finance, and AI governance. Each
+              We currently operate four products across insurance, model risk management, mortgage finance, and AI governance. Each
               follows the same playbook: find a regulated Canadian industry running on manual processes, apply
               AI precisely where it creates the most durable value, and ship something practitioners actually
               want to use.
@@ -126,14 +151,14 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-teal mb-1">3</div>
+              <div className="text-3xl md:text-4xl font-bold text-teal mb-1">4</div>
               <p className="text-navy-200 text-sm font-medium">Active Products</p>
-              <p className="text-navy-300 text-xs mt-1">InsurTech · FinTech · RegTech</p>
+              <p className="text-navy-300 text-xs mt-1">InsurTech · RegTech · FinTech</p>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-teal mb-1">3</div>
+              <div className="text-3xl md:text-4xl font-bold text-teal mb-1">4</div>
               <p className="text-navy-200 text-sm font-medium">Industry Domains</p>
-              <p className="text-navy-300 text-xs mt-1">Insurance · Mortgage · AI Governance</p>
+              <p className="text-navy-300 text-xs mt-1">Insurance · Model Risk · Mortgage · AI Gov.</p>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold text-teal mb-1">1</div>
@@ -154,7 +179,7 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="eyebrow mb-4">Our Product Portfolio</div>
-            <h2>Three Products. Three Domains. One Mission.</h2>
+            <h2>Four Products. Four Domains. One Mission.</h2>
             <p className="text-secondary max-w-2xl mx-auto mt-4 text-lg">
               Each NimbleStride product targets a distinct regulated Canadian market — but all share the same
               design principle: AI that augments expert judgment without replacing it.
@@ -261,10 +286,14 @@ export const Home: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 <div className="bg-teal/20 rounded-lg p-4 text-center">
                   <div className="text-teal font-bold text-lg">Insurance</div>
                   <div className="text-navy-300 text-xs mt-1">ClearBind</div>
+                </div>
+                <div className="bg-amber/20 rounded-lg p-4 text-center">
+                  <div className="text-amber font-bold text-lg">Model Risk</div>
+                  <div className="text-navy-300 text-xs mt-1">ClearMRM</div>
                 </div>
                 <div className="bg-blue/20 rounded-lg p-4 text-center">
                   <div className="text-blue font-bold text-lg">Mortgage</div>
