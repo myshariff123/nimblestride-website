@@ -67,9 +67,9 @@ export const ClearMRM: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="eyebrow mb-4">Platform Capabilities</div>
-            <h2>Phases 1–4 Live — All Features in Production</h2>
+            <h2>Phases 1–8 Live — Full Platform in Production</h2>
             <p className="text-secondary max-w-2xl mx-auto mt-4">
-              Every feature maps to a specific OSFI E-23 requirement. Nothing is decorative.
+              Every feature maps to a specific OSFI E-23 requirement. All 8 development phases deployed as of June 2026. Nothing is decorative.
             </p>
           </div>
 
@@ -110,6 +110,36 @@ export const ClearMRM: React.FC = () => {
                 osfi: '§4',
                 desc: 'One-click PDF generation: 3-page Board Report for risk committees, and a 6-page OSFI Supervisory Review Package with AI narrative and attestation page — ready for an examiner visit.',
                 features: ['Board Risk Committee PDF (AI summary)', 'OSFI Examiner Export (6-page supervisory package)', 'AI executive narrative (Bedrock Sonnet)'],
+              },
+              {
+                title: 'Multi-Tenant Onboarding & SSO',
+                osfi: '§3',
+                desc: 'Self-serve 2-step registration with auto-provisioned demo models. Enterprise single sign-on via SAML 2.0. Admin panel for user management, SSO configuration, and tenant oversight.',
+                features: ['Self-serve tenant registration (auto demo models)', 'SSO / SAML 2.0 enterprise sign-on', 'Admin Command Centre — user & tenant management'],
+              },
+              {
+                title: 'Model Change Management & Regulatory Calendar',
+                osfi: '§4.2',
+                desc: 'Version history with AI materiality assessment per OSFI §4.2. Derived validation schedules with AI weekly CRO briefing. Exam Sprint Mode: AI-generated 30/60/90-day action plans.',
+                features: ['Change version history + AI materiality check', 'Regulatory filing calendar with deadline reminders', 'Exam Sprint Mode — examiner question prep + action plan'],
+              },
+              {
+                title: 'AI Portfolio Intelligence',
+                osfi: '§3–5',
+                desc: 'AI Action Queue replaces passive KPI dashboards with prioritized directives. AI Portfolio Doctor grades overall health A–F. Natural language model search. Document Intelligence extracts structured data from pasted regulatory text.',
+                features: ['AI Action Queue (Sonnet-generated priority directives)', 'Portfolio Doctor — health grade A–F, concentration risk', 'Natural language search + Document Intelligence'],
+              },
+              {
+                title: 'Insurance-Specific Modules',
+                osfi: '§3.2',
+                desc: '14 insurance-specific model taxonomy categories with IFRS 17 linkage. Actuarial assumption versioning with approval workflows. Structured backtesting log. Model dependency cascade risk map.',
+                features: ['14-category insurance model taxonomy (IFRS 17)', 'Actuarial Assumption Register + approval workflow', 'Backtesting log + Model Dependency Map'],
+              },
+              {
+                title: 'OSFI Readiness & B-10 Vendor Package',
+                osfi: '§3–5',
+                desc: 'OSFI Readiness Assessment with grade A–F and critical gap list. PSI Population Stability Index (Stable / Monitor / Action). Board-ready B-10 Third-Party Risk Package. Policy Gap Checker against full E-23 framework.',
+                features: ['OSFI Readiness grade + gap report', 'PSI drift analysis per model (quantitative)', 'B-10 vendor risk package + Policy Gap Checker'],
               },
             ].map((f) => (
               <div key={f.title} className="card p-6 border-l-4 border-amber">
@@ -153,6 +183,14 @@ export const ClearMRM: React.FC = () => {
               { model: 'Sonnet', title: 'Findings Analyzer', desc: 'Severity rating, OSFI §references, completeness score, approval recommendation.' },
               { model: 'Sonnet', title: 'Approval Readiness Check', desc: 'Verifies all E-23 requirements are met before the approver signs off.' },
               { model: 'Sonnet', title: 'Vendor §5 Deep Dive', desc: 'OSFI §5 compliance score, critical gaps, remediation plan, concentration risk.' },
+              { model: 'Sonnet', title: 'AI Action Queue', desc: 'Replaces passive KPI dashboards with prioritized, Sonnet-generated compliance directives.' },
+              { model: 'Sonnet', title: 'Portfolio Doctor', desc: 'Overall health grade A–F, critical findings list, concentration risk, and peer benchmark.' },
+              { model: 'Sonnet', title: 'Validation Report Generator', desc: 'Complete formal validation reports auto-generated and stored in the database.' },
+              { model: 'Sonnet', title: 'MRM Policy Generator', desc: '13-section OSFI E-23–compliant MRM Policy with board attestation, generated on demand.' },
+              { model: 'Sonnet', title: 'AI Examiner Preparation', desc: 'Readiness score, likely examiner questions, and 30-day action plan before an OSFI visit.' },
+              { model: 'Sonnet', title: 'Risk Appetite Statement', desc: '6-question MRA Wizard → AI-generated board-approved Risk Appetite Statement (OSFI §3.1).' },
+              { model: 'Haiku', title: 'Materiality Assessment', desc: 'AI materiality check on every model change — satisfies OSFI §4.2 change management.' },
+              { model: 'Sonnet', title: 'AI Audit Summary', desc: '12-month narrative audit summary auto-generated for examiner review packages.' },
             ].map((ai) => (
               <div key={ai.title} className="card p-5">
                 <div className="text-xs font-bold text-amber mb-2">Claude {ai.model}</div>
@@ -237,10 +275,11 @@ export const ClearMRM: React.FC = () => {
                 <div className="space-y-3 text-sm">
                   {[
                     { date: 'Sep 2025', event: 'OSFI publishes final E-23 Guideline', done: true },
-                    { date: 'Jun 2026', event: 'ClearMRM Phases 1–4 deployed', done: true },
-                    { date: 'Q3 2026', event: 'Peak FRFI buying window opens', done: false },
-                    { date: 'Feb/Mar 2027', event: 'Risk Canada Conference — GA launch', done: false },
-                    { date: 'May 1, 2027', event: 'OSFI E-23 effective date — hard deadline', done: false },
+                    { date: 'Jun 2026', event: 'ClearMRM Phases 1–8 fully deployed — all capabilities live', done: true },
+                    { date: 'Jul–Oct 2026', event: 'Sales window open — 3–6 month FRFI procurement cycles', done: false },
+                    { date: 'Nov 2026–Jan 2027', event: 'Lighthouse pilot clients (1 bank, 1 insurer, 1 credit union)', done: false },
+                    { date: 'Feb/Mar 2027', event: 'Risk Canada Conference — GA launch, case study presentation', done: false },
+                    { date: 'May 1, 2027', event: 'OSFI E-23 effective date — hard compliance deadline', done: false },
                   ].map((item) => (
                     <div key={item.date} className="flex gap-4">
                       <div className={`text-xs font-bold flex-shrink-0 w-20 ${item.done ? 'text-teal' : 'text-navy-300'}`}>{item.date}</div>
@@ -284,8 +323,9 @@ export const ClearMRM: React.FC = () => {
             . Pilot access is open for Canadian FRFIs.
           </p>
           <p className="text-navy-300 mb-10 max-w-xl mx-auto text-sm">
-            Pilot pricing: $36K–$60K/year (50% discount for 2–3 lighthouse clients in exchange for
-            co-design participation and case study rights).
+            Pricing: $30K/yr (Community, under $1B assets) · $72K/yr (Regional, $1B–$20B) · $144K/yr
+            (National, $20B–$100B) · Custom for $100B+ FRFIs. Lighthouse pilot discount available for
+            co-design participants.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact" state={{ contactType: 'clearmrm' }} className="btn-primary">

@@ -49,7 +49,7 @@ function App() {
           url: 'https://nimblestride.ca',
           logo: 'https://nimblestride.ca/logo.png',
           description:
-            'Canadian technology company building AI-powered platforms for regulated industries — InsurTech, FinTech, and AI compute governance.',
+            'Canadian technology company building AI-powered platforms for regulated industries — ClearBind (InsurTech MGA underwriting), ClearMRM (OSFI E-23 model risk management), NewInCanada Mortgage (FinTech newcomer lending), and GridWitness (ESG compliance for AI compute infrastructure).',
           address: {
             '@type': 'PostalAddress',
             addressLocality: 'Edmonton',

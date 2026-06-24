@@ -8,7 +8,7 @@ export const About: React.FC = () => {
     <>
       <SEOHelmet
         title="About NimbleStride — Canadian AI Innovation Company, Edmonton Alberta"
-        description="NimbleStride is an Edmonton-based technology company building AI-powered platforms for Canada's most regulated industries. Three products: ClearBind (InsurTech), NewInCanada Mortgage (FinTech), GridWitness (RegTech)."
+        description="NimbleStride is an Edmonton-based technology company building AI-powered platforms for Canada's most regulated industries. Four products: ClearBind (InsurTech), ClearMRM (OSFI E-23 Model Risk), NewInCanada Mortgage (FinTech), GridWitness (RegTech)."
         keywords="NimbleStride about, Canadian AI company, Edmonton technology startup, InsurTech Canada, FinTech Alberta, RegTech Canada, NRC IRAP, Alberta Innovates"
         canonicalUrl="https://nimblestride.ca/about"
         path="/about"
@@ -89,10 +89,10 @@ export const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="eyebrow mb-4">Our Portfolio</div>
-            <h2>Three Products. Three Regulated Domains.</h2>
+            <h2>Four Products. Four Regulated Domains.</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 icon: '🛡️',
@@ -105,6 +105,18 @@ export const About: React.FC = () => {
                 link: '/products/clearbind',
                 accentBorder: 'border-teal',
                 accentText: 'text-teal',
+              },
+              {
+                icon: '🏦',
+                name: 'ClearMRM',
+                domain: 'RegTech',
+                status: 'Live',
+                statusColor: 'bg-amber text-white',
+                description:
+                  'AI-powered model risk management platform for Canadian FRFIs — purpose-built for OSFI Guideline E-23 (effective May 1, 2027). Phases 1–8 live: model inventory, automated Tier 1/2/3 risk rating, validation workflows, vendor governance, insurance modules, and an immutable audit trail.',
+                link: '/products/clearmrm',
+                accentBorder: 'border-amber',
+                accentText: 'text-amber',
               },
               {
                 icon: '🏠',
@@ -125,7 +137,7 @@ export const About: React.FC = () => {
                 status: 'Pilot Stage',
                 statusColor: 'bg-purple text-white',
                 description:
-                  'Hardware-anchored compliance evidence for AI compute infrastructure. Generates cryptographically verified Scope 2 data satisfying OSFI B-15, SB 253, EU CSRD, and ISSB S2 from existing infrastructure.',
+                  'Hardware-anchored ESG compliance platform for Alberta data centres. Tracks Scope 1/2/3 emissions with a WORM-sealed AESO live grid feed, TCFD and IFRS S2 reports, board attestation, SBTi targets, REC tracking, and carbon offset registry — satisfying OSFI B-15, SB 253, EU CSRD, and ISSB S2.',
                 link: '/solutions',
                 accentBorder: 'border-purple',
                 accentText: 'text-purple',
@@ -229,21 +241,21 @@ export const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="eyebrow mb-4">Growth Roadmap</div>
-            <h2>From Three Products to Many</h2>
+            <h2>From Four Products to Many</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 phase: '1',
-                label: 'Foundation (Now)',
+                label: 'Foundation (2024–2026)',
                 color: 'border-teal',
                 dotColor: 'bg-teal',
                 items: [
-                  'ClearBind: Live beta, MGA partners onboarding',
-                  'NewInCanada Mortgage: Active development, early registrations',
-                  'GridWitness: Institutional pilot engagements',
-                  'Core AI + enrichment infrastructure established',
+                  'ClearBind: Live beta — MGA submission intake, BrokerBridge, CapacityLens',
+                  'ClearMRM: Phases 1–8 live — full OSFI E-23 compliance suite deployed June 2026',
+                  'GridWitness: Pilot live — AESO grid, TCFD, IFRS S2, board attestation, REC tracker',
+                  'NewInCanada Mortgage: Active development, early registrations open',
                 ],
                 period: '2024–2026',
               },
@@ -253,10 +265,10 @@ export const About: React.FC = () => {
                 color: 'border-blue',
                 dotColor: 'bg-blue',
                 items: [
-                  'ClearBind: Full production, national MGA network',
-                  'NewInCanada Mortgage: Public launch, broker network',
-                  'GridWitness: Multi-client production deployments',
-                  'New product domain research and scoping',
+                  'ClearBind: Full production, national MGA network, SOC 2 Type I',
+                  'ClearMRM: 5 lighthouse FRFIs by Mar 2027, GA launch at Risk Canada Conference',
+                  'GridWitness: Multi-client production deployments, named domain launch',
+                  'NewInCanada Mortgage: Public launch, broker network, bilingual support',
                 ],
                 period: '2026–2028',
               },
@@ -266,8 +278,8 @@ export const About: React.FC = () => {
                 color: 'border-purple',
                 dotColor: 'bg-purple',
                 items: [
-                  'Multi-product platform with shared AI infrastructure',
-                  'Expansion into energy, healthcare, and legal domains',
+                  'Multi-product platform with shared AI infrastructure (AWS Bedrock ca-central-1)',
+                  'Expansion into energy, healthcare, and legal compliance domains',
                   'Partnership network across Canada\'s regulated industries',
                   'International expansion into US and UK regulated markets',
                 ],
@@ -311,7 +323,7 @@ export const About: React.FC = () => {
                   { label: 'Founded', value: '2024' },
                   { label: 'Jurisdiction', value: 'Alberta, Canada' },
                   { label: 'Headquarters', value: 'Edmonton, Alberta, Canada' },
-                  { label: 'Sector Focus', value: 'InsurTech · FinTech · RegTech' },
+                  { label: 'Sector Focus', value: 'InsurTech · FinTech · RegTech · Model Risk' },
                 ].map((d) => (
                   <div key={d.label}>
                     <dt className="font-bold text-body">{d.label}</dt>
@@ -359,9 +371,9 @@ export const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-white mb-5">Let's Build Canada's Regulated Future Together</h2>
           <p className="text-navy-200 mb-10 max-w-2xl mx-auto text-lg">
-            Whether you are an MGA ready to test ClearBind, a newcomer exploring your mortgage options,
-            a financial institution with AI compute obligations, or a researcher or innovator who sees a
-            problem worth solving — we want to talk.
+            Whether you are an MGA ready to trial ClearBind, a Canadian FRFI with a May 2027 OSFI E-23
+            deadline, a newcomer exploring your mortgage options, a data centre with ESG compliance
+            obligations, or a researcher who sees a problem worth solving — we want to talk.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/products" className="btn-primary inline-flex items-center gap-2">

@@ -8,17 +8,17 @@ export const Solutions: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="How GridWitness Works — AI Compute Attestation Platform"
-        description="Hardware-anchored Scope 2 evidence from server-level telemetry to audit-ready output. Built for OSFI B-15, California SB 253, EU CSRD, and ISSB S1/S2 compliance."
-        keywords="hardware attestation, Scope 2 compliance, AI workload attestation, audit evidence package, compute telemetry, emissions disclosure"
+        title="GridWitness — Live ESG Compliance Platform for Alberta Data Centres"
+        description="GridWitness is a live ESG compliance platform for Alberta data centres. AESO live grid intensity, Scope 1/2/3 tracking, TCFD reports, IFRS S2 tracker, board attestation, SBTi targets, REC tracking — built for OSFI B-15, SB 253, EU CSRD, and ISSB S2."
+        keywords="GridWitness, ESG compliance Alberta, AESO grid intensity, Scope 2 compliance, TCFD report, IFRS S2, OSFI B-15, carbon budget, SBTi targets, REC tracker, board attestation"
         canonicalUrl="https://nimblestride.ca/solutions"
         path="/solutions"
       />
 
       <HeroSection
-        eyebrow="The GridWitness Platform"
-        title="From Hardware Telemetry to Audit-Ready Evidence"
-        subtitle="Real-time server-level data collection, cryptographic integrity verification, and multi-framework compliance packaging in one integrated platform."
+        eyebrow="The GridWitness Platform — Live Pilot"
+        title="ESG Compliance Infrastructure for Alberta Data Centres"
+        subtitle="Live platform tracking Scope 1, 2 &amp; 3 emissions with AESO live grid intensity, WORM-sealed audit trail, TCFD &amp; IFRS S2 reports, board attestation, SBTi targets, REC tracking, and carbon offset registry — all in one place."
         primaryCtaLabel="Request Demo"
         primaryCtaTo="/contact"
         secondaryCtaLabel="See Regulatory Coverage"
@@ -102,15 +102,62 @@ export const Solutions: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             <div className="card p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-bold text-body">Hardware Evidence Package</h3>
-                <Badge status="active">OSFI B-15</Badge>
+                <h3 className="font-bold text-body">Scope 1, 2 &amp; 3 Tracking</h3>
+                <Badge status="active">Live</Badge>
               </div>
               <p className="text-secondary text-sm mb-4">
-                Cryptographically verified server-level energy consumption data with complete methodology documentation
-                for regulatory audit.
+                Manual Scope 1 entry (natural gas, diesel), WORM-sealed Scope 2 telemetry via AESO live grid
+                intensity, and Scope 3 Cat. 11 AWS cloud carbon sync via Cost Explorer.
               </p>
               <div className="flex gap-2 flex-wrap">
-                <Badge status="active">SB 253</Badge>
+                <Badge status="active">OSFI B-15</Badge>
+                <Badge status="active">GHG Protocol</Badge>
+                <Badge status="active">Bill C-59</Badge>
+              </div>
+            </div>
+
+            <div className="card p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="font-bold text-body">TCFD &amp; IFRS S2 Reports</h3>
+                <Badge status="active">Live</Badge>
+              </div>
+              <p className="text-secondary text-sm mb-4">
+                Full 4-pillar TCFD framework with scenario analysis and one-click PDF report. IFRS S2/ISSB
+                32-paragraph tracker with SASB TC-SI metrics and capital deployment data — PDF generation included.
+              </p>
+              <div className="flex gap-2 flex-wrap">
+                <Badge status="active">TCFD</Badge>
+                <Badge status="active">IFRS S2</Badge>
+                <Badge status="active">ISSB</Badge>
+              </div>
+            </div>
+
+            <div className="card p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="font-bold text-body">Board Attestation &amp; WORM Vault</h3>
+                <Badge status="active">Live</Badge>
+              </div>
+              <p className="text-secondary text-sm mb-4">
+                Token email → /attest page → SHA-256 seal stored in S3 Object Lock COMPLIANCE (7-year retention).
+                OSFI compliance PDF with 9-section Merkle hash chain, presigned download URL.
+              </p>
+              <div className="flex gap-2 flex-wrap">
+                <Badge status="active">S3 Object Lock</Badge>
+                <Badge status="active">OSFI B-15</Badge>
+              </div>
+            </div>
+
+            <div className="card p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="font-bold text-body">SBTi Targets &amp; Carbon Budget</h3>
+                <Badge status="active">Live</Badge>
+              </div>
+              <p className="text-secondary text-sm mb-4">
+                Science-Based Targets (1.5°C, Well-Below 2°C, or custom pathway) with annual trajectory, tCO2e
+                reduction %, and carbon budget with SNS threshold alerts and filing calendar.
+              </p>
+              <div className="flex gap-2 flex-wrap">
+                <Badge status="active">SBTi</Badge>
                 <Badge status="active">CSRD</Badge>
                 <Badge status="active">ISSB S2</Badge>
               </div>
@@ -118,78 +165,32 @@ export const Solutions: React.FC = () => {
 
             <div className="card p-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="font-bold text-body">Governance Trail</h3>
-                <Badge status="active">OSFI B-15</Badge>
+                <h3 className="font-bold text-body">REC Tracker &amp; Offset Registry</h3>
+                <Badge status="active">Live</Badge>
               </div>
               <p className="text-secondary text-sm mb-4">
-                Complete audit record showing data collection methodology, transformation steps, assumptions, and sign-off
-                evidence.
+                Market-based vs. location-based Scope 2 calculation with Bill C-59–compliant REC flag. Carbon
+                offset registry across 8 registries — gross vs. net position with retired offset tracking.
               </p>
               <div className="flex gap-2 flex-wrap">
+                <Badge status="active">Bill C-59</Badge>
+                <Badge status="active">GHG Protocol</Badge>
+              </div>
+            </div>
+
+            <div className="card p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="font-bold text-body">Assurance-Ready Evidence Package</h3>
+                <Badge status="active">Live</Badge>
+              </div>
+              <p className="text-secondary text-sm mb-4">
+                Pre-structured evidence with complete methodology documentation and cryptographic receipt downloads.
+                Designed for Big4 limited assurance engagement across OSFI B-15, SB 253, CSRD, and ISSB S2.
+              </p>
+              <div className="flex gap-2 flex-wrap">
+                <Badge status="active">Big4 Ready</Badge>
+                <Badge status="active">SB 253</Badge>
                 <Badge status="active">CSRD</Badge>
-                <Badge status="planned">ISSB S1</Badge>
-                <Badge status="planned">CSDS</Badge>
-              </div>
-            </div>
-
-            <div className="card p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="font-bold text-body">Transition Risk Module</h3>
-                <Badge status="planned">SB 261</Badge>
-              </div>
-              <p className="text-secondary text-sm mb-4">
-                AI compute infrastructure energy and emissions tracking feeds into organization-wide climate risk
-                quantification.
-              </p>
-              <div className="flex gap-2 flex-wrap">
-                <Badge status="planned">CSRD</Badge>
-                <Badge status="planned">ISSB S2</Badge>
-                <Badge status="planned">TCFD</Badge>
-              </div>
-            </div>
-
-            <div className="card p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="font-bold text-body">Assurance-Ready Format</h3>
-                <Badge status="active">All Frameworks</Badge>
-              </div>
-              <p className="text-secondary text-sm mb-4">
-                Evidence structured to support Big4 auditor limited assurance engagement. Reduces audit time and cost.
-              </p>
-              <div className="flex gap-2 flex-wrap">
-                <Badge status="active">Deloitte</Badge>
-                <Badge status="active">EY</Badge>
-                <Badge status="active">KPMG</Badge>
-              </div>
-            </div>
-
-            <div className="card p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="font-bold text-body">AI Workload Attestation</h3>
-                <Badge status="planned">Roadmap 2026</Badge>
-              </div>
-              <p className="text-secondary text-sm mb-4">
-                Link verified compute infrastructure data to specific AI workloads. Support for Scope 3 Category 15
-                inference emissions.
-              </p>
-              <div className="flex gap-2 flex-wrap">
-                <Badge status="planned">Pulsora</Badge>
-                <Badge status="planned">Persefoni</Badge>
-              </div>
-            </div>
-
-            <div className="card p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="font-bold text-body">Real-Time Dashboard</h3>
-                <Badge status="planned">Roadmap 2026</Badge>
-              </div>
-              <p className="text-secondary text-sm mb-4">
-                Continuous monitoring of infrastructure Scope 2 emissions. Governance and compliance dashboard for
-                executive reporting.
-              </p>
-              <div className="flex gap-2 flex-wrap">
-                <Badge status="planned">On-Premise</Badge>
-                <Badge status="planned">Cloud</Badge>
               </div>
             </div>
           </div>
@@ -206,7 +207,9 @@ export const Solutions: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-secondary mb-6">
-                Generate compliance audits and verify your AI compute infrastructure efficiency in real-time. The GridWitness Portal provides secure access to OSFI B-15 attestation tools and immediate efficiency ratio calculations.
+                GridWitness is live at pilot stage. The platform provides secure multi-tenant access via Cognito SSO,
+                a 3-step onboarding wizard, and a full ESG compliance dashboard — from live AESO grid data to
+                board-sealed attestation PDFs.
               </p>
               <div className="space-y-3 mb-8">
                 <div className="flex gap-3">
@@ -214,8 +217,8 @@ export const Solutions: React.FC = () => {
                     ✓
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm text-body">Generate Audits Instantly</h4>
-                    <p className="text-xs text-secondary">Submit your client ID and IAM role for immediate OSFI B-15 certification.</p>
+                    <h4 className="font-bold text-sm text-body">Live AESO Grid Intensity</h4>
+                    <p className="text-xs text-secondary">Real-time Alberta grid carbon intensity via AESO API — Scope 2 emissions calculated live, not estimated.</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
@@ -223,8 +226,8 @@ export const Solutions: React.FC = () => {
                     ✓
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm text-body">View Efficiency Ratios</h4>
-                    <p className="text-xs text-secondary">Real-time Tokens/kWh calculations across multiple hardware profiles.</p>
+                    <h4 className="font-bold text-sm text-body">WORM-Sealed Telemetry</h4>
+                    <p className="text-xs text-secondary">SQS → Lambda → DynamoDB WORM pipeline with S3 Object Lock COMPLIANCE (7-year) and Merkle hash chain.</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
@@ -232,8 +235,17 @@ export const Solutions: React.FC = () => {
                     ✓
                   </div>
                   <div>
-                    <h4 className="font-bold text-sm text-body">Secure Vault Receipts</h4>
-                    <p className="text-xs text-secondary">Download audit reports with cryptographic attestation and integrity verification.</p>
+                    <h4 className="font-bold text-sm text-body">Multi-Framework PDF Reports</h4>
+                    <p className="text-xs text-secondary">One-click TCFD, IFRS S2, and OSFI B-15 PDFs with board attestation token email and SHA-256 vault seal.</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-teal text-white flex items-center justify-center text-sm font-bold">
+                    ✓
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-sm text-body">Regulatory Filing Calendar</h4>
+                    <p className="text-xs text-secondary">Derived deadlines for OSFI B-15, TCFD, IFRS S2 — with EventBridge daily reminders and filing confirmation.</p>
                   </div>
                 </div>
               </div>
@@ -262,29 +274,29 @@ export const Solutions: React.FC = () => {
                 <div className="flex gap-3">
                   <div className="text-2xl">🔐</div>
                   <div>
-                    <h4 className="font-bold text-body mb-1">Cross-Account Security</h4>
-                    <p className="text-sm text-secondary">Assumes read-only IAM role for secure CloudWatch metric extraction.</p>
+                    <h4 className="font-bold text-body mb-1">AWS Cognito SSO</h4>
+                    <p className="text-sm text-secondary">3-step onboarding wizard. Session cookie (8h), route guards, per-tenant Enforcement Mode toggle.</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <div className="text-2xl">⚡</div>
                   <div>
-                    <h4 className="font-bold text-body mb-1">Hardware Flexibility</h4>
-                    <p className="text-sm text-secondary">Support for CPU, T4 GPU, and A100 GPU cluster profiles.</p>
+                    <h4 className="font-bold text-body mb-1">Live AESO Grid Feed</h4>
+                    <p className="text-sm text-secondary">EventBridge every 5 minutes → grid oracle Lambda → real-time Alberta carbon intensity (SMP-proxy derived).</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
                   <div className="text-2xl">📊</div>
                   <div>
-                    <h4 className="font-bold text-body mb-1">Compliance Ready</h4>
-                    <p className="text-sm text-secondary">Audit-prepared evidence packages for regulatory submission.</p>
+                    <h4 className="font-bold text-body mb-1">Carbon Tax Calculator</h4>
+                    <p className="text-sm text-secondary">GGPPA schedule-based carbon liability with SBTi savings projection to 2030.</p>
                   </div>
                 </div>
                 <div className="flex gap-3">
-                  <div className="text-2xl">✓</div>
+                  <div className="text-2xl">🏛️</div>
                   <div>
-                    <h4 className="font-bold text-body mb-1">Instant Results</h4>
-                    <p className="text-sm text-secondary">No setup required. Start generating audits in seconds.</p>
+                    <h4 className="font-bold text-body mb-1">AWS ca-central-1 Only</h4>
+                    <p className="text-sm text-secondary">All data — DynamoDB, S3 WORM vault, SNS alerts, API Gateway — stays in Canada. PIPEDA compliant.</p>
                   </div>
                 </div>
               </div>

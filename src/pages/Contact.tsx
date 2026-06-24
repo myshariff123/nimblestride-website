@@ -8,6 +8,7 @@ interface LocationState {
 
 const FORM_TYPES = [
   { key: 'clearbind', label: 'ClearBind', icon: '🛡️', sub: 'InsurTech · MGA Beta Access' },
+  { key: 'clearmrm', label: 'ClearMRM', icon: '🏦', sub: 'RegTech · OSFI E-23 Pilot' },
   { key: 'mortgage', label: 'NewInCanada Mortgage', icon: '🏠', sub: 'FinTech · Register Interest' },
   { key: 'institutional', label: 'GridWitness Pilot', icon: '⚡', sub: 'RegTech · Institutional' },
   { key: 'general', label: 'General', icon: '✉️', sub: 'Any other inquiry' },
@@ -29,9 +30,9 @@ export const Contact: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="Contact NimbleStride — ClearBind, Mortgage Platform, GridWitness"
-        description="Contact NimbleStride for ClearBind MGA beta access, NewInCanada Mortgage early registration, GridWitness institutional pilots, or any general inquiry. Edmonton, Alberta."
-        keywords="contact NimbleStride, ClearBind beta, NewInCanada Mortgage, GridWitness pilot, NimbleStride partnership, Edmonton Alberta InsurTech"
+        title="Contact NimbleStride — ClearBind, ClearMRM, Mortgage Platform, GridWitness"
+        description="Contact NimbleStride for ClearBind MGA beta access, ClearMRM OSFI E-23 pilot access, NewInCanada Mortgage early registration, GridWitness institutional pilots, or any general inquiry. Edmonton, Alberta."
+        keywords="contact NimbleStride, ClearBind beta, ClearMRM OSFI E-23, NewInCanada Mortgage, GridWitness pilot, NimbleStride partnership, Edmonton Alberta InsurTech"
         canonicalUrl="https://nimblestride.ca/contact"
         path="/contact"
       />
@@ -50,7 +51,7 @@ export const Contact: React.FC = () => {
       <section className="bg-white py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Tab selector */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-12">
             {FORM_TYPES.map((type) => (
               <button
                 key={type.key}
@@ -142,6 +143,87 @@ export const Contact: React.FC = () => {
                   </div>
                   <button type="submit" className="btn-primary w-full py-3 text-base">
                     Request ClearBind Beta Access
+                  </button>
+                </form>
+              )}
+
+              {/* ClearMRM Form */}
+              {activeForm === 'clearmrm' && (
+                <form action="https://formspree.io/f/clearmrm_pilot" method="POST" className="space-y-5">
+                  <div>
+                    <h3 className="text-2xl font-bold text-body mb-2">ClearMRM — OSFI E-23 Pilot Access</h3>
+                    <p className="text-secondary text-sm">
+                      For Canadian Federally Regulated Financial Institutions (FRFIs) building toward OSFI
+                      Guideline E-23 compliance before the May 1, 2027 deadline. ClearMRM is live at{' '}
+                      <a href="https://clearmrm.nimblestride.ca" target="_blank" rel="noopener noreferrer" className="text-amber hover:underline">
+                        clearmrm.nimblestride.ca
+                      </a>.
+                    </p>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-bold text-body mb-1.5">Institution Name *</label>
+                    <input type="text" name="institution" required className={inputClass} placeholder="Your bank, insurer, credit union, or pension fund" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-body mb-1.5">Institution Type</label>
+                    <select name="institution_type" className={selectClass}>
+                      <option>Tier 2 Bank / Trust Company ($1B–$100B assets)</option>
+                      <option>Federal Insurer under OSFI</option>
+                      <option>Credit Union Central</option>
+                      <option>Federal Pension Administrator</option>
+                      <option>Tier 1 Bank ($100B+ assets)</option>
+                      <option>Other FRFI</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-body mb-1.5">Approximate Total Assets</label>
+                    <select name="total_assets" className={selectClass}>
+                      <option>Under $1B</option>
+                      <option>$1B – $5B</option>
+                      <option>$5B – $20B</option>
+                      <option>$20B – $100B</option>
+                      <option>$100B+</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-body mb-1.5">Current Model Inventory Tool</label>
+                    <select name="current_tool" className={selectClass}>
+                      <option>Excel spreadsheet(s)</option>
+                      <option>Internal system (home-built)</option>
+                      <option>IBM OpenPages</option>
+                      <option>SAS MRM</option>
+                      <option>ValidMind</option>
+                      <option>Nothing formal yet</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-body mb-1.5">Your Role *</label>
+                    <select name="role" required className={selectClass}>
+                      <option>Chief Risk Officer (CRO)</option>
+                      <option>Head of Model Risk</option>
+                      <option>Model Risk Manager</option>
+                      <option>Chief Compliance Officer</option>
+                      <option>CFO / Finance Executive</option>
+                      <option>IT / Technology Lead</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-body mb-1.5">Your Name *</label>
+                    <input type="text" name="name" required className={inputClass} />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-body mb-1.5">Email *</label>
+                    <input type="email" name="email" required className={inputClass} />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-body mb-1.5">Tell us about your OSFI E-23 readiness situation</label>
+                    <textarea name="message" rows={3} className={textareaClass} placeholder="How many models in scope? What's your current inventory process? Any specific gaps you're trying to close before May 2027?" />
+                  </div>
+                  <button type="submit" className="w-full py-3 rounded-md font-bold bg-amber text-white hover:bg-amber/90 transition-colors text-base">
+                    Request ClearMRM Pilot Access
                   </button>
                 </form>
               )}
@@ -323,6 +405,9 @@ export const Contact: React.FC = () => {
                   <div className="space-y-2 text-sm">
                     <button onClick={() => setActiveForm('clearbind')} className="flex items-center gap-2 text-teal hover:text-teal-hover w-full text-left">
                       🛡️ ClearBind — MGA Beta →
+                    </button>
+                    <button onClick={() => setActiveForm('clearmrm')} className="flex items-center gap-2 text-amber hover:text-amber/80 w-full text-left">
+                      🏦 ClearMRM — OSFI E-23 Pilot →
                     </button>
                     <button onClick={() => setActiveForm('mortgage')} className="flex items-center gap-2 text-blue hover:text-blue/80 w-full text-left">
                       🏠 NewInCanada Mortgage →

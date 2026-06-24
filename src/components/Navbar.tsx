@@ -50,6 +50,13 @@ export const Navbar: React.FC = () => {
       icon: '⚡',
       accent: 'text-purple',
     },
+    {
+      path: '/products/clearmrm',
+      label: 'ClearMRM',
+      sub: 'RegTech · OSFI E-23 Model Risk Management',
+      icon: '🏦',
+      accent: 'text-amber',
+    },
   ];
 
   const productsActive =
