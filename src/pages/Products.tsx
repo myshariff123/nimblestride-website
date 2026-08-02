@@ -7,17 +7,17 @@ export const Products: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="Our Products — NimbleStride InsurTech, RegTech, FinTech"
-        description="NimbleStride's product portfolio: ClearBind (MGA underwriting), ClearMRM (OSFI E-23 model risk), NewInCanada Mortgage (newcomer FinTech), and GridWitness (AI compute compliance). Edmonton, Alberta."
-        keywords="ClearBind InsurTech, ClearMRM OSFI E-23 model risk, NewInCanada Mortgage, GridWitness AI compliance, NimbleStride products, Canadian software"
+        title="Our Products — Insurance, Banking & Finance, Energy & Infrastructure"
+        description="NimbleStride's product portfolio across three regulated domains: ClearBind (Insurance — MGA underwriting), ClearMRM (Banking & Finance — OSFI E-23 model risk), and GridWitness (Energy & Infrastructure — ESG compliance). Edmonton, Alberta."
+        keywords="ClearBind InsurTech, ClearMRM OSFI E-23 model risk, GridWitness ESG compliance, NimbleStride products, Canadian RegTech software"
         canonicalUrl="https://nimblestride.ca/products"
         path="/products"
       />
 
       <HeroSection
         eyebrow="Product Portfolio"
-        title="Four Products. Four Regulated Domains. One Company."
-        subtitle="Each NimbleStride product was built to address a genuine Canadian market gap — where regulation is real, the processes are manual, and practitioners have been waiting for software that actually understands their world."
+        title="Three Products. Three Regulated Domains. One Company."
+        subtitle="Each NimbleStride product was built to address a genuine Canadian market gap — where regulation is real, the processes are manual, and practitioners have been waiting for software that actually understands their world. We organize our work by the domain it serves: Insurance, Banking & Finance, and Energy & Infrastructure."
         primaryCtaLabel="Contact Us"
         primaryCtaTo="/contact"
         secondaryCtaLabel="About NimbleStride"
@@ -32,7 +32,7 @@ export const Products: React.FC = () => {
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-4xl">🛡️</span>
                 <div>
-                  <div className="eyebrow">InsurTech · Product 1 of 4</div>
+                  <div className="eyebrow">Insurance · InsurTech · Product 1 of 3</div>
                   <h2 className="text-body">ClearBind</h2>
                 </div>
               </div>
@@ -115,161 +115,7 @@ export const Products: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── PRODUCT 2: NewInCanada Mortgage ─────────────────────────────── */}
-      <section className="bg-surface py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div className="lg:order-2">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-4xl">🏠</span>
-                <div>
-                  <div className="eyebrow text-blue">FinTech · Product 2 of 4</div>
-                  <h2 className="text-body">NewInCanada Mortgage</h2>
-                </div>
-              </div>
-              <p className="text-secondary text-lg leading-relaxed mb-6">
-                Canada's first AI-guided mortgage platform built specifically for newcomers. The conventional
-                mortgage market was designed for applicants with established Canadian credit history, domestic
-                employment, and local income verification — which excludes a significant portion of Canada's
-                fastest-growing demographic on arrival.
-              </p>
-              <p className="text-secondary leading-relaxed mb-8">
-                NewInCanada Mortgage changes that equation. The platform assesses eligibility using
-                international income, foreign credit history, and newcomer-specific lending programs from
-                major Canadian banks, credit unions, and specialist lenders — guiding applicants through
-                every step of the process in plain language.
-              </p>
-
-              <Link to="/products/newincanada-mortgage" className="btn-primary inline-flex items-center gap-2">
-                Full Product Overview
-                <ArrowRight size={16} />
-              </Link>
-              <a href="https://newincanadamortgage.ca" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center gap-2">
-                Visit newincanadamortgage.ca
-                <ArrowRight size={16} />
-              </a>
-            </div>
-
-            <div className="lg:order-1 space-y-4">
-              <div className="card p-6 border-l-4 border-blue">
-                <h3 className="font-bold text-body mb-3">Platform Capabilities</h3>
-                <ul className="space-y-2 text-sm text-secondary">
-                  {[
-                    'AI mortgage eligibility assessment for newcomers and non-residents',
-                    'Foreign income analysis — salaried, self-employed, international',
-                    'International credit history recognition and scoring',
-                    'Lender matching across major banks, credit unions, and MFCs',
-                    'Document checklist generation specific to applicant profile',
-                    'Step-by-step guidance in English and French',
-                    'Mortgage broker portal for client management',
-                  ].map((f) => (
-                    <li key={f} className="flex gap-2">
-                      <CheckCircle2 size={14} className="text-blue flex-shrink-0 mt-0.5" />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="bg-blue/10 border border-blue/20 rounded-lg p-4 flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-bold text-blue">Status: Coming Soon</p>
-                  <p className="text-xs text-secondary mt-0.5">Beta launch — register your interest</p>
-                </div>
-                <Link to="/contact" state={{ contactType: 'mortgage' }} className="bg-blue text-white px-4 py-2 rounded-md text-sm font-bold hover:bg-blue/90 transition-colors">
-                  Register Interest
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── PRODUCT 3: GridWitness ───────────────────────────────────────── */}
-      <section className="bg-white py-14 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-4xl">⚡</span>
-                <div>
-                  <div className="eyebrow text-purple">RegTech · Product 3 of 4</div>
-                  <h2 className="text-body">GridWitness</h2>
-                </div>
-              </div>
-              <p className="text-secondary text-lg leading-relaxed mb-6">
-                Hardware-anchored compliance evidence for AI compute infrastructure. As regulators in Canada,
-                the US, and EU tighten requirements around AI infrastructure emissions, financial institutions
-                and data centre operators face a new class of compliance obligation that existing enterprise
-                software was never designed to address. GridWitness fills that gap.
-              </p>
-              <p className="text-secondary leading-relaxed mb-8">
-                GridWitness reads directly from server hardware management controllers, generates
-                cryptographically verified Scope 2 evidence, and packages it in audit-ready formats aligned
-                with OSFI B-15, California SB 253, EU CSRD, and ISSB S2 — all from infrastructure you
-                already own.
-              </p>
-
-              <div className="flex gap-4 flex-wrap">
-                <Link to="/solutions" className="btn-primary inline-flex items-center gap-2">
-                  Platform Details
-                  <ArrowRight size={16} />
-                </Link>
-                <Link to="/regulatory" className="btn-secondary inline-flex items-center gap-2">
-                  Regulatory Coverage
-                  <ArrowRight size={16} />
-                </Link>
-                <a href="https://16-174-1-7.nip.io" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-flex items-center gap-2">
-                  Access GridWitness Platform
-                  <ArrowRight size={16} />
-                </a>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="card p-6 border-l-4 border-purple">
-                <h3 className="font-bold text-body mb-3">Technical Capabilities</h3>
-                <ul className="space-y-2 text-sm text-secondary">
-                  {[
-                    'Real-time server telemetry via IPMI / Redfish on every compute node',
-                    'Cryptographic hardware attestation — tamper-evident audit chain',
-                    'GHG Protocol Scope 2 calculation at server level (location + market-based)',
-                    'Multi-framework output: OSFI B-15, SB 253, EU CSRD, ISSB S1/S2',
-                    'Big4 audit firm integration — assurance-grade evidence packages',
-                    'On-premise deployment — no data export to third parties required',
-                    'Zero new hardware procurement required',
-                  ].map((f) => (
-                    <li key={f} className="flex gap-2">
-                      <CheckCircle2 size={14} className="text-purple flex-shrink-0 mt-0.5" />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="grid grid-cols-3 gap-3 text-center text-sm">
-                {['🇨🇦 OSFI B-15', '🇺🇸 SB 253', '🇪🇺 CSRD'].map((f) => (
-                  <div key={f} className="bg-purple/10 border border-purple/20 rounded-lg p-3 font-medium text-purple text-xs">
-                    {f}
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-purple/10 border border-purple/20 rounded-lg p-4 flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-bold text-purple">Status: Pilot Stage</p>
-                  <p className="text-xs text-secondary mt-0.5">Institutional pilot partnerships open</p>
-                </div>
-                <Link to="/contact" state={{ contactType: 'institutional' }} className="bg-purple text-white px-4 py-2 rounded-md text-sm font-bold hover:bg-purple/90 transition-colors">
-                  Request Briefing
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── PRODUCT 4: ClearMRM ─────────────────────────────────────────── */}
+      {/* ─── PRODUCT 2: ClearMRM ─────────────────────────────────────────── */}
       <section className="bg-surface py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -277,7 +123,7 @@ export const Products: React.FC = () => {
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-4xl">🏦</span>
                 <div>
-                  <div className="eyebrow text-amber">RegTech · Product 4 of 4</div>
+                  <div className="eyebrow text-amber">Banking &amp; Finance · RegTech · Product 2 of 3</div>
                   <h2 className="text-body">ClearMRM</h2>
                 </div>
               </div>
@@ -348,6 +194,90 @@ export const Products: React.FC = () => {
                 </div>
                 <Link to="/contact" state={{ contactType: 'clearmrm' }} className="bg-amber text-white px-4 py-2 rounded-md text-sm font-bold hover:bg-amber-600 transition-colors">
                   Request Access
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── PRODUCT 3: GridWitness ───────────────────────────────────────── */}
+      <section className="bg-white py-14 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-4xl">⚡</span>
+                <div>
+                  <div className="eyebrow text-purple">Energy &amp; Infrastructure · RegTech · Product 3 of 3</div>
+                  <h2 className="text-body">GridWitness</h2>
+                </div>
+              </div>
+              <p className="text-secondary text-lg leading-relaxed mb-6">
+                Hardware-anchored ESG compliance evidence for data centres and AI compute infrastructure. As
+                regulators in Canada, the US, and EU tighten requirements around infrastructure emissions,
+                financial institutions and data centre operators face a new class of compliance obligation that
+                existing enterprise software was never designed to address. GridWitness fills that gap.
+              </p>
+              <p className="text-secondary leading-relaxed mb-8">
+                GridWitness reads directly from server hardware management controllers, generates
+                cryptographically verified Scope 1/2/3 evidence, and packages it in audit-ready formats aligned
+                with OSFI B-15, California SB 253, EU CSRD, and ISSB S2 — all from infrastructure you
+                already own.
+              </p>
+
+              <div className="flex gap-4 flex-wrap">
+                <Link to="/solutions" className="btn-primary inline-flex items-center gap-2">
+                  Platform Details
+                  <ArrowRight size={16} />
+                </Link>
+                <Link to="/regulatory" className="btn-secondary inline-flex items-center gap-2">
+                  Regulatory Coverage
+                  <ArrowRight size={16} />
+                </Link>
+                <Link to="/portal" className="btn-secondary inline-flex items-center gap-2">
+                  Access GridWitness Portal
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="card p-6 border-l-4 border-purple">
+                <h3 className="font-bold text-body mb-3">Technical Capabilities</h3>
+                <ul className="space-y-2 text-sm text-secondary">
+                  {[
+                    'Real-time server telemetry via IPMI / Redfish on every compute node',
+                    'Cryptographic hardware attestation — tamper-evident audit chain',
+                    'GHG Protocol Scope 2 calculation at server level (location + market-based)',
+                    'Multi-framework output: OSFI B-15, SB 253, EU CSRD, ISSB S1/S2',
+                    'Big4 audit firm integration — assurance-grade evidence packages',
+                    'On-premise deployment — no data export to third parties required',
+                    'Zero new hardware procurement required',
+                  ].map((f) => (
+                    <li key={f} className="flex gap-2">
+                      <CheckCircle2 size={14} className="text-purple flex-shrink-0 mt-0.5" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3 text-center text-sm">
+                {['🇨🇦 OSFI B-15', '🇺🇸 SB 253', '🇪🇺 CSRD'].map((f) => (
+                  <div key={f} className="bg-purple/10 border border-purple/20 rounded-lg p-3 font-medium text-purple text-xs">
+                    {f}
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-purple/10 border border-purple/20 rounded-lg p-4 flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-bold text-purple">Status: Pilot Stage</p>
+                  <p className="text-xs text-secondary mt-0.5">Institutional pilot partnerships open</p>
+                </div>
+                <Link to="/contact" state={{ contactType: 'institutional' }} className="bg-purple text-white px-4 py-2 rounded-md text-sm font-bold hover:bg-purple/90 transition-colors">
+                  Request Briefing
                 </Link>
               </div>
             </div>

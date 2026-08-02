@@ -254,18 +254,17 @@ export const Solutions: React.FC = () => {
                   to="/portal"
                   className="inline-flex items-center gap-2 bg-teal text-white px-6 py-3 rounded-md font-bold hover:bg-teal-dark transition-colors"
                 >
-                  Access Portal
+                  Access GridWitness Portal
                   <ArrowRight size={18} />
                 </Link>
-                <a
-                  href="https://16-174-1-7.nip.io"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/contact"
+                  state={{ contactType: 'institutional' }}
                   className="inline-flex items-center gap-2 border-2 border-teal text-teal px-6 py-3 rounded-md font-bold hover:bg-teal/10 transition-colors"
                 >
-                  Access GridWitness Platform
+                  Request a Demo
                   <ArrowRight size={18} />
-                </a>
+                </Link>
               </div>
             </div>
 

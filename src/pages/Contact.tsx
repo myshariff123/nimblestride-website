@@ -7,10 +7,9 @@ interface LocationState {
 }
 
 const FORM_TYPES = [
-  { key: 'clearbind', label: 'ClearBind', icon: '🛡️', sub: 'InsurTech · MGA Beta Access' },
-  { key: 'clearmrm', label: 'ClearMRM', icon: '🏦', sub: 'RegTech · OSFI E-23 Pilot' },
-  { key: 'mortgage', label: 'NewInCanada Mortgage', icon: '🏠', sub: 'FinTech · Register Interest' },
-  { key: 'institutional', label: 'GridWitness Pilot', icon: '⚡', sub: 'RegTech · Institutional' },
+  { key: 'clearbind', label: 'ClearBind', icon: '🛡️', sub: 'Insurance · MGA Beta Access' },
+  { key: 'clearmrm', label: 'ClearMRM', icon: '🏦', sub: 'Banking & Finance · OSFI E-23 Pilot' },
+  { key: 'institutional', label: 'GridWitness Pilot', icon: '⚡', sub: 'Energy & Infrastructure · Institutional' },
   { key: 'general', label: 'General', icon: '✉️', sub: 'Any other inquiry' },
 ] as const;
 
@@ -30,9 +29,9 @@ export const Contact: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="Contact NimbleStride — ClearBind, ClearMRM, Mortgage Platform, GridWitness"
-        description="Contact NimbleStride for ClearBind MGA beta access, ClearMRM OSFI E-23 pilot access, NewInCanada Mortgage early registration, GridWitness institutional pilots, or any general inquiry. Edmonton, Alberta."
-        keywords="contact NimbleStride, ClearBind beta, ClearMRM OSFI E-23, NewInCanada Mortgage, GridWitness pilot, NimbleStride partnership, Edmonton Alberta InsurTech"
+        title="Contact NimbleStride — ClearBind, ClearMRM, GridWitness"
+        description="Contact NimbleStride for ClearBind MGA beta access, ClearMRM OSFI E-23 pilot access, GridWitness institutional pilots, or any general inquiry. Edmonton, Alberta."
+        keywords="contact NimbleStride, ClearBind beta, ClearMRM OSFI E-23, GridWitness pilot, NimbleStride partnership, Edmonton Alberta InsurTech RegTech"
         canonicalUrl="https://nimblestride.ca/contact"
         path="/contact"
       />
@@ -51,7 +50,7 @@ export const Contact: React.FC = () => {
       <section className="bg-white py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Tab selector */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
             {FORM_TYPES.map((type) => (
               <button
                 key={type.key}
@@ -228,61 +227,6 @@ export const Contact: React.FC = () => {
                 </form>
               )}
 
-              {/* Mortgage Form */}
-              {activeForm === 'mortgage' && (
-                <form action="https://formspree.io/f/mortgage_interest" method="POST" className="space-y-5">
-                  <div>
-                    <h3 className="text-2xl font-bold text-body mb-2">NewInCanada Mortgage — Register Interest</h3>
-                    <p className="text-secondary text-sm">
-                      Register for early access to Canada's first AI-guided mortgage platform for newcomers.
-                      Tell us who you are so we can prioritize access accordingly.
-                    </p>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-bold text-body mb-1.5">I am a *</label>
-                    <select name="audience_type" required className={selectClass}>
-                      <option>Newcomer to Canada looking for mortgage help</option>
-                      <option>Mortgage Broker serving newcomer clients</option>
-                      <option>Lender / Financial Institution</option>
-                      <option>Settlement agency or newcomer support organization</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-body mb-1.5">Your Name *</label>
-                    <input type="text" name="name" required className={inputClass} />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-body mb-1.5">Email *</label>
-                    <input type="email" name="email" required className={inputClass} />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-body mb-1.5">Province of Residence / Operation</label>
-                    <select name="province" className={selectClass}>
-                      {['Alberta', 'British Columbia', 'Ontario', 'Quebec', 'Manitoba', 'Saskatchewan', 'Nova Scotia', 'New Brunswick', 'Other'].map((p) => (
-                        <option key={p}>{p}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-body mb-1.5">Preferred language</label>
-                    <select name="language" className={selectClass}>
-                      <option>English</option>
-                      <option>French</option>
-                      <option>Both</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-body mb-1.5">Tell us more about your situation or interest</label>
-                    <textarea name="message" rows={3} className={textareaClass} placeholder="What brings you here? Any specific challenge or question?" />
-                  </div>
-                  <button type="submit" className="w-full py-3 rounded-md font-bold bg-blue text-white hover:bg-blue/90 transition-colors text-base">
-                    Register My Interest
-                  </button>
-                </form>
-              )}
-
               {/* GridWitness / Institutional Form */}
               {activeForm === 'institutional' && (
                 <form action="https://formspree.io/f/gridwitness_pilot" method="POST" className="space-y-5">
@@ -408,9 +352,6 @@ export const Contact: React.FC = () => {
                     </button>
                     <button onClick={() => setActiveForm('clearmrm')} className="flex items-center gap-2 text-amber hover:text-amber/80 w-full text-left">
                       🏦 ClearMRM — OSFI E-23 Pilot →
-                    </button>
-                    <button onClick={() => setActiveForm('mortgage')} className="flex items-center gap-2 text-blue hover:text-blue/80 w-full text-left">
-                      🏠 NewInCanada Mortgage →
                     </button>
                     <button onClick={() => setActiveForm('institutional')} className="flex items-center gap-2 text-purple hover:text-purple/80 w-full text-left">
                       ⚡ GridWitness Pilot →

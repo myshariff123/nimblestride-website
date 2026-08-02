@@ -7,10 +7,10 @@ const PRODUCTS = [
   {
     icon: '🛡️',
     name: 'ClearBind',
-    domain: 'InsurTech',
+    domain: 'Insurance',
     tagline: 'MGA Underwriting Intelligence',
     description:
-      'AI-powered submission intake for Canadian MGA underwriters. ClearBind automatically extracts, enriches, and triages commercial insurance submissions — turning hours of manual review into seconds of intelligent pre-screening.',
+      'AI-powered submission intake for Canadian MGA underwriters and commercial brokers. ClearBind automatically extracts, enriches, and triages commercial insurance submissions — turning hours of manual review into seconds of intelligent pre-screening.',
     features: [
       'AI field extraction from broker emails and PDFs',
       'Live API enrichment — Google Reviews, NAICS, adverse media, domain security',
@@ -28,55 +28,9 @@ const PRODUCTS = [
     audience: 'MGA Underwriters · Commercial Brokers',
   },
   {
-    icon: '🏠',
-    name: 'NewInCanada Mortgage',
-    domain: 'FinTech',
-    tagline: 'Mortgage Intelligence for Newcomers',
-    description:
-      "Canada's first AI-guided mortgage platform purpose-built for newcomers. NewInCanada Mortgage navigates the unique challenges immigrants face — thin Canadian credit history, foreign income, and unfamiliar lending criteria — to connect them with the right lenders and the right products.",
-    features: [
-      'AI-powered mortgage eligibility assessment for newcomers',
-      'Foreign income and international credit history analysis',
-      'Lender matching across major Canadian banks and credit unions',
-      'Step-by-step documentation guidance in plain language',
-      'Bilingual support — English and French',
-    ],
-    status: 'Coming Soon',
-    statusColor: 'bg-blue text-white',
-    accentBorder: 'border-blue',
-    accentText: 'text-blue',
-    accentBg: 'bg-blue/10',
-    cta: '/products/newincanada-mortgage',
-    ctaLabel: 'Learn More',
-    audience: 'Newcomers to Canada · Mortgage Brokers',
-  },
-  {
-    icon: '⚡',
-    name: 'GridWitness',
-    domain: 'RegTech',
-    tagline: 'AI Compute Compliance Infrastructure',
-    description:
-      'Hardware-anchored compliance evidence for AI compute infrastructure. GridWitness reads directly from server hardware to generate cryptographically verified Scope 2 emissions data — satisfying OSFI B-15, California SB 253, EU CSRD, and ISSB S2 obligations with a single deployment.',
-    features: [
-      'Real-time hardware telemetry via IPMI and Redfish',
-      'Cryptographic attestation — tamper-evident WORM ledger',
-      'Multi-framework output: OSFI B-15, Bill C-59, SB 253, CSRD, ISSB S2',
-      'Scope 1, 2 & 3 tracking with Science-Based Targets',
-      'Big4 audit firm integration and assurance-grade evidence packages',
-    ],
-    status: 'Pilot Stage',
-    statusColor: 'bg-purple text-white',
-    accentBorder: 'border-purple',
-    accentText: 'text-purple',
-    accentBg: 'bg-purple/10',
-    cta: '/solutions',
-    ctaLabel: 'Explore GridWitness',
-    audience: 'Financial Institutions · Data Centre Operators',
-  },
-  {
     icon: '🏦',
     name: 'ClearMRM',
-    domain: 'RegTech',
+    domain: 'Banking & Finance',
     tagline: 'OSFI E-23 Model Risk Management',
     description:
       'AI-powered model risk management platform for Canadian FRFIs — purpose-built for OSFI Guideline E-23 (effective May 1, 2027). Complete model inventory, automated Tier 1/2/3 risk rating, validation workflows, vendor governance, and an immutable audit trail. From Excel to compliant in 30 days.',
@@ -98,15 +52,38 @@ const PRODUCTS = [
     ctaLabel: 'Explore ClearMRM',
     audience: 'CROs · Head of Model Risk · Canadian FRFIs',
   },
+  {
+    icon: '⚡',
+    name: 'GridWitness',
+    domain: 'Energy & Infrastructure',
+    tagline: 'ESG & Climate Compliance for Data Centres',
+    description:
+      'Hardware-anchored ESG compliance evidence for data centres and AI compute infrastructure. GridWitness reads directly from server hardware to generate cryptographically verified Scope 1/2/3 emissions data — satisfying OSFI B-15, California SB 253, EU CSRD, and ISSB S2 obligations with a single deployment.',
+    features: [
+      'Real-time hardware telemetry via IPMI and Redfish',
+      'Cryptographic attestation — tamper-evident WORM ledger',
+      'Multi-framework output: OSFI B-15, Bill C-59, SB 253, CSRD, ISSB S2',
+      'Scope 1, 2 & 3 tracking with Science-Based Targets',
+      'Big4 audit firm integration and assurance-grade evidence packages',
+    ],
+    status: 'Pilot Stage',
+    statusColor: 'bg-purple text-white',
+    accentBorder: 'border-purple',
+    accentText: 'text-purple',
+    accentBg: 'bg-purple/10',
+    cta: '/solutions',
+    ctaLabel: 'Explore GridWitness',
+    audience: 'Financial Institutions · Data Centre Operators',
+  },
 ];
 
 export const Home: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="NimbleStride — AI-Powered Platforms for Canada's Regulated Industries"
-        description="NimbleStride builds intelligent software for Canada's most regulated industries. ClearBind for InsurTech, ClearMRM for OSFI E-23 model risk, NewInCanada Mortgage for FinTech, and GridWitness for AI compute compliance."
-        keywords="NimbleStride, Canadian InsurTech, ClearBind MGA, ClearMRM OSFI E-23, NewInCanada Mortgage, GridWitness, AI compliance, Edmonton Alberta, Canadian FinTech, RegTech Canada"
+        title="AI-Powered Platforms for Canada's Regulated Industries"
+        description="NimbleStride builds intelligent software for Canada's most regulated industries across three domains — Insurance (ClearBind MGA underwriting), Banking & Model Risk (ClearMRM OSFI E-23), and Energy & Infrastructure (GridWitness ESG compliance). Edmonton, Alberta."
+        keywords="NimbleStride, Canadian InsurTech, ClearBind MGA, ClearMRM OSFI E-23, GridWitness ESG compliance, model risk management, RegTech Canada, Edmonton Alberta"
         canonicalUrl="https://nimblestride.ca/"
         path="/"
       />
@@ -129,10 +106,10 @@ export const Home: React.FC = () => {
               of getting it wrong is highest.
             </p>
             <p className="text-navy-300 text-base leading-relaxed mb-10 max-w-3xl">
-              We currently operate four products across insurance, model risk management, mortgage finance, and AI governance. Each
-              follows the same playbook: find a regulated Canadian industry running on manual processes, apply
-              AI precisely where it creates the most durable value, and ship something practitioners actually
-              want to use.
+              We operate three products across three regulated domains — insurance, banking &amp; model risk,
+              and energy &amp; infrastructure. Each follows the same playbook: find a regulated Canadian industry
+              running on manual processes, apply AI precisely where it creates the most durable value, and ship
+              something practitioners actually want to use.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link to="/products" className="btn-primary text-center">
@@ -151,14 +128,14 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-teal mb-1">4</div>
+              <div className="text-3xl md:text-4xl font-bold text-teal mb-1">3</div>
               <p className="text-navy-200 text-sm font-medium">Active Products</p>
-              <p className="text-navy-300 text-xs mt-1">InsurTech · RegTech · FinTech</p>
+              <p className="text-navy-300 text-xs mt-1">InsurTech · RegTech · Climate/ESG</p>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-teal mb-1">4</div>
-              <p className="text-navy-200 text-sm font-medium">Industry Domains</p>
-              <p className="text-navy-300 text-xs mt-1">Insurance · Model Risk · Mortgage · AI Gov.</p>
+              <div className="text-3xl md:text-4xl font-bold text-teal mb-1">3</div>
+              <p className="text-navy-200 text-sm font-medium">Regulated Domains</p>
+              <p className="text-navy-300 text-xs mt-1">Insurance · Banking &amp; Finance · Energy</p>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold text-teal mb-1">1</div>
@@ -179,10 +156,11 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="eyebrow mb-4">Our Product Portfolio</div>
-            <h2>Four Products. Four Domains. One Mission.</h2>
+            <h2>Three Products. Three Regulated Domains. One Mission.</h2>
             <p className="text-secondary max-w-2xl mx-auto mt-4 text-lg">
-              Each NimbleStride product targets a distinct regulated Canadian market — but all share the same
-              design principle: AI that augments expert judgment without replacing it.
+              Each NimbleStride product targets a distinct regulated Canadian market — Insurance, Banking &amp;
+              Finance, and Energy &amp; Infrastructure — but all share the same design principle: AI that augments
+              expert judgment without replacing it.
             </p>
           </div>
 
@@ -286,21 +264,17 @@ export const Home: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="bg-teal/20 rounded-lg p-4 text-center">
                   <div className="text-teal font-bold text-lg">Insurance</div>
                   <div className="text-navy-300 text-xs mt-1">ClearBind</div>
                 </div>
                 <div className="bg-amber/20 rounded-lg p-4 text-center">
-                  <div className="text-amber font-bold text-lg">Model Risk</div>
+                  <div className="text-amber font-bold text-lg">Banking &amp; Finance</div>
                   <div className="text-navy-300 text-xs mt-1">ClearMRM</div>
                 </div>
-                <div className="bg-blue/20 rounded-lg p-4 text-center">
-                  <div className="text-blue font-bold text-lg">Mortgage</div>
-                  <div className="text-navy-300 text-xs mt-1">NewInCanada</div>
-                </div>
                 <div className="bg-purple/20 rounded-lg p-4 text-center">
-                  <div className="text-purple font-bold text-lg">AI Gov.</div>
+                  <div className="text-purple font-bold text-lg">Energy &amp; Infra.</div>
                   <div className="text-navy-300 text-xs mt-1">GridWitness</div>
                 </div>
               </div>
@@ -334,16 +308,16 @@ export const Home: React.FC = () => {
                 body: "Canada's financial institutions operate under some of the most rigorous disclosure and governance requirements in the world — creating demand for precise, auditable compliance tooling.",
               },
               {
-                title: 'Newcomer Economy',
-                body: "Canada welcomes hundreds of thousands of immigrants annually. Most arrive without Canadian credit history, yet face Canada's complex mortgage and financial services landscape on day one.",
+                title: 'Model Risk Mandate',
+                body: "OSFI Guideline E-23 makes model risk management mandatory for every Canadian FRFI by May 2027. Most still run their model inventory in spreadsheets — an entire industry needs auditable tooling, fast.",
               },
               {
                 title: 'P&C Insurance Gap',
                 body: 'Canadian MGAs and brokers lag global peers in digital adoption. Submission processing remains largely manual — creating measurable efficiency losses and missed bind opportunities.',
               },
               {
-                title: 'AI Governance Frontier',
-                body: "Canada's sovereign AI compute strategy, OSFI B-15, and provincial climate disclosure requirements are creating an entirely new compliance obligation category that existing software cannot address.",
+                title: 'Energy & Data-Centre Boom',
+                body: "Alberta's data-centre and AI-compute buildout collides with OSFI B-15 and climate-disclosure rules, creating a new class of ESG compliance obligation that existing software was never designed to address.",
               },
             ].map((c) => (
               <div key={c.title} className="card p-6">
@@ -386,8 +360,8 @@ export const Home: React.FC = () => {
           <div className="eyebrow mb-4">Get Involved</div>
           <h2 className="text-white mb-6">Work With Us. Use Our Products. Shape What's Next.</h2>
           <p className="text-navy-200 mb-10 max-w-2xl mx-auto text-lg">
-            Whether you're an MGA underwriter ready to trial ClearBind, a newcomer navigating Canada's
-            mortgage market, a financial institution with AI compute obligations, or a potential partner —
+            Whether you're an MGA underwriter ready to trial ClearBind, a Canadian FRFI facing the OSFI E-23
+            deadline, a data-centre operator with ESG compliance obligations, or a potential partner —
             we'd like to hear from you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

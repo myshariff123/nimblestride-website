@@ -32,30 +32,23 @@ export const Navbar: React.FC = () => {
     {
       path: '/products/clearbind',
       label: 'ClearBind',
-      sub: 'InsurTech · MGA Underwriting Intelligence',
+      sub: 'Insurance · MGA Underwriting Intelligence',
       icon: '🛡️',
       accent: 'text-teal',
     },
     {
-      path: '/products/newincanada-mortgage',
-      label: 'NewInCanada Mortgage',
-      sub: 'FinTech · Newcomer Mortgage Platform',
-      icon: '🏠',
-      accent: 'text-blue',
+      path: '/products/clearmrm',
+      label: 'ClearMRM',
+      sub: 'Banking & Finance · OSFI E-23 Model Risk',
+      icon: '🏦',
+      accent: 'text-amber',
     },
     {
       path: '/solutions',
       label: 'GridWitness',
-      sub: 'RegTech · AI Compute Compliance',
+      sub: 'Energy & Infrastructure · ESG Compliance',
       icon: '⚡',
       accent: 'text-purple',
-    },
-    {
-      path: '/products/clearmrm',
-      label: 'ClearMRM',
-      sub: 'RegTech · OSFI E-23 Model Risk Management',
-      icon: '🏦',
-      accent: 'text-amber',
     },
   ];
 

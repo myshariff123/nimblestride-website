@@ -46,26 +46,20 @@ export const Footer: React.FC = () => {
               <li>
                 <a href="https://clearbind.ca" target="_blank" rel="noopener noreferrer" className="hover:text-teal transition-colors group">
                   <div className="font-semibold text-navy-200 group-hover:text-teal">🛡️ ClearBind</div>
-                  <div className="text-xs text-navy-300 mt-0.5">InsurTech · MGA Underwriting · clearbind.ca</div>
-                </a>
-              </li>
-              <li>
-                <a href="https://newincanadamortgage.ca" target="_blank" rel="noopener noreferrer" className="hover:text-teal transition-colors group">
-                  <div className="font-semibold text-navy-200 group-hover:text-teal">🏠 NewInCanada Mortgage</div>
-                  <div className="text-xs text-navy-300 mt-0.5">FinTech · Newcomer Finance · newincanadamortgage.ca</div>
-                </a>
-              </li>
-              <li>
-                <a href="https://16-174-1-7.nip.io" target="_blank" rel="noopener noreferrer" className="hover:text-teal transition-colors group">
-                  <div className="font-semibold text-navy-200 group-hover:text-teal">⚡ GridWitness</div>
-                  <div className="text-xs text-navy-300 mt-0.5">RegTech · ESG Compliance · Pilot Live</div>
+                  <div className="text-xs text-navy-300 mt-0.5">Insurance · MGA Underwriting · clearbind.ca</div>
                 </a>
               </li>
               <li>
                 <a href="https://clearmrm.nimblestride.ca" target="_blank" rel="noopener noreferrer" className="hover:text-teal transition-colors group">
                   <div className="font-semibold text-navy-200 group-hover:text-teal">🏦 ClearMRM</div>
-                  <div className="text-xs text-navy-300 mt-0.5">RegTech · OSFI E-23 Model Risk · clearmrm.nimblestride.ca</div>
+                  <div className="text-xs text-navy-300 mt-0.5">Banking & Finance · OSFI E-23 Model Risk · clearmrm.nimblestride.ca</div>
                 </a>
+              </li>
+              <li>
+                <Link to="/solutions" className="hover:text-teal transition-colors group">
+                  <div className="font-semibold text-navy-200 group-hover:text-teal">⚡ GridWitness</div>
+                  <div className="text-xs text-navy-300 mt-0.5">Energy & Infrastructure · ESG Compliance · Pilot Live</div>
+                </Link>
               </li>
             </ul>
           </div>

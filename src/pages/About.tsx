@@ -8,8 +8,8 @@ export const About: React.FC = () => {
     <>
       <SEOHelmet
         title="About NimbleStride — Canadian AI Innovation Company, Edmonton Alberta"
-        description="NimbleStride is an Edmonton-based technology company building AI-powered platforms for Canada's most regulated industries. Four products: ClearBind (InsurTech), ClearMRM (OSFI E-23 Model Risk), NewInCanada Mortgage (FinTech), GridWitness (RegTech)."
-        keywords="NimbleStride about, Canadian AI company, Edmonton technology startup, InsurTech Canada, FinTech Alberta, RegTech Canada, NRC IRAP, Alberta Innovates"
+        description="NimbleStride is an Edmonton-based technology company building AI-powered platforms for Canada's most regulated industries across three domains: Insurance (ClearBind), Banking & Finance (ClearMRM, OSFI E-23), and Energy & Infrastructure (GridWitness ESG)."
+        keywords="NimbleStride about, Canadian AI company, Edmonton technology startup, InsurTech Canada, RegTech Alberta, model risk management, ESG compliance, NRC IRAP, Alberta Innovates"
         canonicalUrl="https://nimblestride.ca/about"
         path="/about"
       />
@@ -41,14 +41,14 @@ export const About: React.FC = () => {
                 enormous administrative overhead.
               </p>
               <p className="text-secondary leading-relaxed mb-5">
-                Skilled professionals — underwriters, mortgage brokers, compliance officers, financial analysts
+                Skilled professionals — underwriters, model-risk analysts, compliance officers, financial analysts
                 — spend significant portions of their working day on structured data collection, manual field
                 extraction, regulatory lookups, and documentation tasks that software should be doing for them.
               </p>
               <p className="text-secondary leading-relaxed">
                 NimbleStride's mission is to return that time to the professionals who need it — so an
-                underwriter spends their expertise deciding, not typing; so a newcomer's mortgage broker
-                spends their time advising, not chasing documentation; so a compliance officer spends their
+                underwriter spends their expertise deciding, not typing; so a model-risk manager spends their
+                time analysing, not reconciling spreadsheets; so a compliance officer spends their
                 skill interpreting, not compiling. We build AI that augments expert judgment. We never
                 try to replace it.
               </p>
@@ -89,15 +89,15 @@ export const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="eyebrow mb-4">Our Portfolio</div>
-            <h2>Four Products. Four Regulated Domains.</h2>
+            <h2>Three Products. Three Regulated Domains.</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 icon: '🛡️',
                 name: 'ClearBind',
-                domain: 'InsurTech',
+                domain: 'Insurance · InsurTech',
                 status: 'Live Beta',
                 statusColor: 'bg-green-dark text-white',
                 description:
@@ -109,7 +109,7 @@ export const About: React.FC = () => {
               {
                 icon: '🏦',
                 name: 'ClearMRM',
-                domain: 'RegTech',
+                domain: 'Banking & Finance · RegTech',
                 status: 'Live',
                 statusColor: 'bg-amber text-white',
                 description:
@@ -119,21 +119,9 @@ export const About: React.FC = () => {
                 accentText: 'text-amber',
               },
               {
-                icon: '🏠',
-                name: 'NewInCanada Mortgage',
-                domain: 'FinTech',
-                status: 'Coming Soon',
-                statusColor: 'bg-blue text-white',
-                description:
-                  'AI-guided mortgage platform for newcomers to Canada. Addresses international income, foreign credit history, and newcomer-specific lender programs — with bilingual guidance through every step.',
-                link: '/products/newincanada-mortgage',
-                accentBorder: 'border-blue',
-                accentText: 'text-blue',
-              },
-              {
                 icon: '⚡',
                 name: 'GridWitness',
-                domain: 'RegTech',
+                domain: 'Energy & Infrastructure · RegTech',
                 status: 'Pilot Stage',
                 statusColor: 'bg-purple text-white',
                 description:
@@ -214,8 +202,8 @@ export const About: React.FC = () => {
                     body: 'Major Canadian financial institutions operate significant Alberta infrastructure. Strong P&C insurance market with independent MGA community.',
                   },
                   {
-                    title: 'Newcomer Demographics',
-                    body: 'Alberta receives a substantial share of Canada\'s annual immigration cohort — a large, proximate market for NewInCanada Mortgage.',
+                    title: 'Energy & Data-Centre Hub',
+                    body: 'Alberta\'s deregulated power market and rapid data-centre / AI-compute buildout make it a natural first market for hardware-anchored ESG compliance like GridWitness.',
                   },
                   {
                     title: 'Federal Innovation Programs',
@@ -241,7 +229,7 @@ export const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="eyebrow mb-4">Growth Roadmap</div>
-            <h2>From Four Products to Many</h2>
+            <h2>From Three Products to Many</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -255,7 +243,7 @@ export const About: React.FC = () => {
                   'ClearBind: Live beta — MGA submission intake, BrokerBridge, CapacityLens',
                   'ClearMRM: Phases 1–8 live — full OSFI E-23 compliance suite deployed June 2026',
                   'GridWitness: Pilot live — AESO grid, TCFD, IFRS S2, board attestation, REC tracker',
-                  'NewInCanada Mortgage: Active development, early registrations open',
+                  'Shared AI foundation on AWS Bedrock (Claude, ca-central-1) across all products',
                 ],
                 period: '2024–2026',
               },
@@ -268,7 +256,7 @@ export const About: React.FC = () => {
                   'ClearBind: Full production, national MGA network, SOC 2 Type I',
                   'ClearMRM: 5 lighthouse FRFIs by Mar 2027, GA launch at Risk Canada Conference',
                   'GridWitness: Multi-client production deployments, named domain launch',
-                  'NewInCanada Mortgage: Public launch, broker network, bilingual support',
+                  'Next domain: begin discovery in a fourth regulated Canadian industry',
                 ],
                 period: '2026–2028',
               },
@@ -323,7 +311,7 @@ export const About: React.FC = () => {
                   { label: 'Founded', value: '2024' },
                   { label: 'Jurisdiction', value: 'Alberta, Canada' },
                   { label: 'Headquarters', value: 'Edmonton, Alberta, Canada' },
-                  { label: 'Sector Focus', value: 'InsurTech · FinTech · RegTech · Model Risk' },
+                  { label: 'Sector Focus', value: 'Insurance · Banking & Finance · Energy & Infrastructure' },
                 ].map((d) => (
                   <div key={d.label}>
                     <dt className="font-bold text-body">{d.label}</dt>
@@ -372,8 +360,8 @@ export const About: React.FC = () => {
           <h2 className="text-white mb-5">Let's Build Canada's Regulated Future Together</h2>
           <p className="text-navy-200 mb-10 max-w-2xl mx-auto text-lg">
             Whether you are an MGA ready to trial ClearBind, a Canadian FRFI with a May 2027 OSFI E-23
-            deadline, a newcomer exploring your mortgage options, a data centre with ESG compliance
-            obligations, or a researcher who sees a problem worth solving — we want to talk.
+            deadline, a data centre with ESG compliance obligations, or a researcher who sees a problem
+            worth solving — we want to talk.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/products" className="btn-primary inline-flex items-center gap-2">

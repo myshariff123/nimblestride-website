@@ -19,22 +19,22 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({
 
   return (
     <Helmet>
-      <title>{title} | GridWitness by NimbleStride</title>
+      <title>{title} | NimbleStride</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <link rel="canonical" href={canonicalUrl} />
 
       <meta property="og:type" content="website" />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:title" content={`${title} | GridWitness`} />
+      <meta property="og:title" content={`${title} | NimbleStride`} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content="GridWitness by NimbleStride" />
+      <meta property="og:site_name" content="NimbleStride" />
       <meta property="og:locale" content="en_CA" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@NimbleStride" />
-      <meta name="twitter:title" content={`${title} | GridWitness`} />
+      <meta name="twitter:title" content={`${title} | NimbleStride`} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
 

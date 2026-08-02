@@ -1,11 +1,9 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Layout } from './components';
 import { Home } from './pages/Home';
 import { Products } from './pages/Products';
 import { ClearBind } from './pages/ClearBind';
-import { MortgageApp } from './pages/MortgageApp';
 import { Solutions } from './pages/Solutions';
 import { ClearMRM } from './pages/ClearMRM';
 import { Regulatory } from './pages/Regulatory';
@@ -27,7 +25,6 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/clearbind" element={<ClearBind />} />
-            <Route path="/products/newincanada-mortgage" element={<MortgageApp />} />
             <Route path="/products/clearmrm" element={<ClearMRM />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/regulatory" element={<Regulatory />} />
@@ -49,7 +46,7 @@ function App() {
           url: 'https://nimblestride.ca',
           logo: 'https://nimblestride.ca/logo.png',
           description:
-            'Canadian technology company building AI-powered platforms for regulated industries — ClearBind (InsurTech MGA underwriting), ClearMRM (OSFI E-23 model risk management), NewInCanada Mortgage (FinTech newcomer lending), and GridWitness (ESG compliance for AI compute infrastructure).',
+            'Canadian technology company building AI-powered platforms across three regulated domains — Insurance (ClearBind, MGA underwriting intelligence), Banking & Model Risk (ClearMRM, OSFI E-23 model risk management), and Energy & Infrastructure (GridWitness, ESG compliance for data centres and AI compute).',
           address: {
             '@type': 'PostalAddress',
             addressLocality: 'Edmonton',
