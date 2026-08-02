@@ -17,17 +17,17 @@ export const Products: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="Our Products — Insurance, Banking & Finance, Energy & Infrastructure"
-        description="NimbleStride's product portfolio across three regulated domains: ClearBind (Insurance — MGA underwriting), ClearMRM (Banking & Finance — OSFI E-23 model risk), and GridWitness (Energy & Infrastructure — ESG compliance). Edmonton, Alberta."
-        keywords="ClearBind InsurTech, ClearMRM OSFI E-23 model risk, GridWitness ESG compliance, NimbleStride products, Canadian RegTech software"
+        title="Our Products — Regulated Platforms & Productivity Tools"
+        description="NimbleStride's product portfolio: ClearBind (Insurance), ClearMRM (Banking & Finance, OSFI E-23), and GridWitness (Energy & Infrastructure), plus productivity tools Cadence (agile delivery) and CustomTask (back-office automation). Edmonton, Alberta."
+        keywords="ClearBind InsurTech, ClearMRM OSFI E-23, GridWitness ESG compliance, Cadence agile, CustomTask automation, NimbleStride products, Canadian software"
         canonicalUrl="https://nimblestride.ca/products"
         path="/products"
       />
 
       <HeroSection
         eyebrow="Product Portfolio"
-        title="Three Products. Three Regulated Domains. One Company."
-        subtitle="Each NimbleStride product was built to address a genuine Canadian market gap — where regulation is real, the processes are manual, and practitioners have been waiting for software that actually understands their world. We organize our work by the domain it serves: Insurance, Banking & Finance, and Energy & Infrastructure."
+        title="Regulated-Industry Platforms & Productivity Tools."
+        subtitle="Two tiers, one playbook. Our regulated-industry platforms serve Insurance, Banking & Finance, and Energy & Infrastructure. Our productivity tools give individual practitioners sharper, faster ways to do skilled work."
         primaryCtaLabel="Contact Us"
         primaryCtaTo="/contact"
         secondaryCtaLabel="About NimbleStride"
@@ -295,12 +295,188 @@ export const Products: React.FC = () => {
         </div>
       </section>
 
+      {/* ─── TIER DIVIDER: PRODUCTIVITY & AUTOMATION ──────────────────────── */}
+      <section className="bg-white pt-8 pb-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="eyebrow mb-3">Productivity &amp; Automation</div>
+          <h2 className="text-body">Tools for the People Who Do the Work</h2>
+          <p className="text-secondary max-w-2xl mx-auto mt-4 text-lg">
+            Beyond our regulated-industry platforms, we build focused tools sold directly to the practitioner.
+          </p>
+        </div>
+      </section>
+
+      {/* ─── PRODUCT 4: Cadence (Agile Delivery) ──────────────────────────── */}
+      <section id="agile-delivery" className="bg-surface py-14 md:py-20 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-4xl">🧭</span>
+                <div>
+                  <div className="eyebrow text-blue">Agile Delivery · Productivity · Live</div>
+                  <h2 className="text-body">Cadence</h2>
+                </div>
+              </div>
+              <p className="text-secondary text-lg leading-relaxed mb-6">
+                A personal agile co-pilot that tells each delivery role exactly what to do today — deliverables,
+                do's, don'ts, and the gates they own — dated to their sprint or PI, across SAFe, Scrum, Kanban,
+                LeSS, Nexus and Scrumban.
+              </p>
+              <p className="text-secondary leading-relaxed mb-8">
+                Built for the individual practitioner — 28 roles across 6 frameworks — with a weekday morning
+                action-plan email and a knowledge base refreshed weekly from vetted practitioner sources.
+                Enterprise tool integration is intentionally out of scope: this is for the person, not the PMO.
+              </p>
+
+              <div className="flex gap-4 flex-wrap">
+                <a
+                  href="https://cadence.nimblestride.ca"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center gap-2"
+                >
+                  Visit cadence.nimblestride.ca
+                  <ArrowRight size={16} />
+                </a>
+                <Link to="/contact" className="btn-secondary inline-flex items-center gap-2">
+                  Talk to Us
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="card p-6 border-l-4 border-blue">
+                <h3 className="font-bold text-body mb-3">What Cadence Does</h3>
+                <ul className="space-y-2 text-sm text-secondary">
+                  {[
+                    'Role- and day-specific playbook — focus, do, avoid, downstream impact',
+                    'Dated gate schedule + day explorer for any day of the sprint/PI',
+                    'Impediment resolver — blocker → the gate, the fix, the meeting',
+                    'Issue registry to track blockers through to resolution',
+                    'Team / ART board — ownership, hand-offs, coverage gaps',
+                    'Weekday morning action-plan email + 60-second no-signup preview',
+                    'Knowledge base auto-refreshed weekly from vetted sources',
+                  ].map((f) => (
+                    <li key={f} className="flex gap-2">
+                      <CheckCircle2 size={14} className="text-blue flex-shrink-0 mt-0.5" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3 text-center text-sm">
+                {['SAFe · Scrum', 'Kanban · LeSS', 'Nexus · Scrumban'].map((f) => (
+                  <div key={f} className="bg-blue/10 border border-blue/20 rounded-lg p-3 font-medium text-blue text-xs">
+                    {f}
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-blue/10 border border-blue/20 rounded-lg p-4 flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-bold text-blue">Status: Live</p>
+                  <p className="text-xs text-secondary mt-0.5">30-day free trial, then $49/year · cadence.nimblestride.ca</p>
+                </div>
+                <a href="https://cadence.nimblestride.ca" target="_blank" rel="noopener noreferrer" className="bg-blue text-white px-4 py-2 rounded-md text-sm font-bold hover:bg-blue/90 transition-colors">
+                  Start Free Trial
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── PRODUCT 5: CustomTask (Back-office Automation) ────────────────── */}
+      <section id="automation" className="bg-white py-14 md:py-20 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-4xl">⚙️</span>
+                <div>
+                  <div className="eyebrow text-green-dark">Back-office Automation · Productivity · Live Demo</div>
+                  <h2 className="text-body">CustomTask</h2>
+                </div>
+              </div>
+              <p className="text-secondary text-lg leading-relaxed mb-6">
+                A general-purpose template-population engine — bring any data (JSON, CSV, PDF invoice, résumé,
+                pasted text) and any template (Word, Excel, PDF, HTML), and get back a finished, correctly
+                formatted document.
+              </p>
+              <p className="text-secondary leading-relaxed mb-8">
+                Born from insurance data-entry, it now spans accounting, HR and logistics — anywhere someone
+                copies fields from one place into a form. Claude-powered extraction with an always-on
+                rule-based fallback that runs even with no API key, and a REST API for developers.
+              </p>
+
+              <div className="flex gap-4 flex-wrap">
+                <a
+                  href="https://customtask.nimblestride.ca"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center gap-2"
+                >
+                  Try the Live Demo
+                  <ArrowRight size={16} />
+                </a>
+                <Link to="/contact" className="btn-secondary inline-flex items-center gap-2">
+                  Talk to Us
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="card p-6 border-l-4 border-green-dark">
+                <h3 className="font-bold text-body mb-3">What CustomTask Does</h3>
+                <ul className="space-y-2 text-sm text-secondary">
+                  {[
+                    'Upload TXT/HTML/DOCX/XLSX/PDF templates; auto-discovers every placeholder field',
+                    'Accepts data as JSON, CSV, DOCX, XLSX, PDF, HTML, or pasted text',
+                    'Claude-powered extraction with an always-on rule-based fallback',
+                    'Format-faithful output (Word → Word, Excel → Excel) + per-field result table',
+                    'Graceful degradation if the AI is unavailable',
+                    'Self-contained email/password auth; REST API for programmatic use',
+                  ].map((f) => (
+                    <li key={f} className="flex gap-2">
+                      <CheckCircle2 size={14} className="text-green-dark flex-shrink-0 mt-0.5" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3 text-center text-sm">
+                {['Word · Excel · PDF', 'AI + rule-based', 'REST API'].map((f) => (
+                  <div key={f} className="bg-green-dark/10 border border-green-dark/20 rounded-lg p-3 font-medium text-green-dark text-xs">
+                    {f}
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-green-dark/10 border border-green-dark/20 rounded-lg p-4 flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-bold text-green-dark">Status: Live Demo (MVP v0.1)</p>
+                  <p className="text-xs text-secondary mt-0.5">customtask.nimblestride.ca</p>
+                </div>
+                <a href="https://customtask.nimblestride.ca" target="_blank" rel="noopener noreferrer" className="bg-green-dark text-white px-4 py-2 rounded-md text-sm font-bold hover:opacity-90 transition-opacity">
+                  Open Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── COMING NEXT ──────────────────────────────────────────────────── */}
       <section className="bg-navy text-white py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="eyebrow mb-4">The Roadmap</div>
-            <h2 className="text-white">What Comes After Three?</h2>
+            <h2 className="text-white">What Comes Next?</h2>
             <p className="text-navy-200 max-w-2xl mx-auto mt-4">
               Our model is repeatable. If a Canadian industry runs on regulated, manual, paper-heavy processes —
               we see a product opportunity.

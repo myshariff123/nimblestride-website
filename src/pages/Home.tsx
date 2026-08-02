@@ -31,6 +31,20 @@ const ACCENT = {
     hoverBorder: 'hover:border-purple',
     dot: 'bg-purple',
   },
+  blue: {
+    text: 'text-blue',
+    iconWrap: 'bg-blue/10 text-blue',
+    chip: 'bg-blue/10 text-blue',
+    hoverBorder: 'hover:border-blue',
+    dot: 'bg-blue',
+  },
+  green: {
+    text: 'text-green-dark',
+    iconWrap: 'bg-green-dark/10 text-green-dark',
+    chip: 'bg-green-dark/10 text-green-dark',
+    hoverBorder: 'hover:border-green-dark',
+    dot: 'bg-green-dark',
+  },
 } as const;
 
 const DOMAINS = [
@@ -63,6 +77,29 @@ const DOMAINS = [
     chips: ['OSFI B-15', 'ISSB S2 / CSRD', 'Data Centres'],
     accent: 'purple' as const,
     to: '/products#energy-infrastructure',
+  },
+];
+
+const TOOLS = [
+  {
+    icon: '🧭',
+    name: 'Agile Delivery',
+    tagline: 'A personal co-pilot for every delivery role',
+    problem:
+      'Scrum Masters, RTEs, Product Owners and Business Analysts juggle 28 roles across 6 frameworks — and still ask "what should I be doing today?" We give each practitioner a dated, role-specific playbook: focus, do, avoid, and the gates they own.',
+    chips: ['SAFe · Scrum · Kanban', 'LeSS · Nexus · Scrumban', '28 Roles'],
+    accent: 'blue' as const,
+    to: '/products#agile-delivery',
+  },
+  {
+    icon: '⚙️',
+    name: 'Back-office Automation',
+    tagline: 'Any data, any template — one finished document',
+    problem:
+      'HR, accounting and logistics teams burn hours copying fields from one place into another. We take any data — JSON, CSV, PDF, résumé, pasted text — and any template — Word, Excel, PDF — and return a finished, correctly-formatted document.',
+    chips: ['Word · Excel · PDF', 'AI + rule-based', 'REST API'],
+    accent: 'green' as const,
+    to: '/products#automation',
   },
 ];
 
@@ -100,8 +137,9 @@ export const Home: React.FC = () => {
               regulation is tightest, processes are slowest, and the cost of getting it wrong is highest.
             </p>
             <p className="text-navy-300 text-base leading-relaxed mb-10 max-w-3xl">
-              We work across three regulated domains. Choose the one that's yours to see how we're
-              rebuilding its most manual workflows around AI that practitioners actually trust.
+              We build AI platforms for three regulated industries — and focused productivity tools for the
+              people who work in them. Start with the domain or tool that's yours, and see how we rebuild its
+              most manual workflows around AI that practitioners actually trust.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#domains" className="btn-primary text-center shadow-lg shadow-teal/20">
@@ -198,6 +236,56 @@ export const Home: React.FC = () => {
 
                   <div className={`inline-flex items-center gap-2 text-sm font-bold ${a.text}`}>
                     Explore the {d.name} domain
+                    <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── PRODUCTIVITY & AUTOMATION ────────────────────────────────────── */}
+      <section id="tools" className="bg-surface py-16 md:py-24 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <div className="eyebrow mb-4">Productivity &amp; Automation</div>
+            <h2>Focused Tools for the People Who Do the Work</h2>
+            <p className="text-secondary max-w-2xl mx-auto mt-4 text-lg">
+              Beyond our regulated-industry platforms, we build sharp, single-purpose tools that make skilled
+              work faster — sold directly to the practitioner.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {TOOLS.map((t) => {
+              const a = ACCENT[t.accent];
+              return (
+                <Link
+                  key={t.name}
+                  to={t.to}
+                  className={`group bg-white rounded-2xl border-2 border-gray-100 ${a.hoverBorder} shadow-sm hover:shadow-xl p-8 flex flex-col transition-all duration-200 hover:-translate-y-1`}
+                >
+                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center text-3xl mb-6 ${a.iconWrap}`}>
+                    {t.icon}
+                  </div>
+                  <div className={`text-xs font-semibold uppercase tracking-wider ${a.text} mb-2`}>
+                    Product
+                  </div>
+                  <h3 className="font-bold text-2xl text-body mb-2">{t.name}</h3>
+                  <p className={`text-sm font-medium ${a.text} mb-4`}>{t.tagline}</p>
+                  <p className="text-secondary text-sm leading-relaxed mb-6 flex-1">{t.problem}</p>
+
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {t.chips.map((c) => (
+                      <span key={c} className={`text-xs font-medium px-2.5 py-1 rounded-full ${a.chip}`}>
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className={`inline-flex items-center gap-2 text-sm font-bold ${a.text}`}>
+                    Learn more
                     <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
                   </div>
                 </Link>

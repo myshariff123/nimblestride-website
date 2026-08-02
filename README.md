@@ -8,15 +8,24 @@ Marketing site for [Nimblestride Inc.](https://nimblestride.ca), built with Reac
 
 ## Products
 
-The site is organized around **three regulated domains**, one product each:
+The site is organized in **two tiers**: regulated-industry platforms (one per domain) and productivity tools.
 
-| Domain | Product | Live Platform | Detail Page | Description |
+**Tier 1 — Regulated-Industry Platforms**
+
+| Domain | Product | Live Platform | Detail | Description |
 |---|---|---|---|---|
 | **Insurance** | **ClearBind** | [clearbind.ca](https://clearbind.ca) | `/products/clearbind` | AI-powered submission intake & appetite matching for Canadian P&C insurance MGAs and brokers |
 | **Banking & Finance** | **ClearMRM** | [clearmrm.nimblestride.ca](https://clearmrm.nimblestride.ca) | `/products/clearmrm` | AI model risk management for Canadian FRFIs, purpose-built for OSFI Guideline E-23 |
 | **Energy & Infrastructure** | **GridWitness** | `/portal` (in-app) | `/solutions` | Hardware-anchored ESG compliance — telemetry, WORM carbon accounting, and OSFI B-15 / TCFD / IFRS S2 reports for data centres |
 
-> **Note:** _New In Canada Mortgage_ was removed from the corporate site in Aug 2026 (product held back from the marketing narrative). GridWitness "access platform" CTAs now point to the in-app `/portal` route rather than a raw-IP URL.
+**Tier 2 — Productivity & Automation**
+
+| Category | Product | Live Platform | Detail | Description |
+|---|---|---|---|---|
+| **Agile Delivery** | **Cadence** | [cadence.nimblestride.ca](https://cadence.nimblestride.ca) | `/products#agile-delivery` | Personal agile co-pilot — role- and day-specific playbooks across SAFe, Scrum, Kanban, LeSS, Nexus & Scrumban |
+| **Back-office Automation** | **CustomTask** | [customtask.nimblestride.ca](https://customtask.nimblestride.ca) | `/products#automation` | Template-population engine — any data + any template → a finished, formatted document |
+
+> **Note:** _New In Canada Mortgage_ was removed from the corporate site in Aug 2026. GridWitness "access platform" CTAs point to the in-app `/portal` route rather than a raw-IP URL.
 
 ## Contact
 

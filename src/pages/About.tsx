@@ -8,8 +8,8 @@ export const About: React.FC = () => {
     <>
       <SEOHelmet
         title="About NimbleStride — Canadian AI Innovation Company, Edmonton Alberta"
-        description="NimbleStride is an Edmonton-based technology company building AI-powered platforms for Canada's most regulated industries across three domains: Insurance (ClearBind), Banking & Finance (ClearMRM, OSFI E-23), and Energy & Infrastructure (GridWitness ESG)."
-        keywords="NimbleStride about, Canadian AI company, Edmonton technology startup, InsurTech Canada, RegTech Alberta, model risk management, ESG compliance, NRC IRAP, Alberta Innovates"
+        description="NimbleStride is an Edmonton-based technology company building AI-powered platforms for Canada's regulated industries — Insurance (ClearBind), Banking & Finance (ClearMRM, OSFI E-23), and Energy & Infrastructure (GridWitness) — plus productivity tools Cadence and CustomTask."
+        keywords="NimbleStride about, Canadian AI company, Edmonton technology startup, InsurTech Canada, RegTech Alberta, model risk management, ESG compliance, agile delivery, automation, NRC IRAP, Alberta Innovates"
         canonicalUrl="https://nimblestride.ca/about"
         path="/about"
       />
@@ -89,10 +89,14 @@ export const About: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="eyebrow mb-4">Our Portfolio</div>
-            <h2>Three Products. Three Regulated Domains.</h2>
+            <h2>Regulated-Industry Platforms & Productivity Tools</h2>
+            <p className="text-secondary max-w-2xl mx-auto mt-4">
+              Three platforms built for Canada's regulated industries, plus focused productivity tools sold
+              directly to the practitioner.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 icon: '🛡️',
@@ -129,6 +133,30 @@ export const About: React.FC = () => {
                 link: '/solutions',
                 accentBorder: 'border-purple',
                 accentText: 'text-purple',
+              },
+              {
+                icon: '🧭',
+                name: 'Cadence',
+                domain: 'Productivity · Agile Delivery',
+                status: 'Live',
+                statusColor: 'bg-blue text-white',
+                description:
+                  'A personal agile co-pilot that tells each delivery role exactly what to do today — deliverables, do\'s, don\'ts and the gates they own — dated to their sprint or PI across SAFe, Scrum, Kanban, LeSS, Nexus and Scrumban. 28 roles, 6 frameworks, sold to the individual practitioner.',
+                link: '/products#agile-delivery',
+                accentBorder: 'border-blue',
+                accentText: 'text-blue',
+              },
+              {
+                icon: '⚙️',
+                name: 'CustomTask',
+                domain: 'Productivity · Back-office Automation',
+                status: 'Live Demo',
+                statusColor: 'bg-green-dark text-white',
+                description:
+                  'A general-purpose template-population engine — bring any data (JSON, CSV, PDF, résumé, pasted text) and any template (Word, Excel, PDF, HTML) and get back a finished, correctly formatted document. Claude-powered extraction with an always-on rule-based fallback, plus a REST API.',
+                link: '/products#automation',
+                accentBorder: 'border-green-dark',
+                accentText: 'text-green-dark',
               },
             ].map((p) => (
               <div key={p.name} className={`card p-7 border-t-4 ${p.accentBorder} flex flex-col`}>
@@ -311,7 +339,7 @@ export const About: React.FC = () => {
                   { label: 'Founded', value: '2024' },
                   { label: 'Jurisdiction', value: 'Alberta, Canada' },
                   { label: 'Headquarters', value: 'Edmonton, Alberta, Canada' },
-                  { label: 'Sector Focus', value: 'Insurance · Banking & Finance · Energy & Infrastructure' },
+                  { label: 'Sector Focus', value: 'Insurance · Banking & Finance · Energy & Infrastructure · Productivity' },
                 ].map((d) => (
                   <div key={d.label}>
                     <dt className="font-bold text-body">{d.label}</dt>

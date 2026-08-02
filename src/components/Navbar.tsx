@@ -50,6 +50,20 @@ export const Navbar: React.FC = () => {
       icon: '⚡',
       accent: 'text-purple',
     },
+    {
+      path: '/products#agile-delivery',
+      label: 'Cadence',
+      sub: 'Productivity · Agile Delivery Co-pilot',
+      icon: '🧭',
+      accent: 'text-blue',
+    },
+    {
+      path: '/products#automation',
+      label: 'CustomTask',
+      sub: 'Productivity · Back-office Automation',
+      icon: '⚙️',
+      accent: 'text-green-dark',
+    },
   ];
 
   const productsActive =
