@@ -1,79 +1,68 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { SEOHelmet } from '../components';
 
-const PRODUCTS = [
+/**
+ * Domain-first landing page.
+ * The home page surfaces the three regulated DOMAINS we serve — not individual
+ * products. Visitors choose a domain to discover the platform behind it.
+ * Full JIT-safe Tailwind class strings live in the ACCENT map (no template classes).
+ */
+const ACCENT = {
+  teal: {
+    text: 'text-teal',
+    iconWrap: 'bg-teal-light text-teal',
+    chip: 'bg-teal-light text-teal',
+    hoverBorder: 'hover:border-teal',
+    dot: 'bg-teal',
+  },
+  amber: {
+    text: 'text-amber',
+    iconWrap: 'bg-amber-light text-amber',
+    chip: 'bg-amber-light text-amber',
+    hoverBorder: 'hover:border-amber',
+    dot: 'bg-amber',
+  },
+  purple: {
+    text: 'text-purple',
+    iconWrap: 'bg-purple/10 text-purple',
+    chip: 'bg-purple/10 text-purple',
+    hoverBorder: 'hover:border-purple',
+    dot: 'bg-purple',
+  },
+} as const;
+
+const DOMAINS = [
   {
     icon: '🛡️',
-    name: 'ClearBind',
-    domain: 'Insurance',
-    tagline: 'MGA Underwriting Intelligence',
-    description:
-      'AI-powered submission intake for Canadian MGA underwriters and commercial brokers. ClearBind automatically extracts, enriches, and triages commercial insurance submissions — turning hours of manual review into seconds of intelligent pre-screening.',
-    features: [
-      'AI field extraction from broker emails and PDFs',
-      'Live API enrichment — Google Reviews, NAICS, adverse media, domain security',
-      'Ghost Underwriter analysis with 500-year combined expertise',
-      'Carrier appetite check and client-ready risk summaries',
-      'BrokerBridge: complete broker workflow module',
-    ],
-    status: 'Live Beta',
-    statusColor: 'bg-green-dark text-white',
-    accentBorder: 'border-teal',
-    accentText: 'text-teal',
-    accentBg: 'bg-teal-light',
-    cta: '/products/clearbind',
-    ctaLabel: 'Explore ClearBind',
-    audience: 'MGA Underwriters · Commercial Brokers',
+    name: 'Insurance',
+    tagline: 'AI underwriting intelligence for MGAs & brokers',
+    problem:
+      'Canadian MGAs and commercial brokers still triage submissions by hand. We turn hours of manual review into seconds of intelligent pre-screening — extraction, enrichment, and carrier-appetite matching before a human opens a single attachment.',
+    chips: ['P&C Commercial', 'MGA Underwriting', 'Broker Intake'],
+    accent: 'teal' as const,
+    to: '/products#insurance',
   },
   {
     icon: '🏦',
-    name: 'ClearMRM',
-    domain: 'Banking & Finance',
-    tagline: 'OSFI E-23 Model Risk Management',
-    description:
-      'AI-powered model risk management platform for Canadian FRFIs — purpose-built for OSFI Guideline E-23 (effective May 1, 2027). Complete model inventory, automated Tier 1/2/3 risk rating, validation workflows, vendor governance, and an immutable audit trail. From Excel to compliant in 30 days.',
-    features: [
-      'Model inventory — 15+ fields, risk tier, validation status',
-      'Automated Tier 1/2/3 risk rating wizard (OSFI §3.2)',
-      'Validation workflow — 6-state compliance machine (§3.3)',
-      'Third-party / vendor model governance (OSFI E-23 §5)',
-      'OSFI Examiner Export — 6-page Supervisory Review Package PDF',
-      'Immutable audit trail — append-only, PostgreSQL trigger (§4.4)',
-      'AI board reports, smart fill & remediation advisor (AWS Bedrock)',
-    ],
-    status: 'Live',
-    statusColor: 'bg-amber text-white',
-    accentBorder: 'border-amber',
-    accentText: 'text-amber',
-    accentBg: 'bg-amber-light',
-    cta: '/products/clearmrm',
-    ctaLabel: 'Explore ClearMRM',
-    audience: 'CROs · Head of Model Risk · Canadian FRFIs',
+    name: 'Banking & Finance',
+    tagline: 'Model risk management for Canadian FRFIs',
+    problem:
+      'OSFI Guideline E-23 makes model risk governance mandatory by May 2027 — yet most institutions still run their model inventory in spreadsheets. We take FRFIs from Excel to examiner-ready, with an auditable trail, in about 30 days.',
+    chips: ['OSFI E-23', 'Model Risk', 'All FRFIs'],
+    accent: 'amber' as const,
+    to: '/products#banking-finance',
   },
   {
     icon: '⚡',
-    name: 'GridWitness',
-    domain: 'Energy & Infrastructure',
-    tagline: 'ESG & Climate Compliance for Data Centres',
-    description:
-      'Hardware-anchored ESG compliance evidence for data centres and AI compute infrastructure. GridWitness reads directly from server hardware to generate cryptographically verified Scope 1/2/3 emissions data — satisfying OSFI B-15, California SB 253, EU CSRD, and ISSB S2 obligations with a single deployment.',
-    features: [
-      'Real-time hardware telemetry via IPMI and Redfish',
-      'Cryptographic attestation — tamper-evident WORM ledger',
-      'Multi-framework output: OSFI B-15, Bill C-59, SB 253, CSRD, ISSB S2',
-      'Scope 1, 2 & 3 tracking with Science-Based Targets',
-      'Big4 audit firm integration and assurance-grade evidence packages',
-    ],
-    status: 'Pilot Stage',
-    statusColor: 'bg-purple text-white',
-    accentBorder: 'border-purple',
-    accentText: 'text-purple',
-    accentBg: 'bg-purple/10',
-    cta: '/solutions',
-    ctaLabel: 'Explore GridWitness',
-    audience: 'Financial Institutions · Data Centre Operators',
+    name: 'Energy & Infrastructure',
+    tagline: 'Hardware-anchored ESG & climate compliance',
+    problem:
+      'The data-centre and AI-compute buildout collides with OSFI B-15 and global climate-disclosure rules. We read emissions evidence directly from server hardware and package it as tamper-evident, assurance-grade reports.',
+    chips: ['OSFI B-15', 'ISSB S2 / CSRD', 'Data Centres'],
+    accent: 'purple' as const,
+    to: '/products#energy-infrastructure',
   },
 ];
 
@@ -82,60 +71,77 @@ export const Home: React.FC = () => {
     <>
       <SEOHelmet
         title="AI-Powered Platforms for Canada's Regulated Industries"
-        description="NimbleStride builds intelligent software for Canada's most regulated industries across three domains — Insurance (ClearBind MGA underwriting), Banking & Model Risk (ClearMRM OSFI E-23), and Energy & Infrastructure (GridWitness ESG compliance). Edmonton, Alberta."
-        keywords="NimbleStride, Canadian InsurTech, ClearBind MGA, ClearMRM OSFI E-23, GridWitness ESG compliance, model risk management, RegTech Canada, Edmonton Alberta"
+        description="NimbleStride builds intelligent software for Canada's most regulated industries across three domains — Insurance, Banking & Finance, and Energy & Infrastructure. Edmonton, Alberta."
+        keywords="NimbleStride, Canadian InsurTech, OSFI E-23 model risk, ESG compliance, RegTech Canada, regulated industries software, Edmonton Alberta"
         canonicalUrl="https://nimblestride.ca/"
         path="/"
       />
 
       {/* ─── HERO ─────────────────────────────────────────────────────────── */}
-      <section className="relative bg-navy text-white py-16 md:py-24 lg:py-32 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-navy-900 via-navy to-navy-800 text-white py-20 md:py-28 lg:py-36 overflow-hidden">
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-teal" aria-hidden="true" />
-        <div className="absolute right-0 top-0 w-96 h-96 bg-teal/5 rounded-full translate-x-1/2 -translate-y-1/2" aria-hidden="true" />
+        <div className="absolute -right-20 -top-20 w-[28rem] h-[28rem] bg-teal/10 rounded-full blur-3xl" aria-hidden="true" />
+        <div className="absolute right-1/4 bottom-0 w-72 h-72 bg-purple/10 rounded-full blur-3xl" aria-hidden="true" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
-            <div className="eyebrow mb-6">Edmonton, Alberta · Canadian Innovation</div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 mb-8">
+              <span className="w-2 h-2 rounded-full bg-teal animate-pulse" aria-hidden="true" />
+              <span className="text-xs font-medium tracking-wide text-teal-hover">
+                Edmonton, Alberta · Canadian Innovation
+              </span>
+            </div>
             <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
-              Building the Innovation Stack for Canada's{' '}
+              The Innovation Stack for Canada's{' '}
               <span className="text-teal">Regulated Industries</span>
             </h1>
             <p className="text-navy-200 text-lg md:text-xl font-light leading-relaxed mb-8 max-w-3xl">
-              NimbleStride is a Canadian technology company that applies AI and machine intelligence to the
-              problems that matter most — where regulation is tightest, processes are slowest, and the cost
-              of getting it wrong is highest.
+              NimbleStride applies AI and machine intelligence to the problems that matter most — where
+              regulation is tightest, processes are slowest, and the cost of getting it wrong is highest.
             </p>
             <p className="text-navy-300 text-base leading-relaxed mb-10 max-w-3xl">
-              We operate three products across three regulated domains — insurance, banking &amp; model risk,
-              and energy &amp; infrastructure. Each follows the same playbook: find a regulated Canadian industry
-              running on manual processes, apply AI precisely where it creates the most durable value, and ship
-              something practitioners actually want to use.
+              We work across three regulated domains. Choose the one that's yours to see how we're
+              rebuilding its most manual workflows around AI that practitioners actually trust.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/products" className="btn-primary text-center">
-                See Our Products
-              </Link>
-              <Link to="/about" className="btn-secondary text-center">
+              <a href="#domains" className="btn-primary text-center shadow-lg shadow-teal/20">
+                Explore Our Domains
+              </a>
+              <Link to="/about" className="btn-secondary text-center border-white/30 text-white hover:bg-white/10">
                 Our Story
               </Link>
+            </div>
+
+            {/* Domain quick-links */}
+            <div className="flex flex-wrap gap-3 mt-12">
+              {DOMAINS.map((d) => (
+                <Link
+                  key={d.name}
+                  to={d.to}
+                  className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-navy-200 hover:border-teal/50 hover:text-white transition-colors"
+                >
+                  <span>{d.icon}</span>
+                  {d.name}
+                </Link>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* ─── STATS BAR ────────────────────────────────────────────────────── */}
-      <section className="bg-navy-800 text-white py-8 md:py-10">
+      <section className="bg-navy-800 text-white py-8 md:py-10 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-3xl md:text-4xl font-bold text-teal mb-1">3</div>
-              <p className="text-navy-200 text-sm font-medium">Active Products</p>
-              <p className="text-navy-300 text-xs mt-1">InsurTech · RegTech · Climate/ESG</p>
-            </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-teal mb-1">3</div>
               <p className="text-navy-200 text-sm font-medium">Regulated Domains</p>
               <p className="text-navy-300 text-xs mt-1">Insurance · Banking &amp; Finance · Energy</p>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-teal mb-1">100%</div>
+              <p className="text-navy-200 text-sm font-medium">Canadian Data Residency</p>
+              <p className="text-navy-300 text-xs mt-1">AWS ca-central-1 · PIPEDA compliant</p>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold text-teal mb-1">1</div>
@@ -151,69 +157,52 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── PRODUCTS ─────────────────────────────────────────────────────── */}
-      <section className="bg-white py-14 md:py-24">
+      {/* ─── DOMAINS ──────────────────────────────────────────────────────── */}
+      <section id="domains" className="bg-white py-16 md:py-24 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
-            <div className="eyebrow mb-4">Our Product Portfolio</div>
-            <h2>Three Products. Three Regulated Domains. One Mission.</h2>
+            <div className="eyebrow mb-4">Where We Work</div>
+            <h2>Three Regulated Domains. Pick Yours.</h2>
             <p className="text-secondary max-w-2xl mx-auto mt-4 text-lg">
-              Each NimbleStride product targets a distinct regulated Canadian market — Insurance, Banking &amp;
-              Finance, and Energy &amp; Infrastructure — but all share the same design principle: AI that augments
-              expert judgment without replacing it.
+              We don't lead with product names — we lead with the problem. Choose the domain that
+              matches your world, and we'll show you the platform we built for it.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {PRODUCTS.map((p) => (
-              <div
-                key={p.name}
-                className={`card p-8 border-t-4 ${p.accentBorder} flex flex-col`}
-              >
-                <div className="flex items-start justify-between mb-5">
-                  <span className="text-4xl">{p.icon}</span>
-                  <span className={`text-xs font-bold px-2.5 py-1 rounded-full ${p.statusColor}`}>
-                    {p.status}
-                  </span>
-                </div>
-
-                <div className={`text-xs font-semibold uppercase tracking-wider ${p.accentText} mb-1`}>
-                  {p.domain}
-                </div>
-                <h3 className="font-bold text-xl text-body mb-1">{p.name}</h3>
-                <p className={`text-sm font-medium ${p.accentText} mb-4`}>{p.tagline}</p>
-
-                <p className="text-secondary text-sm leading-relaxed mb-5">{p.description}</p>
-
-                <ul className="space-y-2 mb-6 flex-1">
-                  {p.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-secondary">
-                      <CheckCircle2 size={15} className={`${p.accentText} flex-shrink-0 mt-0.5`} />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className={`text-xs text-muted px-3 py-2 rounded-lg ${p.accentBg} mb-5`}>
-                  <span className="font-semibold">For: </span>{p.audience}
-                </div>
-
+            {DOMAINS.map((d) => {
+              const a = ACCENT[d.accent];
+              return (
                 <Link
-                  to={p.cta}
-                  className={`flex items-center justify-center gap-2 w-full py-2.5 rounded-md text-sm font-bold border-2 ${p.accentBorder} ${p.accentText} hover:${p.accentBg} transition-colors`}
+                  key={d.name}
+                  to={d.to}
+                  className={`group bg-white rounded-2xl border-2 border-gray-100 ${a.hoverBorder} shadow-sm hover:shadow-xl p-8 flex flex-col transition-all duration-200 hover:-translate-y-1`}
                 >
-                  {p.ctaLabel}
-                  <ArrowRight size={14} />
-                </Link>
-              </div>
-            ))}
-          </div>
+                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center text-3xl mb-6 ${a.iconWrap}`}>
+                    {d.icon}
+                  </div>
+                  <div className={`text-xs font-semibold uppercase tracking-wider ${a.text} mb-2`}>
+                    Domain
+                  </div>
+                  <h3 className="font-bold text-2xl text-body mb-2">{d.name}</h3>
+                  <p className={`text-sm font-medium ${a.text} mb-4`}>{d.tagline}</p>
+                  <p className="text-secondary text-sm leading-relaxed mb-6 flex-1">{d.problem}</p>
 
-          <div className="text-center mt-10">
-            <Link to="/products" className="btn-primary inline-flex items-center gap-2">
-              Full Product Overview
-              <ArrowRight size={16} />
-            </Link>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {d.chips.map((c) => (
+                      <span key={c} className={`text-xs font-medium px-2.5 py-1 rounded-full ${a.chip}`}>
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className={`inline-flex items-center gap-2 text-sm font-bold ${a.text}`}>
+                    Explore the {d.name} domain
+                    <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -225,7 +214,7 @@ export const Home: React.FC = () => {
             <div>
               <div className="eyebrow mb-5">Our Vision</div>
               <h2 className="text-white mb-6">
-                From Three Products to a Thousand — One Regulated Industry at a Time
+                From Three Domains to Many — One Regulated Industry at a Time
               </h2>
               <p className="text-navy-200 leading-relaxed mb-5">
                 Canada is one of the most highly regulated economies in the world. Financial services, insurance,
@@ -240,8 +229,8 @@ export const Home: React.FC = () => {
               <p className="text-navy-200 leading-relaxed">
                 NimbleStride's playbook is repeatable: identify where Canadian regulation meets outdated
                 process; apply AI precisely; ship something practitioners trust. We've done it three times.
-                We intend to do it many more times — across every domain where Canadian institutions and
-                citizens are underserved by the software available to them.
+                We intend to do it many more — across every domain where Canadian institutions and citizens
+                are underserved by the software available to them.
               </p>
             </div>
 
@@ -267,15 +256,15 @@ export const Home: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div className="bg-teal/20 rounded-lg p-4 text-center">
                   <div className="text-teal font-bold text-lg">Insurance</div>
-                  <div className="text-navy-300 text-xs mt-1">ClearBind</div>
+                  <div className="text-navy-300 text-xs mt-1">Underwriting intelligence</div>
                 </div>
                 <div className="bg-amber/20 rounded-lg p-4 text-center">
                   <div className="text-amber font-bold text-lg">Banking &amp; Finance</div>
-                  <div className="text-navy-300 text-xs mt-1">ClearMRM</div>
+                  <div className="text-navy-300 text-xs mt-1">Model risk &amp; OSFI E-23</div>
                 </div>
                 <div className="bg-purple/20 rounded-lg p-4 text-center">
                   <div className="text-purple font-bold text-lg">Energy &amp; Infra.</div>
-                  <div className="text-navy-300 text-xs mt-1">GridWitness</div>
+                  <div className="text-navy-300 text-xs mt-1">ESG &amp; climate compliance</div>
                 </div>
               </div>
 
@@ -309,7 +298,7 @@ export const Home: React.FC = () => {
               },
               {
                 title: 'Model Risk Mandate',
-                body: "OSFI Guideline E-23 makes model risk management mandatory for every Canadian FRFI by May 2027. Most still run their model inventory in spreadsheets — an entire industry needs auditable tooling, fast.",
+                body: 'OSFI Guideline E-23 makes model risk management mandatory for every Canadian FRFI by May 2027. Most still run their model inventory in spreadsheets — an entire industry needs auditable tooling, fast.',
               },
               {
                 title: 'P&C Insurance Gap',
@@ -320,7 +309,7 @@ export const Home: React.FC = () => {
                 body: "Alberta's data-centre and AI-compute buildout collides with OSFI B-15 and climate-disclosure rules, creating a new class of ESG compliance obligation that existing software was never designed to address.",
               },
             ].map((c) => (
-              <div key={c.title} className="card p-6">
+              <div key={c.title} className="card p-6 hover:shadow-md transition-shadow">
                 <h3 className="font-bold text-body text-base mb-3">{c.title}</h3>
                 <p className="text-secondary text-sm leading-relaxed">{c.body}</p>
               </div>
@@ -345,7 +334,7 @@ export const Home: React.FC = () => {
               { name: 'University of Alberta', sub: 'Research Collaboration' },
               { name: 'Schulich School of Business', sub: 'Strategy & Policy' },
             ].map((p) => (
-              <div key={p.name} className="bg-surface rounded-xl p-5 text-center">
+              <div key={p.name} className="bg-surface rounded-xl p-5 text-center hover:bg-teal-light transition-colors">
                 <div className="font-bold text-body text-sm mb-1">{p.name}</div>
                 <div className="text-xs text-muted">{p.sub}</div>
               </div>
@@ -358,17 +347,17 @@ export const Home: React.FC = () => {
       <section className="bg-navy text-white py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="eyebrow mb-4">Get Involved</div>
-          <h2 className="text-white mb-6">Work With Us. Use Our Products. Shape What's Next.</h2>
+          <h2 className="text-white mb-6">Find Your Domain. Solve the Problem. Shape What's Next.</h2>
           <p className="text-navy-200 mb-10 max-w-2xl mx-auto text-lg">
-            Whether you're an MGA underwriter ready to trial ClearBind, a Canadian FRFI facing the OSFI E-23
-            deadline, a data-centre operator with ESG compliance obligations, or a potential partner —
-            we'd like to hear from you.
+            Whether you're an MGA underwriter, a Canadian FRFI facing the OSFI E-23 deadline, a data-centre
+            operator with ESG obligations, or a potential partner — start with your domain, and we'll take
+            it from there.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/products" className="btn-primary">
-              Explore Our Products
-            </Link>
-            <Link to="/contact" className="btn-secondary">
+            <a href="#domains" className="btn-primary">
+              Explore Our Domains
+            </a>
+            <Link to="/contact" className="btn-secondary border-white/30 text-white hover:bg-white/10">
               Contact Us
             </Link>
           </div>

@@ -1,9 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { SEOHelmet, HeroSection } from '../components';
 
 export const Products: React.FC = () => {
+  const location = useLocation();
+
+  // Scroll to the domain section when arriving via a hash link (e.g. /products#insurance).
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.getElementById(location.hash.slice(1));
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [location.hash]);
+
   return (
     <>
       <SEOHelmet
@@ -24,8 +34,8 @@ export const Products: React.FC = () => {
         secondaryCtaTo="/about"
       />
 
-      {/* ─── PRODUCT 1: ClearBind ─────────────────────────────────────────── */}
-      <section className="bg-white py-14 md:py-20">
+      {/* ─── PRODUCT 1: ClearBind (Insurance) ─────────────────────────────── */}
+      <section id="insurance" className="bg-white py-14 md:py-20 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
@@ -115,8 +125,8 @@ export const Products: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── PRODUCT 2: ClearMRM ─────────────────────────────────────────── */}
-      <section className="bg-surface py-14 md:py-20">
+      {/* ─── PRODUCT 2: ClearMRM (Banking & Finance) ──────────────────────── */}
+      <section id="banking-finance" className="bg-surface py-14 md:py-20 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
@@ -201,8 +211,8 @@ export const Products: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── PRODUCT 3: GridWitness ───────────────────────────────────────── */}
-      <section className="bg-white py-14 md:py-20">
+      {/* ─── PRODUCT 3: GridWitness (Energy & Infrastructure) ──────────────── */}
+      <section id="energy-infrastructure" className="bg-white py-14 md:py-20 scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
