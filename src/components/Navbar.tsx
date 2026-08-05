@@ -74,10 +74,16 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Brand */}
-          <Link to="/" className="flex items-center gap-2" aria-label="NimbleStride">
+          <Link to="/" className="flex items-center gap-2.5" aria-label="NimbleStride">
+            <svg width="36" height="36" viewBox="0 0 100 100" className="flex-shrink-0" aria-hidden="true">
+              <rect width="100" height="100" rx="22" fill="#0D1B3E" />
+              <rect x="25" y="26" width="13" height="48" rx="2.5" fill="#FFFFFF" />
+              <rect x="62" y="26" width="13" height="48" rx="2.5" fill="#FFFFFF" />
+              <path d="M25 26 L38 26 L75 74 L62 74 Z" fill="#00B5AD" />
+            </svg>
             <div>
-              <div className="font-bold text-navy text-lg tracking-tight">NIMBLESTRIDE</div>
-              <div className="text-xs text-muted font-light tracking-wide">Canadian Innovation</div>
+              <div className="font-bold text-navy text-lg tracking-tight leading-none">NIMBLESTRIDE</div>
+              <div className="text-xs text-muted font-light tracking-wide mt-0.5">Canadian Innovation</div>
             </div>
           </Link>
 

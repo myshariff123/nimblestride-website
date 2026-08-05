@@ -12,7 +12,14 @@ export const Footer: React.FC = () => {
 
           {/* Brand column */}
           <div className="lg:col-span-2">
-            <div className="font-bold text-white text-xl tracking-tight mb-1">NIMBLESTRIDE</div>
+            <div className="flex items-center gap-2.5 mb-1">
+              <svg width="34" height="34" viewBox="0 0 100 100" className="flex-shrink-0" aria-hidden="true">
+                <rect x="25" y="26" width="13" height="48" rx="2.5" fill="#FFFFFF" />
+                <rect x="62" y="26" width="13" height="48" rx="2.5" fill="#FFFFFF" />
+                <path d="M25 26 L38 26 L75 74 L62 74 Z" fill="#00B5AD" />
+              </svg>
+              <span className="font-bold text-white text-xl tracking-tight">NIMBLESTRIDE</span>
+            </div>
             <div className="text-sm text-teal mb-4 font-medium">
               Intelligent Software for Canada's Regulated Industries
             </div>
