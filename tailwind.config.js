@@ -39,6 +39,12 @@ export default {
         purple: {
           DEFAULT: '#7C3AED',
         },
+        indigo: {
+          DEFAULT: '#4F46E5',
+        },
+        rose: {
+          DEFAULT: '#BE123C',
+        },
       },
       borderColor: {
         gray: {

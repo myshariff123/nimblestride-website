@@ -25,7 +25,18 @@ The site is organized in **two tiers**: regulated-industry platforms (one per do
 | **Agile Delivery** | **Cadence** | [cadence.nimblestride.ca](https://cadence.nimblestride.ca) | `/products#agile-delivery` | Personal agile co-pilot — role- and day-specific playbooks across SAFe, Scrum, Kanban, LeSS, Nexus & Scrumban |
 | **Back-office Automation** | **CustomTask** | [customtask.nimblestride.ca](https://customtask.nimblestride.ca) | `/products#automation` | Template-population engine — any data + any template → a finished, formatted document |
 
-> **Note:** _New In Canada Mortgage_ was removed from the corporate site in Aug 2026. GridWitness "access platform" CTAs point to the in-app `/portal` route rather than a raw-IP URL.
+**Tier 3 — Public Sector & Consumer Fintech**
+
+| Category | Product | Live Platform | Detail | Description |
+|---|---|---|---|---|
+| **Public Sector** | **ClearBid** | _Coming soon (pre-launch)_ | `/products#clearbid` | Mandatory-criteria compliance shredder for Canadian public-sector bids — page-cited matrix of every pass/fail requirement, format rule & deadline from an RFP/ITT/RFQ |
+| **Consumer Fintech** | **Canadian Mortgage Finder** | [newincanadamortgage.ca](https://newincanadamortgage.ca) | `/products#mortgage-finder` | AI mortgage qualification & broker matching for self-employed Canadians and new permanent residents — 80+ data-point intelligence engine (CMHC, OSFI B-20, eligibility) |
+
+## Corporate Structure
+
+NimbleStride is the **AI & software division of the MGR group**, alongside **MGR Infotech Limited** — a Prairie-Canada IT services company (Moose Jaw, SK; serving SK & AB) at [mgr.nimblestride.ca](https://mgr.nimblestride.ca).
+
+> **Note:** GridWitness "access platform" CTAs point to the in-app `/portal` route rather than a raw-IP URL. _Canadian Mortgage Finder_ (formerly surfaced as "New In Canada Mortgage") is re-listed on the corporate site as of Sep 2026.
 
 ## Contact
 

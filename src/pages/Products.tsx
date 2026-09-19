@@ -18,8 +18,8 @@ export const Products: React.FC = () => {
     <>
       <SEOHelmet
         title="Our Products — Regulated Platforms & Productivity Tools"
-        description="NimbleStride's product portfolio: ClearBind (Insurance), ClearMRM (Banking & Finance, OSFI E-23), and GridWitness (Energy & Infrastructure), plus productivity tools Cadence (agile delivery) and CustomTask (back-office automation). Edmonton, Alberta."
-        keywords="ClearBind InsurTech, ClearMRM OSFI E-23, GridWitness ESG compliance, Cadence agile, CustomTask automation, NimbleStride products, Canadian software"
+        description="NimbleStride's product portfolio: ClearBind (Insurance), ClearMRM (Banking & Finance, OSFI E-23), and GridWitness (Energy & Infrastructure), plus productivity tools Cadence (agile delivery) and CustomTask (back-office automation), the ClearBid public-sector bid-compliance tool, and Canadian Mortgage Finder. Edmonton, Alberta."
+        keywords="ClearBind InsurTech, ClearMRM OSFI E-23, GridWitness ESG compliance, Cadence agile, CustomTask automation, ClearBid RFP compliance, Canadian Mortgage Finder, NimbleStride products, Canadian software"
         canonicalUrl="https://nimblestride.ca/products"
         path="/products"
       />
@@ -464,6 +464,179 @@ export const Products: React.FC = () => {
                 </div>
                 <a href="https://customtask.nimblestride.ca" target="_blank" rel="noopener noreferrer" className="bg-green-dark text-white px-4 py-2 rounded-md text-sm font-bold hover:opacity-90 transition-opacity">
                   Open Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── TIER DIVIDER: PUBLIC SECTOR & CONSUMER ───────────────────────── */}
+      <section className="bg-surface pt-10 pb-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="eyebrow mb-3">Public Sector &amp; Consumer Fintech</div>
+          <h2 className="text-body">Platforms Beyond the Core Three Domains</h2>
+          <p className="text-secondary max-w-2xl mx-auto mt-4 text-lg">
+            The same repeatable playbook — Canadian regulation meets manual process, solved with AI — extends
+            to public-sector procurement and consumer mortgage finance.
+          </p>
+        </div>
+      </section>
+
+      {/* ─── PRODUCT 6: ClearBid (Public Sector) ──────────────────────────── */}
+      <section id="clearbid" className="bg-surface py-14 md:py-20 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-4xl">📋</span>
+                <div>
+                  <div className="eyebrow text-indigo">Public Sector · Procurement · Coming Soon</div>
+                  <h2 className="text-body">ClearBid</h2>
+                </div>
+              </div>
+              <p className="text-secondary text-lg leading-relaxed mb-6">
+                A mandatory-criteria compliance shredder for Alberta and Canadian public-sector bids. Upload an
+                RFP, ITT, or RFQ and get back a page-cited compliance matrix of every mandatory requirement,
+                submission-format rule, and hard deadline — in under 10 minutes instead of a day and a half of
+                highlighting PDFs.
+              </p>
+              <p className="text-secondary leading-relaxed mb-8">
+                Public bids are pass/fail on mandatory criteria before anyone reads the technical response — a
+                single missed "shall" (an insurance minimum, a required certification, a signed form, a page
+                limit) is an automatic disqualification at bid opening. ClearBid does one narrow job well: find
+                every pass/fail requirement, cite the page, and tell the bidder whether they can actually clear
+                it. Built for the small contractors that enterprise proposal software prices out.
+              </p>
+
+              <div className="flex gap-4 flex-wrap">
+                <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
+                  Join the Early-Access List
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="card p-6 border-l-4 border-indigo">
+                <h3 className="font-bold text-body mb-3">What ClearBid Does</h3>
+                <ul className="space-y-2 text-sm text-secondary">
+                  {[
+                    'Extracts every pass/fail "shall / must" mandatory requirement with page citations',
+                    'Flags submission-format rules — page limits, required forms, signatures, formatting',
+                    'Surfaces hard deadlines and every key date in the document',
+                    'Insurance minimums, certifications, and eligibility gates called out explicitly',
+                    'Go / No-Go clearance view — can the bidder actually meet each mandatory?',
+                    'Human-in-the-loop review against the source PDF before delivery — no fabricated data',
+                  ].map((f) => (
+                    <li key={f} className="flex gap-2">
+                      <CheckCircle2 size={14} className="text-indigo flex-shrink-0 mt-0.5" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3 text-center text-sm">
+                {['🇨🇦 Public Sector', '⚖️ Pass/Fail Criteria', '📄 Page-Cited'].map((f) => (
+                  <div key={f} className="bg-indigo/10 border border-indigo/20 rounded-lg p-3 font-medium text-indigo text-xs">
+                    {f}
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-indigo/10 border border-indigo/20 rounded-lg p-4 flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-bold text-indigo">Status: In Development</p>
+                  <p className="text-xs text-secondary mt-0.5">Pre-launch · Early-access list open</p>
+                </div>
+                <Link to="/contact" className="bg-indigo text-white px-4 py-2 rounded-md text-sm font-bold hover:bg-indigo/90 transition-colors">
+                  Get Early Access
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── PRODUCT 7: Canadian Mortgage Finder (Consumer Fintech) ───────── */}
+      <section id="mortgage-finder" className="bg-white py-14 md:py-20 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-4xl">🏠</span>
+                <div>
+                  <div className="eyebrow text-rose">Consumer Fintech · Mortgage Intelligence · Live</div>
+                  <h2 className="text-body">Canadian Mortgage Finder</h2>
+                </div>
+              </div>
+              <p className="text-secondary text-lg leading-relaxed mb-6">
+                An AI-powered mortgage qualification and broker-matching platform for the two most underserved
+                segments of the Canadian market — self-employed Canadians (whose T4 income doesn't reflect real
+                earnings) and new permanent residents (with no Canadian credit history). Every applicant is
+                free; licensed brokers pay a referral fee on closed mortgages.
+              </p>
+              <p className="text-secondary leading-relaxed mb-8">
+                Each application runs through an AI intelligence engine that generates 80+ data points — CMHC
+                premium, OSFI B-20 stress test, GDS/TDS ratios, amortization scenarios, program eligibility, a
+                lender-tier and approval probability — then routes a complete, broker-ready analysis package to
+                a matched licensed broker.
+              </p>
+
+              <div className="flex gap-4 flex-wrap">
+                <a
+                  href="https://newincanadamortgage.ca"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-flex items-center gap-2"
+                >
+                  Visit newincanadamortgage.ca
+                  <ArrowRight size={16} />
+                </a>
+                <Link to="/contact" className="btn-secondary inline-flex items-center gap-2">
+                  Broker Partnerships
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="card p-6 border-l-4 border-rose">
+                <h3 className="font-bold text-body mb-3">What the Platform Does</h3>
+                <ul className="space-y-2 text-sm text-secondary">
+                  {[
+                    'AI intelligence engine — 80–100+ data points per application',
+                    'CMHC premium, OSFI B-20 stress test, GDS ratio, amortization & land-transfer tax',
+                    'Program eligibility — FTHB Incentive, RRSP HBP, FHSA, newcomer & bank-statement programs',
+                    'Claude-generated broker brief, lender strategy, talking points & document checklist',
+                    '"Path to Approval" improvement scenarios for applications scoring below 80',
+                    'Broker CRM with token-authenticated updates + a live applicant status portal',
+                    '90-day automated lead-recovery email sequence',
+                  ].map((f) => (
+                    <li key={f} className="flex gap-2">
+                      <CheckCircle2 size={14} className="text-rose flex-shrink-0 mt-0.5" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3 text-center text-sm">
+                {['🇨🇦 Self-Employed', '🛬 New Residents', '🤝 Broker Network'].map((f) => (
+                  <div key={f} className="bg-rose/10 border border-rose/20 rounded-lg p-3 font-medium text-rose text-xs">
+                    {f}
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-rose/10 border border-rose/20 rounded-lg p-4 flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-bold text-rose">Status: Live</p>
+                  <p className="text-xs text-secondary mt-0.5">newincanadamortgage.ca · Onboarding broker partners</p>
+                </div>
+                <a href="https://newincanadamortgage.ca" target="_blank" rel="noopener noreferrer" className="bg-rose text-white px-4 py-2 rounded-md text-sm font-bold hover:bg-rose/90 transition-colors">
+                  Open Platform
                 </a>
               </div>
             </div>
