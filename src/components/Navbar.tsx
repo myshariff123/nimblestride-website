@@ -64,6 +64,20 @@ export const Navbar: React.FC = () => {
       icon: '⚙️',
       accent: 'text-green-dark',
     },
+    {
+      path: '/products#clearbid',
+      label: 'ClearBid',
+      sub: 'Public Sector · Bid Compliance',
+      icon: '📋',
+      accent: 'text-indigo',
+    },
+    {
+      path: '/products#mortgage-finder',
+      label: 'Canadian Mortgage Finder',
+      sub: 'Consumer Fintech · Mortgage Intelligence',
+      icon: '🏠',
+      accent: 'text-rose',
+    },
   ];
 
   const productsActive =

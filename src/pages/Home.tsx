@@ -45,6 +45,20 @@ const ACCENT = {
     hoverBorder: 'hover:border-green-dark',
     dot: 'bg-green-dark',
   },
+  indigo: {
+    text: 'text-indigo',
+    iconWrap: 'bg-indigo/10 text-indigo',
+    chip: 'bg-indigo/10 text-indigo',
+    hoverBorder: 'hover:border-indigo',
+    dot: 'bg-indigo',
+  },
+  rose: {
+    text: 'text-rose',
+    iconWrap: 'bg-rose/10 text-rose',
+    chip: 'bg-rose/10 text-rose',
+    hoverBorder: 'hover:border-rose',
+    dot: 'bg-rose',
+  },
 } as const;
 
 const DOMAINS = [
@@ -80,6 +94,31 @@ const DOMAINS = [
   },
 ];
 
+const MORE_PLATFORMS = [
+  {
+    icon: '📋',
+    name: 'ClearBid',
+    tagline: 'Mandatory-criteria compliance for public-sector bids',
+    problem:
+      'Public bids are pass/fail on mandatory criteria before anyone reads the technical response. ClearBid reads an RFP, ITT or RFQ and returns a page-cited matrix of every "shall", every submission-format rule, and every hard deadline — so a single missed requirement never disqualifies a bid at opening.',
+    chips: ['Public Sector', 'Pass/Fail Criteria', 'Page-Cited'],
+    accent: 'indigo' as const,
+    to: '/products#clearbid',
+    status: 'Coming Soon',
+  },
+  {
+    icon: '🏠',
+    name: 'Canadian Mortgage Finder',
+    tagline: 'AI mortgage qualification for underserved Canadians',
+    problem:
+      'Self-employed Canadians and new permanent residents are routinely declined by the banks. This platform qualifies each applicant with an 80+ data-point AI engine — CMHC, OSFI B-20 stress test, program eligibility, approval probability — and routes a broker-ready package to a matched licensed broker.',
+    chips: ['Self-Employed', 'New Residents', 'Broker Network'],
+    accent: 'rose' as const,
+    to: '/products#mortgage-finder',
+    status: 'Live',
+  },
+];
+
 const TOOLS = [
   {
     icon: '🧭',
@@ -108,8 +147,8 @@ export const Home: React.FC = () => {
     <>
       <SEOHelmet
         title="AI-Powered Platforms for Canada's Regulated Industries"
-        description="NimbleStride builds intelligent software for Canada's most regulated industries across three domains — Insurance, Banking & Finance, and Energy & Infrastructure. Edmonton, Alberta."
-        keywords="NimbleStride, Canadian InsurTech, OSFI E-23 model risk, ESG compliance, RegTech Canada, regulated industries software, Edmonton Alberta"
+        description="NimbleStride builds intelligent software for Canada's most regulated industries across three domains — Insurance, Banking & Finance, and Energy & Infrastructure — plus productivity tools and public-sector and consumer-fintech platforms. Edmonton, Alberta."
+        keywords="NimbleStride, Canadian InsurTech, OSFI E-23 model risk, ESG compliance, RegTech Canada, ClearBid public sector bids, Canadian Mortgage Finder, MGR Infotech, regulated industries software, Edmonton Alberta"
         canonicalUrl="https://nimblestride.ca/"
         path="/"
       />
@@ -278,6 +317,59 @@ export const Home: React.FC = () => {
 
                   <div className="flex flex-wrap gap-2 mb-6">
                     {t.chips.map((c) => (
+                      <span key={c} className={`text-xs font-medium px-2.5 py-1 rounded-full ${a.chip}`}>
+                        {c}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className={`inline-flex items-center gap-2 text-sm font-bold ${a.text}`}>
+                    Learn more
+                    <ArrowRight size={15} className="transition-transform group-hover:translate-x-1" />
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── MORE PLATFORMS ───────────────────────────────────────────────── */}
+      <section id="more" className="bg-white py-16 md:py-24 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <div className="eyebrow mb-4">More From NimbleStride</div>
+            <h2>Public Sector &amp; Consumer Fintech</h2>
+            <p className="text-secondary max-w-2xl mx-auto mt-4 text-lg">
+              The same playbook — Canadian regulation meets manual process, solved with AI — reaches beyond our
+              three core domains into public-sector procurement and consumer mortgage finance.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {MORE_PLATFORMS.map((p) => {
+              const a = ACCENT[p.accent];
+              return (
+                <Link
+                  key={p.name}
+                  to={p.to}
+                  className={`group bg-white rounded-2xl border-2 border-gray-100 ${a.hoverBorder} shadow-sm hover:shadow-xl p-8 flex flex-col transition-all duration-200 hover:-translate-y-1`}
+                >
+                  <div className="flex items-start justify-between mb-6">
+                    <div className={`w-14 h-14 rounded-xl flex items-center justify-center text-3xl ${a.iconWrap}`}>
+                      {p.icon}
+                    </div>
+                    <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${a.chip}`}>{p.status}</span>
+                  </div>
+                  <div className={`text-xs font-semibold uppercase tracking-wider ${a.text} mb-2`}>
+                    Platform
+                  </div>
+                  <h3 className="font-bold text-2xl text-body mb-2">{p.name}</h3>
+                  <p className={`text-sm font-medium ${a.text} mb-4`}>{p.tagline}</p>
+                  <p className="text-secondary text-sm leading-relaxed mb-6 flex-1">{p.problem}</p>
+
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {p.chips.map((c) => (
                       <span key={c} className={`text-xs font-medium px-2.5 py-1 rounded-full ${a.chip}`}>
                         {c}
                       </span>

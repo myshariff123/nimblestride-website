@@ -46,7 +46,7 @@ function App() {
           url: 'https://nimblestride.ca',
           logo: 'https://nimblestride.ca/logo.png',
           description:
-            'Canadian technology company building AI-powered platforms across three regulated domains — Insurance (ClearBind, MGA underwriting intelligence), Banking & Model Risk (ClearMRM, OSFI E-23 model risk management), and Energy & Infrastructure (GridWitness, ESG compliance for data centres) — plus productivity tools Cadence (agile delivery co-pilot) and CustomTask (back-office automation).',
+            'Canadian technology company building AI-powered platforms across three regulated domains — Insurance (ClearBind, MGA underwriting intelligence), Banking & Model Risk (ClearMRM, OSFI E-23 model risk management), and Energy & Infrastructure (GridWitness, ESG compliance for data centres) — plus productivity tools Cadence (agile delivery co-pilot) and CustomTask (back-office automation), ClearBid (public-sector bid-compliance), and Canadian Mortgage Finder (AI mortgage qualification). NimbleStride is the AI & software division of the MGR group, alongside MGR Infotech.',
           address: {
             '@type': 'PostalAddress',
             addressLocality: 'Edmonton',

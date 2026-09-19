@@ -8,8 +8,8 @@ export const About: React.FC = () => {
     <>
       <SEOHelmet
         title="About NimbleStride — Canadian AI Innovation Company, Edmonton Alberta"
-        description="NimbleStride is an Edmonton-based technology company building AI-powered platforms for Canada's regulated industries — Insurance (ClearBind), Banking & Finance (ClearMRM, OSFI E-23), and Energy & Infrastructure (GridWitness) — plus productivity tools Cadence and CustomTask."
-        keywords="NimbleStride about, Canadian AI company, Edmonton technology startup, InsurTech Canada, RegTech Alberta, model risk management, ESG compliance, agile delivery, automation, NRC IRAP, Alberta Innovates"
+        description="NimbleStride is an Edmonton-based technology company and the AI & software division of the MGR group, building AI-powered platforms for Canada's regulated industries — Insurance (ClearBind), Banking & Finance (ClearMRM, OSFI E-23), and Energy & Infrastructure (GridWitness) — plus productivity tools Cadence and CustomTask, the ClearBid public-sector bid-compliance tool, and Canadian Mortgage Finder."
+        keywords="NimbleStride about, Canadian AI company, Edmonton technology startup, InsurTech Canada, RegTech Alberta, model risk management, ESG compliance, agile delivery, automation, ClearBid, Canadian Mortgage Finder, MGR Infotech, MGR group, NRC IRAP, Alberta Innovates"
         canonicalUrl="https://nimblestride.ca/about"
         path="/about"
       />
@@ -91,8 +91,9 @@ export const About: React.FC = () => {
             <div className="eyebrow mb-4">Our Portfolio</div>
             <h2>Regulated-Industry Platforms & Productivity Tools</h2>
             <p className="text-secondary max-w-2xl mx-auto mt-4">
-              Three platforms built for Canada's regulated industries, plus focused productivity tools sold
-              directly to the practitioner.
+              Three platforms built for Canada's regulated industries, focused productivity tools sold directly
+              to the practitioner, and emerging platforms in public-sector procurement and consumer mortgage
+              finance.
             </p>
           </div>
 
@@ -157,6 +158,30 @@ export const About: React.FC = () => {
                 link: '/products#automation',
                 accentBorder: 'border-green-dark',
                 accentText: 'text-green-dark',
+              },
+              {
+                icon: '📋',
+                name: 'ClearBid',
+                domain: 'Public Sector · Procurement',
+                status: 'Coming Soon',
+                statusColor: 'bg-indigo text-white',
+                description:
+                  'A mandatory-criteria compliance shredder for Canadian public-sector bids. Upload an RFP, ITT or RFQ and get back a page-cited matrix of every pass/fail requirement, submission-format rule, and hard deadline — so a single missed "shall" never disqualifies a bid at opening.',
+                link: '/products#clearbid',
+                accentBorder: 'border-indigo',
+                accentText: 'text-indigo',
+              },
+              {
+                icon: '🏠',
+                name: 'Canadian Mortgage Finder',
+                domain: 'Consumer Fintech · Mortgage',
+                status: 'Live',
+                statusColor: 'bg-rose text-white',
+                description:
+                  'AI mortgage qualification and broker matching for self-employed Canadians and new permanent residents. An 80+ data-point engine runs CMHC, OSFI B-20 stress test, program eligibility and approval probability, then routes a broker-ready package to a matched licensed broker at newincanadamortgage.ca.',
+                link: '/products#mortgage-finder',
+                accentBorder: 'border-rose',
+                accentText: 'text-rose',
               },
             ].map((p) => (
               <div key={p.name} className={`card p-7 border-t-4 ${p.accentBorder} flex flex-col`}>
@@ -322,8 +347,65 @@ export const About: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── COMPANY DETAILS ──────────────────────────────────────────────── */}
+      {/* ─── THE MGR GROUP ────────────────────────────────────────────────── */}
       <section className="bg-white py-12 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="eyebrow mb-4">Corporate Structure</div>
+              <h2>Part of the MGR Group</h2>
+              <p className="text-secondary mt-5 leading-relaxed mb-5">
+                NimbleStride is the AI &amp; software division of the MGR group, alongside{' '}
+                <strong>MGR Infotech Limited</strong> — a Prairie-Canada IT services company headquartered in
+                Moose Jaw, Saskatchewan, serving businesses across Saskatchewan and Alberta with managed IT and
+                networks, cloud, data backup &amp; security, servers, custom PC builds, and security / CCTV
+                systems.
+              </p>
+              <p className="text-secondary leading-relaxed mb-6">
+                MGR Infotech brings decades of hands-on infrastructure and managed-services experience; NimbleStride
+                brings applied AI for Canada's regulated industries. Together the group spans the full stack — from
+                the network closet to examiner-ready compliance software.
+              </p>
+              <a
+                href="https://mgr.nimblestride.ca"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary inline-flex items-center gap-2"
+              >
+                Visit MGR Infotech
+                <ArrowRight size={16} />
+              </a>
+            </div>
+
+            <div className="card p-8">
+              <h3 className="font-bold text-body mb-5">The Group at a Glance</h3>
+              <ul className="space-y-4 text-sm text-secondary">
+                {[
+                  {
+                    title: 'MGR Infotech Limited',
+                    body: 'IT services & equipment — managed IT, cloud, data backup & security, servers, computer repair & custom PC builds, security / CCTV. Moose Jaw, SK · serving SK & AB. mgr.nimblestride.ca',
+                  },
+                  {
+                    title: 'NimbleStride',
+                    body: 'The AI & software division — regulated-industry platforms (ClearBind, ClearMRM, GridWitness), productivity tools (Cadence, CustomTask), and emerging platforms (ClearBid, Canadian Mortgage Finder). Edmonton, AB.',
+                  },
+                ].map((item) => (
+                  <li key={item.title} className="flex gap-3">
+                    <span className="text-teal font-bold flex-shrink-0">·</span>
+                    <div>
+                      <p className="font-bold text-body">{item.title}</p>
+                      <p className="mt-0.5">{item.body}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── COMPANY DETAILS ──────────────────────────────────────────────── */}
+      <section className="bg-surface py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
             <div className="eyebrow mb-4">Company Details</div>
@@ -339,7 +421,7 @@ export const About: React.FC = () => {
                   { label: 'Founded', value: '2024' },
                   { label: 'Jurisdiction', value: 'Alberta, Canada' },
                   { label: 'Headquarters', value: 'Edmonton, Alberta, Canada' },
-                  { label: 'Sector Focus', value: 'Insurance · Banking & Finance · Energy & Infrastructure · Productivity' },
+                  { label: 'Sector Focus', value: 'Insurance · Banking & Finance · Energy & Infrastructure · Productivity · Public Sector · Consumer Fintech' },
                 ].map((d) => (
                   <div key={d.label}>
                     <dt className="font-bold text-body">{d.label}</dt>
