@@ -9,7 +9,7 @@ export const ClearBind: React.FC = () => {
       <SEOHelmet
         title="ClearBind — MGA Underwriting Intelligence Platform | NimbleStride"
         description="ClearBind automates commercial insurance submission intake for Canadian MGAs. AI field extraction, live enrichment, Ghost Underwriter analysis, BrokerBridge — all PIPEDA compliant on AWS ca-central-1."
-        keywords="ClearBind, MGA underwriting AI, insurance submission automation, commercial lines AI, BrokerBridge, CapacityLens, Canadian InsurTech, MGA platform Alberta"
+        keywords="ClearBind, MGA underwriting AI, insurance submission automation, commercial lines AI, BrokerBridge, CapacityLens, Canadian InsurTech, MGA platform Canada"
         canonicalUrl="https://nimblestride.ca/products/clearbind"
         path="/products/clearbind"
       />
@@ -79,7 +79,7 @@ export const ClearBind: React.FC = () => {
               <p className="text-teal text-sm font-medium mb-4">MGA Submission Intake & Triage</p>
               <p className="text-secondary text-sm leading-relaxed mb-5">
                 The core module. Receives broker submissions by email (via Power Automate) or PDF upload,
-                extracts all underwriting fields using GPT-4o, enriches with live API data, classifies the
+                extracts all underwriting fields using AWS Bedrock Claude, enriches with live API data, classifies the
                 risk, and assigns a triage stage — all automatically.
               </p>
               <ul className="space-y-2 text-sm text-secondary">
@@ -216,7 +216,7 @@ export const ClearBind: React.FC = () => {
             <div className="space-y-4">
               {[
                 { label: 'Data Residency', value: 'AWS ca-central-1 (Canada) — PIPEDA compliant' },
-                { label: 'AI Models', value: 'OpenAI GPT-4o (extraction & enrichment) · AWS Bedrock Claude (PIPEDA layer)' },
+                { label: 'AI Models', value: 'AWS Bedrock Claude (extraction, enrichment & analysis) — ca-central-1, PIPEDA compliant' },
                 { label: 'OCR', value: 'AWS Textract for PDF document processing' },
                 { label: 'Storage', value: 'AWS S3 · PostgreSQL RDS ca-central-1' },
                 { label: 'Auth', value: 'AWS Cognito (ca-central-1) · Multi-tenant JWT isolation' },

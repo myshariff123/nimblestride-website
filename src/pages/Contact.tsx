@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { SEOHelmet } from '../components';
 
 interface LocationState {
@@ -298,7 +298,7 @@ export const Contact: React.FC = () => {
 
                 <div className="pt-4 border-t border-gray-100">
                   <p className="text-xs font-bold text-muted uppercase tracking-wider mb-3">Parent Company</p>
-                  <a href="https://mgr.nimblestride.ca" target="_blank" rel="noopener noreferrer" className="text-sm text-teal hover:text-teal-hover">
+                  <a href="https://www.mgrinfotech.net" target="_blank" rel="noopener noreferrer" className="text-sm text-teal hover:text-teal-hover">
                     MGR Infotech ↗
                   </a>
                   <p className="text-xs text-muted mt-1">info@mgrinfotech.net</p>
@@ -313,6 +313,18 @@ export const Contact: React.FC = () => {
                     <button onClick={() => setActiveForm('clearmrm')} className="flex items-center gap-2 text-amber hover:text-amber/80 w-full text-left">
                       🏦 ClearMRM — OSFI E-23 Pilot →
                     </button>
+                    <a href="https://cadence.nimblestride.ca" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue hover:text-blue/80">
+                      🧭 Cadence — Agile Delivery ↗
+                    </a>
+                    <a href="https://customtask.nimblestride.ca" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-green-dark hover:text-green-dark/80">
+                      ⚙️ CustomTask — Automation ↗
+                    </a>
+                    <Link to="/products#clearbid" className="flex items-center gap-2 text-indigo hover:text-indigo/80">
+                      📋 ClearBid — Public Sector →
+                    </Link>
+                    <a href="https://newincanadamortgage.ca" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-rose hover:text-rose/80">
+                      🏠 Canadian Mortgage Finder ↗
+                    </a>
                   </div>
                 </div>
               </div>

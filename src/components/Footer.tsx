@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
             </div>
             <p className="text-xs text-navy-300 mb-5 leading-relaxed">
               The AI &amp; software division of{' '}
-              <a href="https://mgr.nimblestride.ca" target="_blank" rel="noopener noreferrer" className="text-navy-200 hover:text-teal">
+              <a href="https://www.mgrinfotech.net" target="_blank" rel="noopener noreferrer" className="text-navy-200 hover:text-teal">
                 MGR Infotech
               </a>{' '}
               — turning Canada's most complex regulated workflows into streamlined, AI-powered experiences.
@@ -94,7 +94,7 @@ export const Footer: React.FC = () => {
               <li><Link to="/about" className="hover:text-teal transition-colors">About NimbleStride</Link></li>
               <li><Link to="/contact" className="hover:text-teal transition-colors">Contact Us</Link></li>
               <li>
-                <a href="https://mgr.nimblestride.ca" target="_blank" rel="noopener noreferrer" className="hover:text-teal transition-colors">
+                <a href="https://www.mgrinfotech.net" target="_blank" rel="noopener noreferrer" className="hover:text-teal transition-colors">
                   MGR Infotech (Parent) ↗
                 </a>
               </li>
@@ -126,6 +126,12 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-navy-700 pt-8">
+          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-5 text-xs" aria-label="Legal">
+            <Link to="/privacy" className="text-navy-200 hover:text-teal transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="text-navy-200 hover:text-teal transition-colors">Terms of Use</Link>
+            <Link to="/about" className="text-navy-200 hover:text-teal transition-colors">About</Link>
+            <Link to="/contact" className="text-navy-200 hover:text-teal transition-colors">Contact</Link>
+          </nav>
           <p className="text-xs text-navy-300 text-center max-w-4xl mx-auto leading-relaxed">
             NimbleStride is the AI &amp; software division of MGR Infotech. All regulatory, financial, and compliance
             information is provided for informational purposes only and does not constitute legal, financial, or
