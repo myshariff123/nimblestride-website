@@ -18,8 +18,8 @@ export const Products: React.FC = () => {
     <>
       <SEOHelmet
         title="Our Products — Regulated Platforms & Productivity Tools"
-        description="NimbleStride's product portfolio: ClearBind (Insurance), ClearMRM (Banking & Finance, OSFI E-23), and GridWitness (Energy & Infrastructure), plus productivity tools Cadence (agile delivery) and CustomTask (back-office automation), the ClearBid public-sector bid-compliance tool, and Canadian Mortgage Finder. Edmonton, Alberta."
-        keywords="ClearBind InsurTech, ClearMRM OSFI E-23, GridWitness ESG compliance, Cadence agile, CustomTask automation, ClearBid RFP compliance, Canadian Mortgage Finder, NimbleStride products, Canadian software"
+        description="NimbleStride's product portfolio: ClearBind (Insurance) and ClearMRM (Banking & Finance, OSFI E-23), plus productivity tools Cadence (agile delivery) and CustomTask (back-office automation), the ClearBid public-sector bid-compliance tool, and Canadian Mortgage Finder. A division of MGR Infotech, Moose Jaw, SK."
+        keywords="ClearBind InsurTech, ClearMRM OSFI E-23, Cadence agile, CustomTask automation, ClearBid RFP compliance, Canadian Mortgage Finder, MGR Infotech, NimbleStride products, Canadian software"
         canonicalUrl="https://nimblestride.ca/products"
         path="/products"
       />
@@ -27,7 +27,7 @@ export const Products: React.FC = () => {
       <HeroSection
         eyebrow="Product Portfolio"
         title="Regulated-Industry Platforms & Productivity Tools."
-        subtitle="Two tiers, one playbook. Our regulated-industry platforms serve Insurance, Banking & Finance, and Energy & Infrastructure. Our productivity tools give individual practitioners sharper, faster ways to do skilled work."
+        subtitle="One playbook. Our regulated-industry platforms serve Insurance and Banking & Finance, and our productivity, public-sector and consumer-fintech tools give practitioners sharper, faster ways to work."
         primaryCtaLabel="Contact Us"
         primaryCtaTo="/contact"
         secondaryCtaLabel="About NimbleStride"
@@ -42,7 +42,7 @@ export const Products: React.FC = () => {
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-4xl">🛡️</span>
                 <div>
-                  <div className="eyebrow">Insurance · InsurTech · Product 1 of 3</div>
+                  <div className="eyebrow">Insurance · InsurTech · Product 1 of 2</div>
                   <h2 className="text-body">ClearBind</h2>
                 </div>
               </div>
@@ -133,7 +133,7 @@ export const Products: React.FC = () => {
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-4xl">🏦</span>
                 <div>
-                  <div className="eyebrow text-amber">Banking &amp; Finance · RegTech · Product 2 of 3</div>
+                  <div className="eyebrow text-amber">Banking &amp; Finance · RegTech · Product 2 of 2</div>
                   <h2 className="text-body">ClearMRM</h2>
                 </div>
               </div>
@@ -204,90 +204,6 @@ export const Products: React.FC = () => {
                 </div>
                 <Link to="/contact" state={{ contactType: 'clearmrm' }} className="bg-amber text-white px-4 py-2 rounded-md text-sm font-bold hover:bg-amber-600 transition-colors">
                   Request Access
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── PRODUCT 3: GridWitness (Energy & Infrastructure) ──────────────── */}
-      <section id="energy-infrastructure" className="bg-white py-14 md:py-20 scroll-mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-4xl">⚡</span>
-                <div>
-                  <div className="eyebrow text-purple">Energy &amp; Infrastructure · RegTech · Product 3 of 3</div>
-                  <h2 className="text-body">GridWitness</h2>
-                </div>
-              </div>
-              <p className="text-secondary text-lg leading-relaxed mb-6">
-                Hardware-anchored ESG compliance evidence for data centres and AI compute infrastructure. As
-                regulators in Canada, the US, and EU tighten requirements around infrastructure emissions,
-                financial institutions and data centre operators face a new class of compliance obligation that
-                existing enterprise software was never designed to address. GridWitness fills that gap.
-              </p>
-              <p className="text-secondary leading-relaxed mb-8">
-                GridWitness reads directly from server hardware management controllers, generates
-                cryptographically verified Scope 1/2/3 evidence, and packages it in audit-ready formats aligned
-                with OSFI B-15, California SB 253, EU CSRD, and ISSB S2 — all from infrastructure you
-                already own.
-              </p>
-
-              <div className="flex gap-4 flex-wrap">
-                <Link to="/solutions" className="btn-primary inline-flex items-center gap-2">
-                  Platform Details
-                  <ArrowRight size={16} />
-                </Link>
-                <Link to="/regulatory" className="btn-secondary inline-flex items-center gap-2">
-                  Regulatory Coverage
-                  <ArrowRight size={16} />
-                </Link>
-                <Link to="/portal" className="btn-secondary inline-flex items-center gap-2">
-                  Access GridWitness Portal
-                  <ArrowRight size={16} />
-                </Link>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="card p-6 border-l-4 border-purple">
-                <h3 className="font-bold text-body mb-3">Technical Capabilities</h3>
-                <ul className="space-y-2 text-sm text-secondary">
-                  {[
-                    'Real-time server telemetry via IPMI / Redfish on every compute node',
-                    'Cryptographic hardware attestation — tamper-evident audit chain',
-                    'GHG Protocol Scope 2 calculation at server level (location + market-based)',
-                    'Multi-framework output: OSFI B-15, SB 253, EU CSRD, ISSB S1/S2',
-                    'Big4 audit firm integration — assurance-grade evidence packages',
-                    'On-premise deployment — no data export to third parties required',
-                    'Zero new hardware procurement required',
-                  ].map((f) => (
-                    <li key={f} className="flex gap-2">
-                      <CheckCircle2 size={14} className="text-purple flex-shrink-0 mt-0.5" />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="grid grid-cols-3 gap-3 text-center text-sm">
-                {['🇨🇦 OSFI B-15', '🇺🇸 SB 253', '🇪🇺 CSRD'].map((f) => (
-                  <div key={f} className="bg-purple/10 border border-purple/20 rounded-lg p-3 font-medium text-purple text-xs">
-                    {f}
-                  </div>
-                ))}
-              </div>
-
-              <div className="bg-purple/10 border border-purple/20 rounded-lg p-4 flex items-center justify-between">
-                <div>
-                  <p className="text-sm font-bold text-purple">Status: Pilot Stage</p>
-                  <p className="text-xs text-secondary mt-0.5">Institutional pilot partnerships open</p>
-                </div>
-                <Link to="/contact" state={{ contactType: 'institutional' }} className="bg-purple text-white px-4 py-2 rounded-md text-sm font-bold hover:bg-purple/90 transition-colors">
-                  Request Briefing
                 </Link>
               </div>
             </div>

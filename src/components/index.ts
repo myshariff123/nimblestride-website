@@ -7,5 +7,3 @@ export { Navbar } from './Navbar';
 export { Footer } from './Footer';
 export { Layout } from './Layout';
 export { HeroSection } from './HeroSection';
-export { JurisdictionCard } from './JurisdictionCard';
-export { FrameworkCard } from './FrameworkCard';

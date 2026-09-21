@@ -5,9 +5,9 @@ import { SEOHelmet } from '../components';
 
 /**
  * Domain-first landing page.
- * The home page surfaces the three regulated DOMAINS we serve — not individual
- * products. Visitors choose a domain to discover the platform behind it.
- * Full JIT-safe Tailwind class strings live in the ACCENT map (no template classes).
+ * Surfaces the regulated DOMAINS we serve, our productivity tools, and our
+ * public-sector / consumer-fintech platforms. Full JIT-safe Tailwind class
+ * strings live in the ACCENT map (no template classes).
  */
 const ACCENT = {
   teal: {
@@ -23,13 +23,6 @@ const ACCENT = {
     chip: 'bg-amber-light text-amber',
     hoverBorder: 'hover:border-amber',
     dot: 'bg-amber',
-  },
-  purple: {
-    text: 'text-purple',
-    iconWrap: 'bg-purple/10 text-purple',
-    chip: 'bg-purple/10 text-purple',
-    hoverBorder: 'hover:border-purple',
-    dot: 'bg-purple',
   },
   blue: {
     text: 'text-blue',
@@ -81,16 +74,6 @@ const DOMAINS = [
     chips: ['OSFI E-23', 'Model Risk', 'All FRFIs'],
     accent: 'amber' as const,
     to: '/products#banking-finance',
-  },
-  {
-    icon: '⚡',
-    name: 'Energy & Infrastructure',
-    tagline: 'Hardware-anchored ESG & climate compliance',
-    problem:
-      'The data-centre and AI-compute buildout collides with OSFI B-15 and global climate-disclosure rules. We read emissions evidence directly from server hardware and package it as tamper-evident, assurance-grade reports.',
-    chips: ['OSFI B-15', 'ISSB S2 / CSRD', 'Data Centres'],
-    accent: 'purple' as const,
-    to: '/products#energy-infrastructure',
   },
 ];
 
@@ -146,9 +129,9 @@ export const Home: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="AI-Powered Platforms for Canada's Regulated Industries"
-        description="NimbleStride builds intelligent software for Canada's most regulated industries across three domains — Insurance, Banking & Finance, and Energy & Infrastructure — plus productivity tools and public-sector and consumer-fintech platforms. Edmonton, Alberta."
-        keywords="NimbleStride, Canadian InsurTech, OSFI E-23 model risk, ESG compliance, RegTech Canada, ClearBid public sector bids, Canadian Mortgage Finder, MGR Infotech, regulated industries software, Edmonton Alberta"
+        title="AI Software for Canada's Regulated Industries"
+        description="NimbleStride, the AI & software division of MGR Infotech (Moose Jaw, SK), builds intelligent software for Canada's regulated industries — Insurance and Banking & Finance — plus productivity tools and public-sector and consumer-fintech platforms."
+        keywords="NimbleStride, MGR Infotech, Canadian InsurTech, OSFI E-23 model risk, RegTech Canada, ClearBid public sector bids, Canadian Mortgage Finder, Moose Jaw Saskatchewan"
         canonicalUrl="https://nimblestride.ca/"
         path="/"
       />
@@ -157,14 +140,14 @@ export const Home: React.FC = () => {
       <section className="relative bg-gradient-to-br from-navy-900 via-navy to-navy-800 text-white py-20 md:py-28 lg:py-36 overflow-hidden">
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-teal" aria-hidden="true" />
         <div className="absolute -right-20 -top-20 w-[28rem] h-[28rem] bg-teal/10 rounded-full blur-3xl" aria-hidden="true" />
-        <div className="absolute right-1/4 bottom-0 w-72 h-72 bg-purple/10 rounded-full blur-3xl" aria-hidden="true" />
+        <div className="absolute right-1/4 bottom-0 w-72 h-72 bg-amber/10 rounded-full blur-3xl" aria-hidden="true" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 mb-8">
               <span className="w-2 h-2 rounded-full bg-teal animate-pulse" aria-hidden="true" />
               <span className="text-xs font-medium tracking-wide text-teal-hover">
-                Edmonton, Alberta · Canadian Innovation
+                Moose Jaw, Saskatchewan · A division of MGR Infotech
               </span>
             </div>
             <h1 className="font-bold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
@@ -176,9 +159,9 @@ export const Home: React.FC = () => {
               regulation is tightest, processes are slowest, and the cost of getting it wrong is highest.
             </p>
             <p className="text-navy-300 text-base leading-relaxed mb-10 max-w-3xl">
-              We build AI platforms for three regulated industries — and focused productivity tools for the
-              people who work in them. Start with the domain or tool that's yours, and see how we rebuild its
-              most manual workflows around AI that practitioners actually trust.
+              As the AI &amp; software division of MGR Infotech, we build regulated-industry platforms — and
+              focused productivity, public-sector and consumer-fintech tools — for the people who work in them.
+              Start with the domain or tool that's yours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#domains" className="btn-primary text-center shadow-lg shadow-teal/20">
@@ -211,9 +194,14 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-teal mb-1">3</div>
+              <div className="text-3xl md:text-4xl font-bold text-teal mb-1">2</div>
               <p className="text-navy-200 text-sm font-medium">Regulated Domains</p>
-              <p className="text-navy-300 text-xs mt-1">Insurance · Banking &amp; Finance · Energy</p>
+              <p className="text-navy-300 text-xs mt-1">Insurance · Banking &amp; Finance</p>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-teal mb-1">6</div>
+              <p className="text-navy-200 text-sm font-medium">Platforms &amp; Tools</p>
+              <p className="text-navy-300 text-xs mt-1">Across regulated, productivity &amp; fintech</p>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold text-teal mb-1">100%</div>
@@ -225,11 +213,6 @@ export const Home: React.FC = () => {
               <p className="text-navy-200 text-sm font-medium">Country. Deeply.</p>
               <p className="text-navy-300 text-xs mt-1">Built for Canada's regulatory reality</p>
             </div>
-            <div>
-              <div className="text-3xl md:text-4xl font-bold text-teal mb-1">∞</div>
-              <p className="text-navy-200 text-sm font-medium">Problems Remaining</p>
-              <p className="text-navy-300 text-xs mt-1">We're just getting started</p>
-            </div>
           </div>
         </div>
       </section>
@@ -239,14 +222,14 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="eyebrow mb-4">Where We Work</div>
-            <h2>Three Regulated Domains. Pick Yours.</h2>
+            <h2>Regulated Domains. Pick Yours.</h2>
             <p className="text-secondary max-w-2xl mx-auto mt-4 text-lg">
               We don't lead with product names — we lead with the problem. Choose the domain that
               matches your world, and we'll show you the platform we built for it.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {DOMAINS.map((d) => {
               const a = ACCENT[d.accent];
               return (
@@ -342,7 +325,7 @@ export const Home: React.FC = () => {
             <h2>Public Sector &amp; Consumer Fintech</h2>
             <p className="text-secondary max-w-2xl mx-auto mt-4 text-lg">
               The same playbook — Canadian regulation meets manual process, solved with AI — reaches beyond our
-              three core domains into public-sector procurement and consumer mortgage finance.
+              core domains into public-sector procurement and consumer mortgage finance.
             </p>
           </div>
 
@@ -394,12 +377,12 @@ export const Home: React.FC = () => {
             <div>
               <div className="eyebrow mb-5">Our Vision</div>
               <h2 className="text-white mb-6">
-                From Three Domains to Many — One Regulated Industry at a Time
+                One Regulated Industry at a Time
               </h2>
               <p className="text-navy-200 leading-relaxed mb-5">
                 Canada is one of the most highly regulated economies in the world. Financial services, insurance,
-                real estate, energy, healthcare, and public infrastructure all operate under frameworks that are
-                sophisticated, jurisdiction-specific, and constantly evolving.
+                public procurement, and consumer finance all operate under frameworks that are sophisticated,
+                jurisdiction-specific, and constantly evolving.
               </p>
               <p className="text-navy-200 leading-relaxed mb-5">
                 These regulatory environments create friction — enormous amounts of manual work, paper-based
@@ -408,9 +391,8 @@ export const Home: React.FC = () => {
               </p>
               <p className="text-navy-200 leading-relaxed">
                 NimbleStride's playbook is repeatable: identify where Canadian regulation meets outdated
-                process; apply AI precisely; ship something practitioners trust. We've done it three times.
-                We intend to do it many more — across every domain where Canadian institutions and citizens
-                are underserved by the software available to them.
+                process; apply AI precisely; ship something practitioners trust. We intend to do it across every
+                domain where Canadian institutions and citizens are underserved by the software available to them.
               </p>
             </div>
 
@@ -433,7 +415,7 @@ export const Home: React.FC = () => {
                 </ul>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="bg-teal/20 rounded-lg p-4 text-center">
                   <div className="text-teal font-bold text-lg">Insurance</div>
                   <div className="text-navy-300 text-xs mt-1">Underwriting intelligence</div>
@@ -442,16 +424,12 @@ export const Home: React.FC = () => {
                   <div className="text-amber font-bold text-lg">Banking &amp; Finance</div>
                   <div className="text-navy-300 text-xs mt-1">Model risk &amp; OSFI E-23</div>
                 </div>
-                <div className="bg-purple/20 rounded-lg p-4 text-center">
-                  <div className="text-purple font-bold text-lg">Energy &amp; Infra.</div>
-                  <div className="text-navy-300 text-xs mt-1">ESG &amp; climate compliance</div>
-                </div>
               </div>
 
               <div className="bg-teal rounded-xl p-6 text-navy text-center">
                 <div className="text-4xl font-bold mb-2">Next?</div>
                 <div className="text-sm font-medium opacity-90">
-                  Energy regulation · Healthcare data · Public infrastructure · Legal workflows
+                  Public procurement · Consumer finance · Healthcare data · Legal workflows
                 </div>
                 <div className="text-xs mt-2 opacity-75">
                   If you see a problem in your regulated industry, let's talk.
@@ -470,7 +448,7 @@ export const Home: React.FC = () => {
             <h2>A Uniquely Complex Regulatory Landscape Creates Uniquely Large Opportunities</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 title: 'OSFI & Provincial Regulators',
@@ -484,10 +462,6 @@ export const Home: React.FC = () => {
                 title: 'P&C Insurance Gap',
                 body: 'Canadian MGAs and brokers lag global peers in digital adoption. Submission processing remains largely manual — creating measurable efficiency losses and missed bind opportunities.',
               },
-              {
-                title: 'Energy & Data-Centre Boom',
-                body: "Alberta's data-centre and AI-compute buildout collides with OSFI B-15 and climate-disclosure rules, creating a new class of ESG compliance obligation that existing software was never designed to address.",
-              },
             ].map((c) => (
               <div key={c.title} className="card p-6 hover:shadow-md transition-shadow">
                 <h3 className="font-bold text-body text-base mb-3">{c.title}</h3>
@@ -498,21 +472,19 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── PARTNERSHIPS ─────────────────────────────────────────────────── */}
+      {/* ─── SUPPORTED BY ─────────────────────────────────────────────────── */}
       <section className="bg-white py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <div className="eyebrow mb-3">Supported By</div>
-            <h2>Academic, Government & Industry Alignment</h2>
+            <h2>Government &amp; Innovation Program Alignment</h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
             {[
               { name: 'NRC IRAP', sub: 'Federal Innovation Funding' },
+              { name: 'Mitacs', sub: 'Academic Research Accelerator' },
               { name: 'Alberta Innovates', sub: 'Provincial R&D Support' },
-              { name: 'Mitacs', sub: 'Academic Partnership' },
-              { name: 'University of Alberta', sub: 'Research Collaboration' },
-              { name: 'Schulich School of Business', sub: 'Strategy & Policy' },
             ].map((p) => (
               <div key={p.name} className="bg-surface rounded-xl p-5 text-center hover:bg-teal-light transition-colors">
                 <div className="font-bold text-body text-sm mb-1">{p.name}</div>
@@ -529,9 +501,8 @@ export const Home: React.FC = () => {
           <div className="eyebrow mb-4">Get Involved</div>
           <h2 className="text-white mb-6">Find Your Domain. Solve the Problem. Shape What's Next.</h2>
           <p className="text-navy-200 mb-10 max-w-2xl mx-auto text-lg">
-            Whether you're an MGA underwriter, a Canadian FRFI facing the OSFI E-23 deadline, a data-centre
-            operator with ESG obligations, or a potential partner — start with your domain, and we'll take
-            it from there.
+            Whether you're an MGA underwriter, a Canadian FRFI facing the OSFI E-23 deadline, a public-sector
+            bidder, or a potential partner — start with your domain, and we'll take it from there.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#domains" className="btn-primary">

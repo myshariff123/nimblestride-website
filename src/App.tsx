@@ -4,15 +4,9 @@ import { Layout } from './components';
 import { Home } from './pages/Home';
 import { Products } from './pages/Products';
 import { ClearBind } from './pages/ClearBind';
-import { Solutions } from './pages/Solutions';
 import { ClearMRM } from './pages/ClearMRM';
-import { Regulatory } from './pages/Regulatory';
-import { RegulatoryMap } from './pages/RegulatoryMap';
-import { Partnerships } from './pages/Partnerships';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
-import { Onboarding } from './pages/Onboarding';
-import { Portal } from './pages/Portal';
 
 const helmetContext = {};
 
@@ -26,15 +20,9 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/products/clearbind" element={<ClearBind />} />
             <Route path="/products/clearmrm" element={<ClearMRM />} />
-            <Route path="/solutions" element={<Solutions />} />
-            <Route path="/regulatory" element={<Regulatory />} />
-            <Route path="/regulatory-map" element={<RegulatoryMap />} />
-            <Route path="/partnerships" element={<Partnerships />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
           </Route>
-          <Route path="/onboarding" element={<Onboarding />} />
-          <Route path="/portal" element={<Portal />} />
         </Routes>
       </Router>
 
@@ -42,17 +30,25 @@ function App() {
         {JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Organization',
-          name: 'NimbleStride Inc.',
+          name: 'NimbleStride',
           url: 'https://nimblestride.ca',
           logo: 'https://nimblestride.ca/logo.png',
+          parentOrganization: {
+            '@type': 'Organization',
+            name: 'MGR Infotech',
+            url: 'https://mgr.nimblestride.ca',
+          },
           description:
-            'Canadian technology company building AI-powered platforms across three regulated domains — Insurance (ClearBind, MGA underwriting intelligence), Banking & Model Risk (ClearMRM, OSFI E-23 model risk management), and Energy & Infrastructure (GridWitness, ESG compliance for data centres) — plus productivity tools Cadence (agile delivery co-pilot) and CustomTask (back-office automation), ClearBid (public-sector bid-compliance), and Canadian Mortgage Finder (AI mortgage qualification). NimbleStride is the AI & software division of the MGR group, alongside MGR Infotech.',
+            'AI & software division of MGR Infotech, building AI-powered platforms for Canada\'s regulated industries — Insurance (ClearBind, MGA underwriting intelligence) and Banking & Model Risk (ClearMRM, OSFI E-23 model risk management) — plus productivity tools Cadence and CustomTask, the ClearBid public-sector bid-compliance tool, and Canadian Mortgage Finder.',
           address: {
             '@type': 'PostalAddress',
-            addressLocality: 'Edmonton',
-            addressRegion: 'Alberta',
+            streetAddress: '#417 – 310 Main Street N',
+            addressLocality: 'Moose Jaw',
+            addressRegion: 'Saskatchewan',
             addressCountry: 'CA',
           },
+          telephone: '+1-855-206-8546',
+          email: 'support@nimblestride.ca',
           sameAs: ['https://www.linkedin.com/company/nimblestride'],
         })}
       </script>
