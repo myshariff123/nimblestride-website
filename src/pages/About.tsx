@@ -214,7 +214,7 @@ export const About: React.FC = () => {
                 the network closet to examiner-ready compliance software.
               </p>
               <a
-                href="https://mgr.nimblestride.ca"
+                href="https://www.mgrinfotech.net"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary inline-flex items-center gap-2"
@@ -432,7 +432,7 @@ export const About: React.FC = () => {
                 <div>
                   <dt className="font-bold text-body">Parent Company</dt>
                   <dd className="text-secondary">
-                    <a href="https://mgr.nimblestride.ca" className="text-teal hover:text-teal-hover" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.mgrinfotech.net" className="text-teal hover:text-teal-hover" target="_blank" rel="noopener noreferrer">
                       MGR Infotech
                     </a>{' '}
                     · info@mgrinfotech.net

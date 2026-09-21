@@ -2,7 +2,6 @@ export { Badge } from './Badge';
 export { CalloutBox } from './CalloutBox';
 export { FAQAccordion } from './FAQAccordion';
 export { SEOHelmet } from './SEOHelmet';
-export { SocialShare } from './SocialShare';
 export { Navbar } from './Navbar';
 export { Footer } from './Footer';
 export { Layout } from './Layout';

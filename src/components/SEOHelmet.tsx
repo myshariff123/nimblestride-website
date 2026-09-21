@@ -33,7 +33,6 @@ export const SEOHelmet: React.FC<SEOHelmetProps> = ({
       <meta property="og:locale" content="en_CA" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@NimbleStride" />
       <meta name="twitter:title" content={`${title} | NimbleStride`} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />

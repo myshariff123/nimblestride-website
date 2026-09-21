@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Layout } from './components';
 import { Home } from './pages/Home';
@@ -7,6 +7,8 @@ import { ClearBind } from './pages/ClearBind';
 import { ClearMRM } from './pages/ClearMRM';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
+import { Privacy } from './pages/Privacy';
+import { Terms } from './pages/Terms';
 
 const helmetContext = {};
 
@@ -22,6 +24,10 @@ function App() {
             <Route path="/products/clearmrm" element={<ClearMRM />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            {/* Retired routes and unknown paths fall back to the homepage. */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>
       </Router>
@@ -36,7 +42,7 @@ function App() {
           parentOrganization: {
             '@type': 'Organization',
             name: 'MGR Infotech',
-            url: 'https://mgr.nimblestride.ca',
+            url: 'https://www.mgrinfotech.net',
           },
           description:
             'AI & software division of MGR Infotech, building AI-powered platforms for Canada\'s regulated industries — Insurance (ClearBind, MGA underwriting intelligence) and Banking & Model Risk (ClearMRM, OSFI E-23 model risk management) — plus productivity tools Cadence and CustomTask, the ClearBid public-sector bid-compliance tool, and Canadian Mortgage Finder.',

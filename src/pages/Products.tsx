@@ -1,19 +1,9 @@
-import { useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { SEOHelmet, HeroSection } from '../components';
 
 export const Products: React.FC = () => {
-  const location = useLocation();
-
-  // Scroll to the domain section when arriving via a hash link (e.g. /products#insurance).
-  useEffect(() => {
-    if (location.hash) {
-      const el = document.getElementById(location.hash.slice(1));
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }, [location.hash]);
-
+  // Hash-scroll to the target section is handled globally in Layout.
   return (
     <>
       <SEOHelmet
@@ -82,7 +72,7 @@ export const Products: React.FC = () => {
                 <ul className="space-y-2 text-sm text-secondary">
                   {[
                     'Email ingestion via Power Automate + direct PDF upload',
-                    'GPT-4o field extraction with confidence scoring',
+                    'AI field extraction with confidence scoring (AWS Bedrock Claude)',
                     'NAICS classification and risk tier assignment',
                     'Google Reviews, adverse media, domain security API enrichment',
                     'Ghost Underwriter · Cyber Scan · Coverage Gap AI tools',
@@ -173,11 +163,11 @@ export const Products: React.FC = () => {
                 <ul className="space-y-2 text-sm text-secondary">
                   {[
                     'Model inventory — 15+ fields per model, version history, soft-delete',
-                    'Risk Rating Wizard — 8-question, automated Tier 1/2/3 (OSFI §3.2)',
-                    'Validation Workflow — 6-state machine: requested → closed (§3.3)',
-                    'Vendor/Third-Party Assessment — OSFI E-23 §5 checklist + AI deep dive',
+                    'Risk Rating Wizard — 8-question, automated Tier 1/2/3 (OSFI s. 3.2)',
+                    'Validation Workflow — 6-state machine: requested → closed (s. 3.3)',
+                    'Vendor/Third-Party Assessment — OSFI E-23 s. 5 checklist + AI deep dive',
                     'OSFI Examiner Export — 6-page Supervisory Review Package PDF',
-                    'Immutable audit trail — PostgreSQL trigger, append-only (§4.4)',
+                    'Immutable audit trail — PostgreSQL trigger, append-only (s. 4.4)',
                     'AI board reports, smart fill, remediation advisor (AWS Bedrock Claude)',
                     'SSO (SAML 2.0), multi-tenant onboarding, admin panel',
                   ].map((f) => (
@@ -574,7 +564,7 @@ export const Products: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { domain: 'Energy & Utilities', idea: 'Alberta energy regulatory compliance and emissions reporting automation', timeline: 'Exploring' },
+              { domain: 'Public-Sector Procurement', idea: 'Expanding ClearBid into a full bid-compliance workspace for Canadian public-sector suppliers', timeline: 'In Development' },
               { domain: 'Healthcare Data', idea: 'PHIPA-compliant AI tools for Canadian health data workflows and clinical documentation', timeline: 'Exploring' },
               { domain: 'Legal Workflows', idea: 'AI-assisted document review and compliance checking for Canadian legal practices', timeline: 'Exploring' },
               { domain: 'Your Industry', idea: "We're actively looking for the next problem worth solving. If you see it, we want to hear from you.", timeline: 'Let\'s Talk' },
