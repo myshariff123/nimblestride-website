@@ -9,11 +9,16 @@ interface LocationState {
 const FORM_TYPES = [
   { key: 'clearbind', label: 'ClearBind', icon: '🛡️', sub: 'Insurance · MGA Beta Access' },
   { key: 'clearmrm', label: 'ClearMRM', icon: '🏦', sub: 'Banking & Finance · OSFI E-23 Pilot' },
-  { key: 'institutional', label: 'GridWitness Pilot', icon: '⚡', sub: 'Energy & Infrastructure · Institutional' },
   { key: 'general', label: 'General', icon: '✉️', sub: 'Any other inquiry' },
 ] as const;
 
 type FormKey = typeof FORM_TYPES[number]['key'];
+
+const SUBJECTS: Record<FormKey, string> = {
+  clearbind: 'ClearBind Beta Access Request',
+  clearmrm: 'ClearMRM OSFI E-23 Pilot Request',
+  general: 'General Inquiry',
+};
 
 export const Contact: React.FC = () => {
   const location = useLocation();
@@ -26,12 +31,28 @@ export const Contact: React.FC = () => {
   const selectClass = inputClass;
   const textareaClass = `${inputClass} resize-none`;
 
+  // Submissions open the visitor's email client addressed to support@nimblestride.ca
+  // with all field values pre-filled — no third-party form backend required.
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>, key: FormKey) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const lines: string[] = [];
+    data.forEach((value, label) => {
+      const v = value.toString().trim();
+      if (v) lines.push(`${label}: ${v}`);
+    });
+    const subject = encodeURIComponent(SUBJECTS[key]);
+    const body = encodeURIComponent(lines.join('\n'));
+    window.location.href = `mailto:support@nimblestride.ca?subject=${subject}&body=${body}`;
+  };
+
   return (
     <>
       <SEOHelmet
-        title="Contact NimbleStride — ClearBind, ClearMRM, GridWitness"
-        description="Contact NimbleStride for ClearBind MGA beta access, ClearMRM OSFI E-23 pilot access, GridWitness institutional pilots, or any general inquiry. Edmonton, Alberta."
-        keywords="contact NimbleStride, ClearBind beta, ClearMRM OSFI E-23, GridWitness pilot, NimbleStride partnership, Edmonton Alberta InsurTech RegTech"
+        title="Contact NimbleStride — ClearBind, ClearMRM & More"
+        description="Contact NimbleStride for ClearBind MGA beta access, ClearMRM OSFI E-23 pilot access, or any general inquiry. A division of MGR Infotech — Moose Jaw, SK."
+        keywords="contact NimbleStride, ClearBind beta, ClearMRM OSFI E-23, MGR Infotech, NimbleStride partnership, Moose Jaw Saskatchewan"
         canonicalUrl="https://nimblestride.ca/contact"
         path="/contact"
       />
@@ -50,7 +71,7 @@ export const Contact: React.FC = () => {
       <section className="bg-white py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Tab selector */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-12">
             {FORM_TYPES.map((type) => (
               <button
                 key={type.key}
@@ -75,7 +96,7 @@ export const Contact: React.FC = () => {
 
               {/* ClearBind Form */}
               {activeForm === 'clearbind' && (
-                <form action="https://formspree.io/f/clearbind_beta" method="POST" className="space-y-5">
+                <form onSubmit={(e) => handleSubmit(e, 'clearbind')} className="space-y-5">
                   <div>
                     <h3 className="text-2xl font-bold text-body mb-2">ClearBind Beta Access</h3>
                     <p className="text-secondary text-sm">
@@ -121,19 +142,9 @@ export const Contact: React.FC = () => {
                   <div>
                     <label className="block text-sm font-bold text-body mb-1.5">Province</label>
                     <select name="province" className={selectClass}>
-                      {['Alberta', 'British Columbia', 'Ontario', 'Quebec', 'Manitoba', 'Saskatchewan', 'Nova Scotia', 'New Brunswick', 'Other'].map((p) => (
+                      {['Saskatchewan', 'Alberta', 'British Columbia', 'Ontario', 'Quebec', 'Manitoba', 'Nova Scotia', 'New Brunswick', 'Other'].map((p) => (
                         <option key={p}>{p}</option>
                       ))}
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-body mb-1.5">Approximate monthly submission volume</label>
-                    <select name="volume" className={selectClass}>
-                      <option>Under 50</option>
-                      <option>50–200</option>
-                      <option>200–500</option>
-                      <option>500+</option>
-                      <option>Not sure</option>
                     </select>
                   </div>
                   <div>
@@ -148,7 +159,7 @@ export const Contact: React.FC = () => {
 
               {/* ClearMRM Form */}
               {activeForm === 'clearmrm' && (
-                <form action="https://formspree.io/f/clearmrm_pilot" method="POST" className="space-y-5">
+                <form onSubmit={(e) => handleSubmit(e, 'clearmrm')} className="space-y-5">
                   <div>
                     <h3 className="text-2xl font-bold text-body mb-2">ClearMRM — OSFI E-23 Pilot Access</h3>
                     <p className="text-secondary text-sm">
@@ -173,16 +184,6 @@ export const Contact: React.FC = () => {
                       <option>Federal Pension Administrator</option>
                       <option>Tier 1 Bank ($100B+ assets)</option>
                       <option>Other FRFI</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-body mb-1.5">Approximate Total Assets</label>
-                    <select name="total_assets" className={selectClass}>
-                      <option>Under $1B</option>
-                      <option>$1B – $5B</option>
-                      <option>$5B – $20B</option>
-                      <option>$20B – $100B</option>
-                      <option>$100B+</option>
                     </select>
                   </div>
                   <div>
@@ -227,70 +228,9 @@ export const Contact: React.FC = () => {
                 </form>
               )}
 
-              {/* GridWitness / Institutional Form */}
-              {activeForm === 'institutional' && (
-                <form action="https://formspree.io/f/gridwitness_pilot" method="POST" className="space-y-5">
-                  <div>
-                    <h3 className="text-2xl font-bold text-body mb-2">GridWitness Institutional Pilot</h3>
-                    <p className="text-secondary text-sm">
-                      For financial institutions, data centre operators, and enterprises with OSFI B-15,
-                      California SB 253, or EU CSRD AI compute compliance obligations.
-                    </p>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-bold text-body mb-1.5">Organization Name *</label>
-                    <input type="text" name="organization" required className={inputClass} />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-body mb-1.5">Industry</label>
-                    <select name="industry" className={selectClass}>
-                      <option>Financial Services (Bank / Insurance / Asset Manager)</option>
-                      <option>Data Centre / Infrastructure Operator</option>
-                      <option>Energy / Utilities</option>
-                      <option>Technology / Cloud</option>
-                      <option>Public Sector / Sovereign AI</option>
-                      <option>Audit / Professional Services</option>
-                      <option>Academic / Research</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-body mb-1.5">Primary Regulatory Framework</label>
-                    <select name="framework" className={selectClass}>
-                      <option>OSFI B-15 (Canada)</option>
-                      <option>CSDS 1&amp;2 / Bill C-59 (Canada)</option>
-                      <option>California SB 253 (USA)</option>
-                      <option>EU CSRD / ESRS (Europe)</option>
-                      <option>ISSB S1/S2 (Global)</option>
-                      <option>Multiple Frameworks</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-body mb-1.5">Your Name *</label>
-                    <input type="text" name="name" required className={inputClass} />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-body mb-1.5">Email *</label>
-                    <input type="email" name="email" required className={inputClass} />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-body mb-1.5">Phone</label>
-                    <input type="tel" name="phone" className={inputClass} />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-body mb-1.5">Tell us about your compliance program</label>
-                    <textarea name="message" rows={3} className={textareaClass} />
-                  </div>
-                  <button type="submit" className="btn-primary w-full py-3 text-base">
-                    Submit Pilot Inquiry
-                  </button>
-                </form>
-              )}
-
               {/* General Form */}
               {activeForm === 'general' && (
-                <form action="https://formspree.io/f/nimblestride_general" method="POST" className="space-y-5">
+                <form onSubmit={(e) => handleSubmit(e, 'general')} className="space-y-5">
                   <div>
                     <h3 className="text-2xl font-bold text-body mb-2">General Inquiry</h3>
                     <p className="text-secondary text-sm">
@@ -319,6 +259,12 @@ export const Contact: React.FC = () => {
                   </button>
                 </form>
               )}
+
+              <p className="text-xs text-muted mt-4">
+                Submitting opens your email app with the details pre-filled to{' '}
+                <a href="mailto:support@nimblestride.ca" className="text-teal hover:text-teal-hover">support@nimblestride.ca</a>.
+                If nothing opens, email us directly — we reply within two business days.
+              </p>
             </div>
 
             {/* Sidebar */}
@@ -334,14 +280,28 @@ export const Contact: React.FC = () => {
                       </a>
                     </div>
                     <div>
-                      <p className="font-bold text-body">Location</p>
-                      <p>Edmonton, Alberta, Canada</p>
+                      <p className="font-bold text-body">Phone</p>
+                      <a href="tel:+18552068546" className="text-teal hover:text-teal-hover">(855) 206-8546</a>
+                      <span className="text-muted"> · toll-free</span>
+                    </div>
+                    <div>
+                      <p className="font-bold text-body">Head Office</p>
+                      <p>#417 – 310 Main Street N<br />Moose Jaw, SK</p>
+                      <p className="text-muted text-xs mt-0.5">Serving Saskatchewan &amp; Alberta</p>
                     </div>
                     <div>
                       <p className="font-bold text-body">Response Time</p>
-                      <p>We respond within 2 business days</p>
+                      <p>We respond within two business days</p>
                     </div>
                   </div>
+                </div>
+
+                <div className="pt-4 border-t border-gray-100">
+                  <p className="text-xs font-bold text-muted uppercase tracking-wider mb-3">Parent Company</p>
+                  <a href="https://mgr.nimblestride.ca" target="_blank" rel="noopener noreferrer" className="text-sm text-teal hover:text-teal-hover">
+                    MGR Infotech ↗
+                  </a>
+                  <p className="text-xs text-muted mt-1">info@mgrinfotech.net</p>
                 </div>
 
                 <div className="pt-4 border-t border-gray-100">
@@ -352,9 +312,6 @@ export const Contact: React.FC = () => {
                     </button>
                     <button onClick={() => setActiveForm('clearmrm')} className="flex items-center gap-2 text-amber hover:text-amber/80 w-full text-left">
                       🏦 ClearMRM — OSFI E-23 Pilot →
-                    </button>
-                    <button onClick={() => setActiveForm('institutional')} className="flex items-center gap-2 text-purple hover:text-purple/80 w-full text-left">
-                      ⚡ GridWitness Pilot →
                     </button>
                   </div>
                 </div>

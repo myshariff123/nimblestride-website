@@ -44,13 +44,6 @@ export const Navbar: React.FC = () => {
       accent: 'text-amber',
     },
     {
-      path: '/solutions',
-      label: 'GridWitness',
-      sub: 'Energy & Infrastructure · ESG Compliance',
-      icon: '⚡',
-      accent: 'text-purple',
-    },
-    {
       path: '/products#agile-delivery',
       label: 'Cadence',
       sub: 'Productivity · Agile Delivery Co-pilot',
@@ -80,8 +73,7 @@ export const Navbar: React.FC = () => {
     },
   ];
 
-  const productsActive =
-    isActive('/products') || isActive('/solutions') || isActive('/regulatory');
+  const productsActive = isActive('/products');
 
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
