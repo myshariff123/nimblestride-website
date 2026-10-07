@@ -32,7 +32,7 @@ export const Products: React.FC = () => {
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-4xl">🛡️</span>
                 <div>
-                  <div className="eyebrow">Insurance · InsurTech · Product 1 of 2</div>
+                  <div className="eyebrow">Insurance · InsurTech · Live Beta</div>
                   <h2 className="text-body">ClearBind</h2>
                 </div>
               </div>
@@ -123,7 +123,7 @@ export const Products: React.FC = () => {
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-4xl">🏦</span>
                 <div>
-                  <div className="eyebrow text-amber">Banking &amp; Finance · RegTech · Product 2 of 2</div>
+                  <div className="eyebrow text-amber">Banking &amp; Finance · RegTech · Live</div>
                   <h2 className="text-body">ClearMRM</h2>
                 </div>
               </div>
@@ -380,8 +380,8 @@ export const Products: React.FC = () => {
       {/* ─── TIER DIVIDER: PUBLIC SECTOR & CONSUMER ───────────────────────── */}
       <section className="bg-surface pt-10 pb-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="eyebrow mb-3">Public Sector &amp; Consumer Fintech</div>
-          <h2 className="text-body">Platforms Beyond the Core Three Domains</h2>
+          <div className="eyebrow mb-3">Professional Services, Public Sector &amp; Consumer Fintech</div>
+          <h2 className="text-body">Platforms Beyond Our Regulated-Industry Core</h2>
           <p className="text-secondary max-w-2xl mx-auto mt-4 text-lg">
             The same repeatable playbook — Canadian regulation meets manual process, solved with AI — extends
             to public-sector procurement and consumer mortgage finance.
