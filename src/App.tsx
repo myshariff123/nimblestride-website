@@ -5,6 +5,7 @@ import { Home } from './pages/Home';
 import { Products } from './pages/Products';
 import { ClearBind } from './pages/ClearBind';
 import { ClearMRM } from './pages/ClearMRM';
+import { ConsultLine } from './pages/ConsultLine';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { Privacy } from './pages/Privacy';
@@ -22,6 +23,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/products/clearbind" element={<ClearBind />} />
             <Route path="/products/clearmrm" element={<ClearMRM />} />
+            <Route path="/products/consultline" element={<ConsultLine />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />
@@ -45,7 +47,7 @@ function App() {
             url: 'https://www.mgrinfotech.net',
           },
           description:
-            'AI & software division of MGR Infotech, building AI-powered platforms for Canada\'s regulated industries — Insurance (ClearBind, MGA underwriting intelligence) and Banking & Model Risk (ClearMRM, OSFI E-23 model risk management) — plus productivity tools Cadence and CustomTask, the ClearBid public-sector bid-compliance tool, and Canadian Mortgage Finder.',
+            'AI & software division of MGR Infotech, building AI-powered platforms for Canada\'s regulated industries — Insurance (ClearBind, MGA underwriting intelligence) and Banking & Model Risk (ClearMRM, OSFI E-23 model risk management) — plus ConsultLine (phone intake and paid consultations for immigration consultants), productivity tools Cadence and CustomTask, the ClearBid public-sector bid-compliance tool, and Canadian Mortgage Finder.',
           address: {
             '@type': 'PostalAddress',
             streetAddress: '#417 – 310 Main Street N',

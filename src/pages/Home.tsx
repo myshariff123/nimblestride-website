@@ -45,6 +45,13 @@ const ACCENT = {
     hoverBorder: 'hover:border-indigo',
     dot: 'bg-indigo',
   },
+  purple: {
+    text: 'text-purple',
+    iconWrap: 'bg-purple/10 text-purple',
+    chip: 'bg-purple/10 text-purple',
+    hoverBorder: 'hover:border-purple',
+    dot: 'bg-purple',
+  },
   rose: {
     text: 'text-rose',
     iconWrap: 'bg-rose/10 text-rose',
@@ -78,6 +85,17 @@ const DOMAINS = [
 ];
 
 const MORE_PLATFORMS = [
+  {
+    icon: '📞',
+    name: 'ConsultLine',
+    tagline: 'Phone intake and paid consultations for immigration consultants',
+    problem:
+      'Every call becomes a client file. Callers accept your consultation terms by text, you get an alert as the free time ends, a payment link goes out when you decide, and an AI intake draft is ready for your review after the call.',
+    chips: ['Immigration Consultants', 'Terms by Text', 'Paid Consultations'],
+    accent: 'purple' as const,
+    to: '/products/consultline',
+    status: 'Pilot',
+  },
   {
     icon: '📋',
     name: 'ClearBid',
@@ -131,7 +149,7 @@ export const Home: React.FC = () => {
       <SEOHelmet
         title="AI Software for Canada's Regulated Industries"
         description="NimbleStride, the AI & software division of MGR Infotech (Moose Jaw, SK), builds intelligent software for Canada's regulated industries — Insurance and Banking & Finance — plus productivity tools and public-sector and consumer-fintech platforms."
-        keywords="NimbleStride, MGR Infotech, Canadian InsurTech, OSFI E-23 model risk, RegTech Canada, ClearBid public sector bids, Canadian Mortgage Finder, Moose Jaw Saskatchewan"
+        keywords="NimbleStride, MGR Infotech, Canadian InsurTech, OSFI E-23 model risk, RegTech Canada, ConsultLine immigration consultant software, ClearBid public sector bids, Canadian Mortgage Finder, Moose Jaw Saskatchewan"
         canonicalUrl="https://nimblestride.ca/"
         path="/"
       />
@@ -322,14 +340,14 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="eyebrow mb-4">More From NimbleStride</div>
-            <h2>Public Sector &amp; Consumer Fintech</h2>
+            <h2>Professional Services, Public Sector &amp; Consumer Fintech</h2>
             <p className="text-secondary max-w-2xl mx-auto mt-4 text-lg">
               The same playbook — Canadian regulation meets manual process, solved with AI — reaches beyond our
-              core domains into public-sector procurement and consumer mortgage finance.
+              core domains into professional services, public-sector procurement and consumer mortgage finance.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {MORE_PLATFORMS.map((p) => {
               const a = ACCENT[p.accent];
               return (

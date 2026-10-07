@@ -71,6 +71,12 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
+                <Link to="/products/consultline" className="hover:text-teal transition-colors group">
+                  <div className="font-semibold text-navy-200 group-hover:text-teal">📞 ConsultLine</div>
+                  <div className="text-xs text-navy-300 mt-0.5">Professional Services · Phone Intake · Pilot</div>
+                </Link>
+              </li>
+              <li>
                 <Link to="/products#clearbid" className="hover:text-teal transition-colors group">
                   <div className="font-semibold text-navy-200 group-hover:text-teal">📋 ClearBid</div>
                   <div className="text-xs text-navy-300 mt-0.5">Public Sector · Bid Compliance · Coming Soon</div>

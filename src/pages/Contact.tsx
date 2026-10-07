@@ -9,6 +9,7 @@ interface LocationState {
 const FORM_TYPES = [
   { key: 'clearbind', label: 'ClearBind', icon: '🛡️', sub: 'Insurance · MGA Beta Access' },
   { key: 'clearmrm', label: 'ClearMRM', icon: '🏦', sub: 'Banking & Finance · OSFI E-23 Pilot' },
+  { key: 'consultline', label: 'ConsultLine', icon: '📞', sub: 'Immigration Consultants · Book a Demo' },
   { key: 'general', label: 'General', icon: '✉️', sub: 'Any other inquiry' },
 ] as const;
 
@@ -17,6 +18,7 @@ type FormKey = typeof FORM_TYPES[number]['key'];
 const SUBJECTS: Record<FormKey, string> = {
   clearbind: 'ClearBind Beta Access Request',
   clearmrm: 'ClearMRM OSFI E-23 Pilot Request',
+  consultline: 'ConsultLine Demo Request',
   general: 'General Inquiry',
 };
 
@@ -50,8 +52,8 @@ export const Contact: React.FC = () => {
   return (
     <>
       <SEOHelmet
-        title="Contact NimbleStride — ClearBind, ClearMRM & More"
-        description="Contact NimbleStride for ClearBind MGA beta access, ClearMRM OSFI E-23 pilot access, or any general inquiry. A division of MGR Infotech — Moose Jaw, SK."
+        title="Contact NimbleStride — ClearBind, ClearMRM, ConsultLine & More"
+        description="Contact NimbleStride for ClearBind MGA beta access, ClearMRM OSFI E-23 pilot access, a ConsultLine demo, or any general inquiry. A division of MGR Infotech — Moose Jaw, SK."
         keywords="contact NimbleStride, ClearBind beta, ClearMRM OSFI E-23, MGR Infotech, NimbleStride partnership, Moose Jaw Saskatchewan"
         canonicalUrl="https://nimblestride.ca/contact"
         path="/contact"
@@ -71,7 +73,7 @@ export const Contact: React.FC = () => {
       <section className="bg-white py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Tab selector */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-12">
             {FORM_TYPES.map((type) => (
               <button
                 key={type.key}
@@ -228,6 +230,69 @@ export const Contact: React.FC = () => {
                 </form>
               )}
 
+              {/* ConsultLine Form */}
+              {activeForm === 'consultline' && (
+                <form onSubmit={(e) => handleSubmit(e, 'consultline')} className="space-y-5">
+                  <div>
+                    <h3 className="text-2xl font-bold text-body mb-2">ConsultLine — Book a Demo</h3>
+                    <p className="text-secondary text-sm">
+                      For immigration consultants and small practices. We'll walk you through a call end to end and
+                      talk through how ConsultLine would fit your practice.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-sm font-bold text-body mb-1.5">Your Name *</label>
+                      <input type="text" name="name" required className={inputClass} />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-bold text-body mb-1.5">Email *</label>
+                      <input type="email" name="email" required className={inputClass} />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-sm font-bold text-body mb-1.5">Practice Name</label>
+                      <input type="text" name="practice" className={inputClass} />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-bold text-body mb-1.5">Phone</label>
+                      <input type="tel" name="phone" className={inputClass} />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-sm font-bold text-body mb-1.5">Your Role</label>
+                      <select name="role" className={selectClass}>
+                        <option>Licensed consultant (RCIC)</option>
+                        <option>Practice owner / manager</option>
+                        <option>Assistant / office staff</option>
+                        <option>Other professional service</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-bold text-body mb-1.5">Team Size</label>
+                      <select name="team_size" className={selectClass}>
+                        <option>Just me</option>
+                        <option>2–4 people</option>
+                        <option>5 or more</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-body mb-1.5">Current Phone System &amp; CRM (if any)</label>
+                    <input type="text" name="current_tools" placeholder="e.g. mobile only, a VoIP line, a CRM or case-management tool" className={inputClass} />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-body mb-1.5">Anything You'd Like Us to Cover?</label>
+                    <textarea name="message" rows={4} className={textareaClass} />
+                  </div>
+                  <button type="submit" className="btn-primary w-full py-3 text-base">
+                    Request a Demo
+                  </button>
+                </form>
+              )}
+
               {/* General Form */}
               {activeForm === 'general' && (
                 <form onSubmit={(e) => handleSubmit(e, 'general')} className="space-y-5">
@@ -312,6 +377,9 @@ export const Contact: React.FC = () => {
                     </button>
                     <button onClick={() => setActiveForm('clearmrm')} className="flex items-center gap-2 text-amber hover:text-amber/80 w-full text-left">
                       🏦 ClearMRM — OSFI E-23 Pilot →
+                    </button>
+                    <button onClick={() => setActiveForm('consultline')} className="flex items-center gap-2 text-purple hover:text-purple/80 w-full text-left">
+                      📞 ConsultLine — Book a Demo →
                     </button>
                     <a href="https://cadence.nimblestride.ca" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue hover:text-blue/80">
                       🧭 Cadence — Agile Delivery ↗

@@ -44,6 +44,13 @@ export const Navbar: React.FC = () => {
       accent: 'text-amber',
     },
     {
+      path: '/products/consultline',
+      label: 'ConsultLine',
+      sub: 'Professional Services · Phone Intake & Paid Consultations',
+      icon: '📞',
+      accent: 'text-purple',
+    },
+    {
       path: '/products#agile-delivery',
       label: 'Cadence',
       sub: 'Productivity · Agile Delivery Co-pilot',
