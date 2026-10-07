@@ -8,8 +8,8 @@ export const Products: React.FC = () => {
     <>
       <SEOHelmet
         title="Our Products — Regulated Platforms & Productivity Tools"
-        description="NimbleStride's product portfolio: ClearBind (Insurance) and ClearMRM (Banking & Finance, OSFI E-23), plus productivity tools Cadence (agile delivery) and CustomTask (back-office automation), the ClearBid public-sector bid-compliance tool, and Canadian Mortgage Finder. A division of MGR Infotech, Moose Jaw, SK."
-        keywords="ClearBind InsurTech, ClearMRM OSFI E-23, Cadence agile, CustomTask automation, ClearBid RFP compliance, Canadian Mortgage Finder, MGR Infotech, NimbleStride products, Canadian software"
+        description="NimbleStride's product portfolio: ClearBind (Insurance) and ClearMRM (Banking & Finance, OSFI E-23), plus productivity tools Cadence (agile delivery) and CustomTask (back-office automation), the ClearBid public-sector bid-compliance tool, Canadian Mortgage Finder, and ConsultLine for immigration consultants. A division of MGR Infotech, Moose Jaw, SK."
+        keywords="ClearBind InsurTech, ClearMRM OSFI E-23, Cadence agile, CustomTask automation, ClearBid RFP compliance, Canadian Mortgage Finder, ConsultLine RCIC software, MGR Infotech, NimbleStride products, Canadian software"
         canonicalUrl="https://nimblestride.ca/products"
         path="/products"
       />
@@ -17,7 +17,7 @@ export const Products: React.FC = () => {
       <HeroSection
         eyebrow="Product Portfolio"
         title="Regulated-Industry Platforms & Productivity Tools."
-        subtitle="One playbook. Our regulated-industry platforms serve Insurance and Banking & Finance, and our productivity, public-sector and consumer-fintech tools give practitioners sharper, faster ways to work."
+        subtitle="One playbook. Our regulated-industry platforms serve Insurance and Banking & Finance, and our productivity, professional-services, public-sector and consumer-fintech tools give practitioners sharper, faster ways to work."
         primaryCtaLabel="Contact Us"
         primaryCtaTo="/contact"
         secondaryCtaLabel="About NimbleStride"
@@ -544,6 +544,78 @@ export const Products: React.FC = () => {
                 <a href="https://newincanadamortgage.ca" target="_blank" rel="noopener noreferrer" className="bg-rose text-white px-4 py-2 rounded-md text-sm font-bold hover:bg-rose/90 transition-colors">
                   Open Platform
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── PRODUCT 8: ConsultLine (Professional Services) ───────────────── */}
+      <section id="consultline" className="bg-surface py-14 md:py-20 scroll-mt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-4xl">📞</span>
+                <div>
+                  <div className="eyebrow text-purple">Professional Services · Immigration Consultants · Pilot</div>
+                  <h2 className="text-body">ConsultLine</h2>
+                </div>
+              </div>
+              <p className="text-secondary text-lg leading-relaxed mb-6">
+                Phone intake and paid consultations for Canadian immigration consultants. Every call becomes a
+                client file: callers accept your consultation terms by text, you get an alert as the free time
+                ends, and a secure payment link goes out only when you decide.
+              </p>
+              <p className="text-secondary leading-relaxed mb-8">
+                After the call, the transcript becomes an AI intake draft — program interest, status, key facts,
+                open questions and documents mentioned — and uploaded documents are checked and summarised, all
+                waiting on the client record for the consultant to review.
+              </p>
+              <div className="flex gap-4 flex-wrap">
+                <Link to="/products/consultline" className="btn-primary inline-flex items-center gap-2">
+                  Explore ConsultLine
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="card p-6 border-l-4 border-purple">
+                <h3 className="font-bold text-body mb-3">What ConsultLine Does</h3>
+                <ul className="space-y-2 text-sm text-secondary">
+                  {[
+                    'Consultation terms by text — accepted with the client\'s legal name and email',
+                    'Every caller matched or created as a client record in your CRM',
+                    'Text alert to the consultant as the free consultation time ends',
+                    'Payment link by text and email when you choose — paid status recorded automatically',
+                    'AI intake draft from the call transcript, ready for review',
+                    'Secure document upload with an AI check of each document',
+                  ].map((f) => (
+                    <li key={f} className="flex gap-2">
+                      <CheckCircle2 size={14} className="text-purple flex-shrink-0 mt-0.5" />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="grid grid-cols-3 gap-3 text-center text-sm">
+                {['📞 Your Phone Line', '🧾 Terms by Text', '💳 Paid Time'].map((f) => (
+                  <div key={f} className="bg-purple/10 border border-purple/20 rounded-lg p-3 font-medium text-purple text-xs">
+                    {f}
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-purple/10 border border-purple/20 rounded-lg p-4 flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-bold text-purple">Status: Pilot</p>
+                  <p className="text-xs text-secondary mt-0.5">Demos available · Pilot pricing on request</p>
+                </div>
+                <Link to="/contact" state={{ contactType: 'consultline' }} className="bg-purple text-white px-4 py-2 rounded-md text-sm font-bold hover:bg-purple/90 transition-colors">
+                  Book a Demo
+                </Link>
               </div>
             </div>
           </div>

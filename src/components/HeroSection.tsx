@@ -7,6 +7,7 @@ interface HeroSectionProps {
   subtitle?: string;
   primaryCtaLabel: string;
   primaryCtaTo: string;
+  primaryCtaState?: Record<string, unknown>;
   secondaryCtaLabel?: string;
   secondaryCtaTo?: string;
   accentStripe?: boolean;
@@ -18,6 +19,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   subtitle,
   primaryCtaLabel,
   primaryCtaTo,
+  primaryCtaState,
   secondaryCtaLabel,
   secondaryCtaTo,
   accentStripe = true,
@@ -39,7 +41,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           )}
 
           <div className="flex flex-col sm:flex-row gap-4 pt-6">
-            <Link to={primaryCtaTo} className="btn-primary text-center">
+            <Link to={primaryCtaTo} state={primaryCtaState} className="btn-primary text-center">
               {primaryCtaLabel}
             </Link>
             {secondaryCtaLabel && secondaryCtaTo && (
